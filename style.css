@@ -16,20 +16,21 @@ h1 {
     border-color: gray;
 }
 .center-image {
-  width: 580px;
-  margin-top: 10px;
-  margin-left: 100px;
-  border-radius: 60px;
-  border-style: ridge;
-  border-color: gray;
+    width: 580px;
+    margin-top: 10px;
+    margin-left: 100px;
+    border-radius: 60px;
+    border-style: ridge;
+    border-color: gray;
 }
-.shopping{
-  width: 550px;
-  margin-top: 10px;
-  margin-left: 100px;
-  border-radius: 60px;
-  border-style: ridge;
-  border-color: gray;
+.shopping {
+    height: 90px;
+    width: 550px;
+    margin-top: 10px;
+    margin-left: 100px;
+    border-radius: 60px;
+    border-style: ridge;
+    border-color: gray;
 
 }
 .box{
