@@ -563,7 +563,7 @@ button.remove {
     border: 1px solid #DCC099;
 }
 .receipt {
-    background-image: URL("..\\images\\pc.png");
+    background-image: URL("..\\images\\Pc.png");
     background-repeat: no-repeat;
     background-position: 50%;
     font-size: 35px;
@@ -804,7 +804,7 @@ label {
         grid-auto-columns: 300px;
         overflow-x: auto;
         gap: var(--size-2);
-        background-image: ('src/');
+        background-image: URL("..\\images\\Pc.png");
     }
     .cart > div {
         height: fit-content;
