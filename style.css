@@ -183,4 +183,17 @@ p{
         font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
         font-size:15px;
 }
+/* about me page paragraph*/
+    p{
+        color: rgb(168, 167, 167);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: left;
+        border-radius: 50px;
+        margin-top: 150px;
+        width: 280px;
+        font-size: 20px;
+        box-sizing: content-box;
+        margin-top: 180px;
+        margin-left: 10px;
+}
 }
