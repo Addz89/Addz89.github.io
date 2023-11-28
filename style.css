@@ -1,0 +1,99 @@
+h1{
+    text-align: center;
+    color: teal;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size:60px;
+    border: 3px solid teal;
+    border-radius: 50px;
+}
+
+.center-image {
+    width: 380px;
+    margin-top: 10px;
+    margin-left: 1500px;
+    border-radius: 60px;
+    border-style: ridge;
+    border-color: gray;
+}
+.styled-button {
+    height: fit-content;
+    width: auto;
+    padding: 8px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: rgb(146, 146, 146);
+    border-right: 3px solid #008080;
+    line-height: 3em;
+    background-color: transparent;
+}
+
+.styled-button:hover {
+    color: teal;
+}
+
+body {
+    background-color: #081017;
+    background-size: screen;
+    background-position: fill;
+    background-repeat: no-repeat;
+}
+.line {
+    height: 7px;
+    background-image: linear-gradient(
+        to right,
+        transparent 10%,
+        #008080 50%,
+        transparent 90%
+    );
+    background-repeat: repeat;
+    background-size: 100% 800px;
+    background-position: 0 center;
+    z-index: 1050;
+
+}
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color:black;
+    box-shadow: #000000 6px 2px 2px 0px inset, #008080 0px 0px 6px 6px inset;
+    border: 1px solid #000000;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    border: #008080;
+    background: #000000;
+  }
+  /* Buttons */
+::-webkit-scrollbar-button:single-button {
+    border-radius: 4px;
+    background-color:black;
+    box-shadow: #000000 1px 2px 2px 1px inset, #008080 0px 0px 6px 6px inset;
+    border: 1px solid #000000;
+  }
+  /* About me page styles*/
+
+p{
+    color: rgb(168, 167, 167);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    border-radius: 50px;
+    margin-top: 150px;
+    width: 500px;
+    font-size: 20px;
+    box-sizing: content-box;
+    margin-top: 180px;
+    margin-left: 60px;
+}
