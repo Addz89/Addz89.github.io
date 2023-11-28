@@ -156,21 +156,21 @@ p{
         line-height: 3em;
 }
     .adventure {
-        width: 370px;
+        width: 300px;
         margin-top: 100px;
         border-radius: 20px;
         border-style: ridge;
         border-color: gray;
 }
     .center-image {
-        width: 370px;
+        width: 300px;
         margin-top: 10px;
         border-radius: 60px;
         border-style: ridge;
         border-color: gray;
 }
     .shopping {
-        width: 370px;
+        width: 300px;
         margin-top: 10px;
         margin-left: 2px;
         border-radius: 20px;
