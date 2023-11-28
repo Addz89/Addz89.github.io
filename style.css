@@ -158,7 +158,6 @@ p{
     .adventure {
         width: 530px;
         margin-top: 100px;
-        margin-left: 100px;
         border-radius: 20px;
         border-style: ridge;
         border-color: gray;
@@ -166,7 +165,6 @@ p{
     .center-image {
         width: 530px;
         margin-top: 10px;
-        margin-left: 100px;
         border-radius: 60px;
         border-style: ridge;
         border-color: gray;
@@ -174,7 +172,6 @@ p{
     .shopping {
         width: 530px;
         margin-top: 10px;
-        margin-left: 100px;
         border-radius: 20px;
         border-style: ridge;
         border-color: gray;
