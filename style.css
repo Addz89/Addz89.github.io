@@ -6,13 +6,11 @@ h1{
     border: 3px solid teal;
     border-radius: 50px;
 }
-.h2{
+h2{
     text-align: center;
     color: teal;
     font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-size:60px;
-    border: 3px solid teal;
-    border-radius: 50px;
 }
 .adventure{
     width: 350px;
@@ -42,8 +40,6 @@ h1{
   background-size: 100% 800px;
   background-position: 0 center;
   z-index: 1050;
-
-    
 
 }
 .styled-button {
