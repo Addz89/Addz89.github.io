@@ -67,7 +67,13 @@ h2 {
   text-align: center;
   color: teal;
   font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-  font-size:60px;
+  font-size:40px;
+}
+h3 {
+  text-align: left;
+  color: whitesmoke;
+  font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-size: 40px;
 }
 .line {
     height: 7px;
