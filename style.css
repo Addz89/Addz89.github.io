@@ -146,7 +146,7 @@ p{
 @media only screen and (max-width: 600px) 
 {
     /* Styles for screens smaller than 600px */
-}
+
 h1 {
     text-align: center;
     color: teal;
@@ -167,4 +167,5 @@ h1 {
 }
 .zoom{
     zoom: 50%;
+}
 }
