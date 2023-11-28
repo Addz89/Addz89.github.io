@@ -172,6 +172,7 @@ p{
     .shopping {
         width: 360px;
         margin-top: 10px;
+        margin-left: 1px;
         border-radius: 20px;
         border-style: ridge;
         border-color: gray;
@@ -180,6 +181,6 @@ p{
         text-align: left;
         color: teal;
         font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-        font-size:10px;
+        font-size:15px;
 }
 }
