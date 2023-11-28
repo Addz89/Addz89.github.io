@@ -8,12 +8,28 @@ h1{
 }
 
 .center-image {
-    width: 380px;
+    width: 580px;
     margin-top: 10px;
-    margin-left: 1500px;
+    margin-left: 100px;
     border-radius: 60px;
     border-style: ridge;
     border-color: gray;
+}
+.box{
+  height: 7px;
+  background-image: linear-gradient(
+      to right,
+      transparent 10%,
+      #008080 50%,
+      transparent 90%
+  );
+  background-repeat: repeat;
+  background-size: 100% 800px;
+  background-position: 0 center;
+  z-index: 1050;
+
+    
+
 }
 .styled-button {
     height: fit-content;
