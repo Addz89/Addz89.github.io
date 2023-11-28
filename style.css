@@ -6,7 +6,14 @@ h1{
     border: 3px solid teal;
     border-radius: 50px;
 }
-
+.adventure{
+    width: 580px;
+    margin-top: 10px;
+    margin-left: 100px;
+    border-radius: 20px;
+    border-style: ridge;
+    border-color: gray;
+}
 .center-image {
     width: 580px;
     margin-top: 10px;
