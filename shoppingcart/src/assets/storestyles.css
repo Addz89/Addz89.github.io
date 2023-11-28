@@ -255,7 +255,7 @@ h3 {
 .checkout-container {
     width: 100%;
     text-align: center;
-    background-image: URL("images/Pc.png");
+    background-image: URL("..\\images\\Pc.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 900px;
@@ -563,7 +563,7 @@ button.remove {
     border: 1px solid #DCC099;
 }
 .receipt {
-    background-image: URL("..\\images\\Pc.png");
+    background-image: URL("..\\images\\pc1.png");
     background-repeat: no-repeat;
     background-position: 50%;
     font-size: 35px;
