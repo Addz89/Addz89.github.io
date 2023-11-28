@@ -12,7 +12,6 @@ h1 {
 .adventure {
     width: 630px;
     margin-top: 100px;
-    margin-left: 100px;
     border-radius: 20px;
     border-style: ridge;
     border-color: gray;
@@ -20,7 +19,6 @@ h1 {
 .center-image {
     width: 630px;
     margin-top: 10px;
-    margin-left: 100px;
     border-radius: 60px;
     border-style: ridge;
     border-color: gray;
