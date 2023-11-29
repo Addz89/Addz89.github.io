@@ -171,8 +171,7 @@ p{
 }
     .shopping {
         width: 360px;
-        margin-top: 10px;
-        margin-left: 1px;
+        margin-top: 12px;
         border-radius: 20px;
         border-style: ridge;
         border-color: gray;
