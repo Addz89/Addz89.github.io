@@ -165,7 +165,7 @@ p{
     .center-image {
         width: 360px;
         margin-top: 10px;
-        border-radius: 60px;
+        border-radius: 20px;
         border-style: ridge;
         border-color: gray;
 }
