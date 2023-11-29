@@ -172,7 +172,7 @@ p{
     .shopping {
         width: 360px;
         margin-top: 12px;
-        margin-left: 10px;
+        margin-left: 0.1px;
         border-radius: 20px;
         border-style: ridge;
         border-color: gray;
