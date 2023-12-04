@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST["subject"];
     $message = $_POST["message"];
 
-    $to = "your-email@example.com";
+    $to = "adam.naumovski89@live.com";
     $subject = "New Contact Form Submission: $subject";
     $headers = "From: $email";
 
