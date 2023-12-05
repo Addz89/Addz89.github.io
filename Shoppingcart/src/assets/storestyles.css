@@ -256,7 +256,7 @@ h3 {
 .checkout-container {
     width: 100%;
     text-align: center;
-    background-image: URL("images/pc.png");
+    background-image: URL("images\\pc.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 900px;
