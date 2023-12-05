@@ -90,6 +90,7 @@ p{
 
 .footer-text p {
     font-size: 1.6rem;
+    margin-left: 150px;
 }
 
 .footer-iconTop a {
@@ -129,4 +130,44 @@ p{
 
 .footer-iconTop a:hover i {
     color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+    p {
+    position: flex;
+    padding-top: 10px;
+    padding-left: 1px;
+    color: var(--main-color);
+    font-size: 10px;
+    }
+
+    .footer-text p {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
+    .footer p {
+        padding-left: 1px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    p {
+    position: flex;
+    padding-top: 10px;
+    padding-left: 1px;
+    color: var(--main-color);
+    font-size: 10px;
+    }
+
+    .footer-text p {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
+    .footer p {
+        padding-left: 1px;
+    }
+
 }
