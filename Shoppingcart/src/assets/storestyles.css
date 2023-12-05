@@ -10,6 +10,42 @@
 .quicklogBottom {
     display: none;
 }
+
+/* navbar */
+.header {
+    position: top;
+    top: 0;
+    left: 0;
+    width: 84%;
+    padding: 9px 8%;
+    background: #112e42;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background: whitesmoke;
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: whitesmoke;
+    cursor: pointer;
+    display: flex;
+}
+.navbar a {
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+.logo {
+    color: whitesmoke;
+}
 .quicklog {
     width: 100%;
     display: flex;
@@ -256,7 +292,7 @@ h3 {
 .checkout-container {
     width: 100%;
     text-align: center;
-    background-image: URL("images\\pc.png");
+    background-image: URL("..\\images\\pc.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 900px;
@@ -826,4 +862,28 @@ label {
     .cart-total > div > p {
         margin: auto;
     }
+
+
+@media (max-width: 768px) {
+    .header {
+        background: var(--bg-color);
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+        z-index: 1;
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+}
 }
