@@ -152,7 +152,27 @@ p{
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 520px) {
+    p {
+    position: flex;
+    padding-top: 10px;
+    padding-left: 1px;
+    color: var(--main-color);
+    font-size: 10px;
+    }
+
+    .footer-text p {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
+    .footer p {
+        padding-left: 1px;
+    }
+
+}
+
+@media (max-width: 1200px) {
     p {
     position: flex;
     padding-top: 10px;
