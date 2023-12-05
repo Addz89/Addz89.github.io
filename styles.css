@@ -69,16 +69,17 @@ body {
     display: none;
 }
 
-h1 {
-
-    padding-top: 6px;
-    margin: 500px;
+p{
+    display: inline-block;
+    position: relative;
+    padding-top: 10px;
+    padding-left: 300px;
+    margin: 186px;
     color: var(--main-color);
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .footer {
-    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,6 +117,16 @@ h1 {
     transition: .5s;
 }
 
+.footer-iconTop a:hover::before {
+    width: 100%;
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
 .footer-iconTop a:hover i {
-    color: var(--second-bg-color);
+    color: var(--main-color);
 }
