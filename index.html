@@ -169,14 +169,15 @@
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
 
         <form action="https://formsubmit.co/adam.naumovski89@live.com" method="POST">
+            <input type="hidden" name="_subject" value="New Mail Yayy!!">
             <input type="hidden" name="_next" href="thankyou.html"></a>
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" name="name" placeholder="Full Name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Address" required>
+                    <input type="text" name="email"placeholder="Email Address" required>
                     <span class="focus"></span>
                 </div>
 
@@ -185,11 +186,11 @@
             
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" required>
+                    <input type="number" name="number"placeholder="Mobile Number" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email Subject" required>
+                    <input type="text" name="subject"placeholder="Email Subject" required>
                     <span class="focus"></span>
                 </div>
 
@@ -225,24 +226,6 @@
     </footer>
     <!---custom js link-->
     <script src="script.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(){
-            Email.send({
-                Host : "smtp-mail.outlook.com",
-                Username : "adam.naumovski89@live.com",
-                Password : "Zavier20",
-                To : 'adam.naumovski89@live.com',
-                From : document.getElementById("email").value,
-                Subject : "New Contact Form Enquiry",
-                Body : "Name: " + document.getElementById("name").value
-                    + "<br> Email: " + document.getElementById("email").value
-                    + "<br> Mobile Number: " + document.getElementById("Mobile Number").value
-                    + "<br> Your Message: " + document.getElementById("Message").value
-            }).then(
-              message => alert("Message Sent")
-            );
-        }
-    </script>
+
 </body>
 </html>
