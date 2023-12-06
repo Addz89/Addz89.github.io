@@ -93,6 +93,43 @@ p{
 
 }
 
+/* Scrollbar styles */
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color:rgb(255, 255, 255);
+    box-shadow: black 2px 4px 6px;
+    box-shadow: #112e42 2px 5px 5px 2px inset, #00abf0 0px 0px 6px 6px inset;
+    border: 1px solid #00abf0;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+  /* Buttons */
+::-webkit-scrollbar-button:single-button {
+    display: block;
+    border-style: dotted;
+    height: 13px;
+    width: 20px;
+    background-color: #050505;
+    border: 1px dotted #00abf0;
+    border-radius: 1em;
+    box-shadow: #112e42 2px 2px 1px 0px inset, #00abf0 0px 0px 6px 6px inset;
+  }
+
 
 /* screen sizes */
 @media (max-width: 768px) {
