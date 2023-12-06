@@ -28,9 +28,9 @@ window.onscroll = () => {
             sec.classList.add('show-animate');
         }
         // if want to use animation the repeats on scroll use this
-            //  else {
-                //  sec.classList.remove('show-animate');
-        //  }
+            else {
+                sec.classList.remove('show-animate');
+        }
     })
     // sticky header
     let header = document.querySelector('header');

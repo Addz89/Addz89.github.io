@@ -476,16 +476,16 @@ span {
     background: var(--main-color);
 }
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 60%;
+    width: 55%;
 }
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 50%;
+    width: 45%;
 }
 .skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 25%;
+    width: 5%;
 }
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
-    width: 75%;
+    width: 45%;
 }
 .contact {
     min-height: auto;
@@ -647,6 +647,7 @@ section:nth-child(odd) .animate.scroll,
     width: 105%;
 }
 
+.footer .animate.scroll,
 .about.show-animate .animate.scroll,
 .education.show-animate .animate.scroll,
 .skills.show-animate .animate.scroll,
