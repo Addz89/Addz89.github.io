@@ -74,11 +74,13 @@ body {
 
 /* start cards */
 
+
 .wrap {
-  width:500px;
-  margin:300px;
-  margin-top:130px;
+  width:600px;
+  margin:100px;
+  margin-top:30px;
   float:center;
+  margin-left: 300px;
 }
 
 .columns {
@@ -104,6 +106,7 @@ body {
 }
 
 .wolf {
+  position:sticky;
   padding:30px;
   transition:0.4s;
   width:300px;
@@ -234,3 +237,31 @@ h1 {color:black;
   border-radius: 1em;
   box-shadow: #112e42 2px 2px 1px 0px inset, #00abf0 0px 0px 6px 6px inset;
 }
+
+/* styles for card on screen */
+
+@media (max-width: 1200px) {
+ 
+  .wrap {
+    position:relative;
+    width:600px;
+    margin:100px;
+    margin-top:250px;
+    float:left;
+    margin-left: 20px;
+  }
+  
+  .columns {
+    border:7px groove;
+    border-width:3px;
+    padding:10px;
+    border-color:gray;
+    color:black;
+    width:280px;
+    height:368px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
