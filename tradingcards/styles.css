@@ -336,7 +336,100 @@ h1 {color:black;
   
 }
 
+@media only screen and (max-width: 898px) {
+
+  body {
+    padding-top: 80px; /* Adjust this value based on your header's height */
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .navbar {
+    display: flex; /* Hide the navbar on small screens */
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: -517px; /* Adjust this value based on your header's height */
+    left: 125%;
+    z-index: 99;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 30px;
+    margin: 520px 0;
+    transform: translateX(-20rem);
+    transition: .25s ease;
+    transition-delay: 0s;
+}
+
+  #menu-icon {
+    display: block;
+  }
+
+  .wrap {
+    width: 20px;
+    margin: 10px;
+
+  }
+
+  .columns {
+    width: auto;
+    margin: 8px;
+    height: 430px;
+    color: var(--bg-color);
+  }
 
 
 
+  .wolf,
+  .Eagle,
+  .Tiger {
+    width: auto;
+    margin: 10px;
+    height: 950px;
+  }
 
+  .Eagle {
+    margin-left: 20px;
+  }
+
+  .Tiger {
+    margin-left: 20px;
+  }
+
+  img {
+    border: 6px solid var(--bg-color);
+    width:705px;
+    height:360px;
+    margin:-1px;
+  } 
+  
+  h1 {color:black;
+    font-size:45px;
+  }
+
+  h2 {color:black;
+    font-size:45px;
+  }
+  
+  h3 {color:black;
+    font-size:45px;
+  }
+  
+  .about {color:white;
+  }
+  
+  p {color:white;
+    font-size: 20px;
+  }
+  
+  
+}
