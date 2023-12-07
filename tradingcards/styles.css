@@ -76,11 +76,10 @@ body {
 
 
 .wrap {
-  width:600px;
-  margin:100px;
-  margin-top:30px;
-  float:center;
-  margin-left: 300px;
+  width:500px;
+  margin:300px;
+  margin-top:130px;
+
 }
 
 .columns {
@@ -106,7 +105,6 @@ body {
 }
 
 .wolf {
-  position:sticky;
   padding:30px;
   transition:0.4s;
   width:300px;
@@ -172,17 +170,17 @@ p.intro {
 
 span { 
   font-weight:bold;
-  color:black;
+  color:var(--second-bg-color);
 }
 
 img {
-  border: 6px solid gray;
+  border: 6px solid var(--bg-color);
   width:294px;
   height:190px;
   margin:-1px;
 } 
 
-h2 {color:black;
+.h2 {color:black;
   font-size:30px;
 }
 
@@ -197,7 +195,7 @@ p {color:white;
 }
 
 h1 {color:black;
-  size:30px;
+  size:10px;
   height:20px;
 }
 
@@ -240,28 +238,105 @@ h1 {color:black;
 
 /* styles for card on screen */
 
-@media (max-width: 1200px) {
- 
-  .wrap {
-    position:relative;
-    width:600px;
-    margin:100px;
-    margin-top:250px;
-    float:left;
-    margin-left: 20px;
+/* Add this media query at the bottom of your existing CSS code */
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Adjust this value based on your header's height */
   }
-  
-  .columns {
-    border:7px groove;
-    border-width:3px;
-    padding:10px;
-    border-color:gray;
-    color:black;
-    width:280px;
-    height:368px;
+
+  .header {
+    padding: 10px;
   }
-  p {
+
+  .logo {
     font-size: 15px;
   }
+
+  .navbar {
+    display: flex; /* Hide the navbar on small screens */
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: 3px; /* Adjust this value based on your header's height */
+    left: 159%;
+    z-index: 99;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 20px;
+    margin: 3px 0;
+    transform: translateX(-20rem);
+    transition: .25s ease;
+    transition-delay: 0s;
 }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .wrap {
+    flex-direction: column;
+    width: auto;
+    margin: 10px;
+  }
+
+  .columns {
+    width: auto;
+    margin: 8px;
+    height: 430px;
+    color: var(--bg-color);
+  }
+
+
+
+  .wolf,
+  .Eagle,
+  .Tiger {
+    width: auto;
+    margin: 10px;
+    height: 750px;
+  }
+
+  .Eagle {
+    margin-left: 20px;
+  }
+
+  .Tiger {
+    margin-left: 20px;
+  }
+
+  img {
+    border: 6px solid var(--bg-color);
+    width:275px;
+    height:190px;
+    margin:-1px;
+  } 
+  
+  h1 {color:black;
+    font-size:25px;
+  }
+
+  h2 {color:black;
+    font-size:25px;
+  }
+  
+  h3 {color:black;
+    font-size:25px;
+  }
+  
+  .about {color:white;
+  }
+  
+  p {color:white;
+  }
+  
+  
+}
+
+
+
+
 
