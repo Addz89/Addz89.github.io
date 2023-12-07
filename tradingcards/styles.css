@@ -117,7 +117,7 @@ body {
   border:2px groove;
   border-width:3px;
   border-radius:1px;
-  border-color:gray;
+  border-color:var(--second-bg-color);
   height:700px;
 
 }
@@ -136,7 +136,7 @@ body {
   border:2px groove;
   border-width:3px;
   border-padding:1px;
-  border-color:gray;
+  border-color:var(--second-bg-color);
   box-height:300px;
   margin-bottom:130px;
   height:700px;
@@ -156,7 +156,7 @@ body {
   border:2px groove;
   border-width:3px;
   border-padding:1px;
-  border-color:gray;
+  border-color:var(--second-bg-color);
   box-hight:300px;
   margin-bottom:130px;
   height:700px;
@@ -180,7 +180,7 @@ img {
   margin:-1px;
 } 
 
-.h2 {color:black;
+h2 {color:rgb(0, 0, 0);
   font-size:30px;
 }
 
