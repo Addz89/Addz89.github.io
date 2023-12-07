@@ -336,7 +336,7 @@ h1 {color:black;
   
 }
 
-@media only screen and (max-width: 898px) {
+@media only screen and (max-width: 1298px) {
 
   body {
     padding-top: 80px; /* Adjust this value based on your header's height */
