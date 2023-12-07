@@ -240,7 +240,7 @@ h1 {color:black;
 
 /* Add this media query at the bottom of your existing CSS code */
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   body {
     padding-top: 80px; /* Adjust this value based on your header's height */
   }
@@ -336,7 +336,7 @@ h1 {color:black;
   
 }
 
-@media only screen and (max-width: 1298px) {
+@media (max-width: 1298px) {
 
   body {
     padding-top: 80px; /* Adjust this value based on your header's height */
