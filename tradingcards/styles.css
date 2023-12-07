@@ -357,7 +357,7 @@ h1 {color:black;
     width: 100%;
     background-color: transparent;
     top: -517px; /* Adjust this value based on your header's height */
-    left: 125%;
+    left: 118%;
     z-index: 99;
   }
 
@@ -383,7 +383,7 @@ h1 {color:black;
   .columns {
     width: auto;
     margin: 8px;
-    height: 430px;
+    height: 830px;
     color: var(--bg-color);
   }
 
@@ -392,9 +392,9 @@ h1 {color:black;
   .wolf,
   .Eagle,
   .Tiger {
-    width: auto;
+    width: 800px;
     margin: 10px;
-    height: 950px;
+    height: 1500px;
   }
 
   .Eagle {
@@ -407,8 +407,8 @@ h1 {color:black;
 
   img {
     border: 6px solid var(--bg-color);
-    width:705px;
-    height:360px;
+    width:780px;
+    height:460px;
     margin:-1px;
   } 
   
@@ -428,7 +428,7 @@ h1 {color:black;
   }
   
   p {color:white;
-    font-size: 20px;
+    font-size: 35px;
   }
   
   
