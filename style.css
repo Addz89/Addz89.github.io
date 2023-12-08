@@ -786,7 +786,7 @@ section:nth-child(odd) .animate.scroll,
     .home-content h1 {
         display: flex;
         flex-direction: column;
-    }
+    
         padding: 10rem 4% 5rem 5%;
     }
 
@@ -802,9 +802,7 @@ section:nth-child(odd) .animate.scroll,
         margin-top: 2rem;
         text-align: center;
     }
-
 }
-
 @media (max-width: 371px) {
     .home {
         justify-content: center;        

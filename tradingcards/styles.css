@@ -174,7 +174,7 @@ h6 {
   height: 5px;
   background-image: linear-gradient(
       to right,
-      transparent 10%,
+      transparent -3%,
       #00abf0 50%,
       transparent 90%
   );
@@ -198,10 +198,11 @@ h6 {
   border:7px groove;
   border-width:3px;
   padding:10px;
-  border-color:gray;
-  color:black;
+  border-color:var(--second-bg-color);
+  color:var(--bg-color);
   width:280px;
   height:368px;
+  background: linear-gradient(to bottom, #ffffff 0%, #081b29 85%);
 }
 
 .wolf:hover {
@@ -221,18 +222,18 @@ h6 {
   transition:0.4s;
   width:300px;
   text-align:left;
+  float:left;
   margin:20px;
   margin-top:1px;
   background: linear-gradient(to bottom, #ffffff 0%, #cc0000 85%);
-  float:left;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
   border:2px groove;
   border-width:3px;
-  border-radius:1px;
+  border-padding:1px;
   border-color:var(--second-bg-color);
+  box-height:300px;
+  margin-top:-29px;
   height:700px;
-  margin-top:172px;
-
 }
 .icon-with-space i {
   margin-right: 12px; /* Adjust the value as needed */
@@ -254,7 +255,7 @@ h6 {
   border-padding:1px;
   border-color:var(--second-bg-color);
   box-height:300px;
-  margin-bottom:130px;
+  margin-top:-200px;
   height:700px;
 }
 
@@ -274,7 +275,7 @@ h6 {
   border-padding:1px;
   border-color:var(--second-bg-color);
   box-hight:300px;
-  margin-bottom:130px;
+  margin-top:-200px;
   height:700px;
 }
 
@@ -294,6 +295,7 @@ img {
   width:294px;
   height:190px;
   margin:-1px;
+  margin-top: 1px;
 } 
 
 h2 {color:rgb(0, 0, 0);
@@ -476,13 +478,14 @@ h1 {color:black;
 
 .home-sci a {
     margin-left: -360px;
-    margin-top: 90px;
+    margin-top: 99px;
     width: 220px;
     height: 70px;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 20%;
-    font-size: 20px;
+    font-size: 40px ;
+    font-weight: 750;
     color: var(--main-color);
     z-index: 66;
     transition: .5s;
@@ -500,7 +503,7 @@ h1 {color:black;
   .columns {
     width: auto;
     margin: 8px;
-    height: 830px;
+    height: 1100px;
     color: var(--bg-color);
   }
 
@@ -509,7 +512,7 @@ h1 {color:black;
   .Tiger {
     width: 1160px;
     margin: 10px;
-    height: 1700px;
+    height: 2000px;
     margin-top: 300px;
   }
 
@@ -529,35 +532,43 @@ h1 {color:black;
   } 
   
   h1 {color:black;
-    font-size:45px;
+    font-family: 'Roboto', sans-serif;
+    font-size:65px;
+ 
+  }
+  .wolf1{
+    margin-top: 50px;
   }
 
   h2 {color:black;
-    font-size:45px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:65px;
   }
   
   h3 {color:black;
-    font-size:45px;
+
+    font-size:65px;
   }
   
   .about {color:white;
   }
   
   p {color:white;
-    font-size: 35px;
+    font-size: 45px;
   }
 
   .swordline {
-    height: 10px;
-    margin-top: -20px;
+    width: 2000px;
+    margin-left: 30px;
+    height: 5px;
     background-image: linear-gradient(
         to right,
-        transparent 1%,
-        #00abf0 60%,
-        transparent 500%
+        transparent -1%,
+        #00abf0 50%,
+        transparent 90%
     );
     background-repeat: no-repeat;
-    background-size: 100% 600rem;
+    background-size: 100% 100px;
     background-position: 0 center;
     z-index: 100;
   }
