@@ -173,12 +173,12 @@ input:-webkit-autofill {
 }
 .topScroll {
     background-image: URL("..\\images\\cover.jpg");
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: right center;
     width: 1900px;
     height: 300px;
     text-align: center;
-    background-size: 1000px;
+    background-size: 2200px;
   }
 .cart-total {
     position: fixed;
@@ -630,6 +630,8 @@ label {
 }
 /* On screens that are 500px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
+
+    
     .quicklog {
         display: none;
     }
@@ -689,18 +691,6 @@ label {
         background-color: #00000095;
         z-index: 1;
       }
-    .welcome > p {
-        display:contents;
-        display: flex;
-        justify-content: center;
-        color: #ffffff;
-        text-shadow: 0 0 3px #ffffff, 0 0 5px #0f0e0e;
-        font-size: 40px;
-        font-family: 'Uncial Antiqua';
-        margin-top: 50%;
-        animation: fadeIn 3s;
-
-    }
     .h1 {
         padding: 15px;
         color: #1524f7;
@@ -885,5 +875,21 @@ label {
         transition: .25s ease;
         transition-delay: .25s;
     }
+    
 }
+}
+@media (max-width: 1298px) {
+
+    .topScroll {
+        background-image: URL("..\\images\\cover.jpg");
+        background-repeat: no-repeat;
+        background-position: left;
+        height: 300px;
+        text-align: center;
+        background-size: 1050px;
+        
+      }
+      .pcshop {
+        margin-right: 850px;
+      }
 }
