@@ -53,19 +53,29 @@ body {
 }
 
 .navbar a {
+  margin-top: 150px;
   font-size: 1.7rem;
   color: var(--text-color);
   font-weight: 500;
-  margin-left: 3.5rem;
+  margin-left: 55rem;
   transition: .3s;
   font-family: 'Poppins',sans-serif;
+
+}
+h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--main-color);
+  padding-left: 1px;
+  font-size: 5rem;
+  margin-top: 100px;
+  margin-left: 200px;
 
 }
 .btn-box {
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 34.5rem;
+  width: 3.5rem;
   height: 5rem;
 }
 .btn-box .btn {
@@ -114,22 +124,23 @@ body {
   width: 100%;
 }
 .home-sci {
-  position: absolute;
+  position: relative;
   bottom: 2rem;
   width: 1270px;
   display: flex;
   justify-content: space-between;
 }
 .home-sci a {
+  margin-left: 50px;
   position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: .2rem solid var(--main-color);
-  border-radius: 50%;
+  width: 150px;
+    height: 50px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 20%;
   font-size: 20px;
   color: var(--main-color);
   z-index: 1;
@@ -449,61 +460,63 @@ h1 {color:black;
 
   .logo {
     top:-500px;
-    font-size: 35px;
+    font-size: 50px;
     font-family: 'Poppins',sans-serif;
   }
 
   .navbar {
-    display: flex; /* Hide the navbar on small screens */
+    display: flex;
     flex-direction: column;
     position: absolute;
     width: 100%;
     background-color: transparent;
-    top: -500px; /* Adjust this value based on your header's height */
-    left: 118%;
+    left: 0%;
     z-index: 99;
   }
-
   .navbar a {
-    display: block;
-    font-size: 20px;
-    top:-500px;
-    transform: translateX(-20rem);
-    transition: .25s ease;
-    transition-delay: 0s;
+    margin-top: 90px;
+    font-size: 25px;
+    color: var(--text-color);
+    font-weight: 60;
+    margin-left: 3rem;
+    transition: .3s;
+  
   }
   .home-sci {
-    position: fixed;
-    margin-bottom: 1050px;
-    margin-left: -50px;
-    bottom: 4rem;
-    width: 170px;
+    position:fixed;
+    bottom: 55rem;
+    width: auto;
     display: flex;
     justify-content: space-between;
-}
+  }
 .home-sci a {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border: .2rem solid var(--main-color);
-  border-radius: 50%;
-  font-size: 30px;
-  color: var(--main-color);
-  z-index: 1;
-  overflow: hidden;
-  transition: .5s;
-}
-
+    margin-left: 400px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 20%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+  }
   .wrap {
     width: 20px;
     margin: 10px;
-
   }
 
+  h6 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: flex;
+    margin-left: 20px;
+    font-size: 30px;
+  }
   .columns {
     width: auto;
     margin: 8px;
