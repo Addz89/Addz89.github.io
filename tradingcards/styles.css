@@ -474,12 +474,12 @@ h1 {color:black;
   }
   .home-sci {
     position: fixed;
-    margin-bottom: 1150px;
-    padding: 5px;
-    margin-left: -180px;
+    margin-bottom: 1050px;
+    margin-left: -50px;
+    bottom: 4rem;
+    width: 170px;
     display: flex;
     justify-content: space-between;
-    
 }
 .home-sci a {
   position: relative;
