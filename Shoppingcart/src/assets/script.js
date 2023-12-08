@@ -6,7 +6,7 @@ const products = [
     quantity: 0,
     productId: 101,
     basePrice: 100,
-    image: "images/500gbharddrive.jpg"
+    image: "src/images/500gbharddrive.jpg"
   },
   {
     name: "1 Tb Hard Drive",

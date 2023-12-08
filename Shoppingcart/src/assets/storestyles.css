@@ -878,55 +878,207 @@ label {
     
 }
 }
-@media (max-width: 1298px) {
 
-    .topScroll {
-        background-image: URL("..\\images\\cover.jpg");
-        background-repeat: no-repeat;
-        background-position: left;
-        height: 300px;
-        text-align: center;
-        background-size: 1050px;
-        
-      }
-      .pcshop {
-        margin-right: 850px;
-      }
-}
-@media screen and (max-width: 480px) {
-    body {
-        font-size: 14px;
+    @media (max-width: 1298px) {
+        body {
+            font-size: 16px;
+        }
+    
+        .header {
+            width: 97%;
+            padding: 1px 1%;
+        }
+    
+        .navbar {
+            /* Adjust styles for the navigation bar if needed */
+        }
+    
+        .container {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+    
+        .quicklogBottom {
+            display: contents;
+            position: relative;
+            display: flex;
+            width: fit-content;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin: auto;
+            height: auto;
+        }
+    
+        .prompt {
+            font-size: 30px;
+        }
+    
+        .quickButton {
+            font-size: 20px;
+        }
+    
+        .container > h1 {
+            font-size: 1.2em;
+        }
+    
+        .container > p {
+            font-size: 16px;
+        }
+    
+        .container > input {
+            width: 80%;
+        }
+    
+        .container, b {
+            font-size: 16px;
+        }
+    
+        .container > button {
+            font-size: 20px;
+        }
+    
+        .container > h5 {
+            font-size: 14px;
+        }
+    
+        a {
+            font-size: 16px;
+        }
+    
+        .headerBG {
+            height: 500px;
+        }
+    
+        .topScroll {
+            margin-left: -900px;
+            background-size: 50%;
+        }
+    
+        .cart-total {
+            width: 150px;
+            height: 120px;
+            background-size: 120px;
+        }
+    
+        h2, h3 {
+            font-size: 16px;
+        }
+    
+        h5 {
+            font-size: 30px;
+        }
+    
+        h4 {
+            font-size: 40px;
+        }
+    
+        h6 {
+            font-size: 20px;
+        }
+    
+        p {
+            font-size: 14px;
+        }
+    
+        .Parts > p {
+            font-size: 30px;
+        }
+    
+        h2 {
+            font-size: 1em;
+        }
+    
+        h1 {
+            font-size: 40px;
+        }
+    
+        h3 {
+            font-size: 20px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    
+        .cart-total > div > p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    
+        .currency-selector > select {
+            width: 80px;
+            margin-top: 15px;
+        }
+    
+        #checkouttitle {
+            font-size: 50px;
+        }
+    
+        #PcTitle {
+            margin: 15px;
+            font-size: 30px;
+        }
+    
+        .products {
+            size: 5px;
+            font-size: 10px;
+        }
+    
+        .cart-container,
+        .checkout-container {
+            width: 100%;
+        }
+    
+        .Pc {
+            width: 200px;
+            height: 400px;
+            padding: 20px;
+        }
+
+        .pcshop {
+            margin-right: -930px;
+        }
+    
+        .snaps-inline {
+            scroll-snap-type: block;
+        }
+    
+        .Container {
+            grid-auto-columns: 250px;
+            gap: var(--size-5);
+        }
+    
+        .Container > div {
+            height: 250px;
+            width: 300px;
+        }
+    
+        .Container > div > h3 {
+            font-size: 20px;
+        }
+    
+        .Container > div > p {
+            font-size: 20px;
+        }
+    
+        .Container > div > button {
+            margin-left: 0%;
+            margin-bottom: 10%;
+        }
+    
+        .cart {
+            justify-content: flex-start;
+            width: auto;
+            height: fit-content;
+            order: 1;
+            display: grid;
+            grid-auto-flow: column;
+            overscroll-behavior-inline: contain;
+            grid-auto-columns: 200px;
+            overflow-x: auto;
+            gap: var(--size-2);
+        }
+    
+        .cart > div {
+            height: fit-content;
+            width: 150px;
+        }
     }
-
-    .header {
-        width: 100%;
-        padding: 9px 4%;
-    }
-
-    .navbar {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 1rem 4%;
-    }
-
-    .container {
-        margin-top: 0;
-        margin-left: 10px;
-    }
-
-    .quicklogBottom {
-        display: contents;
-    }
-
-    .quicklog {
-        display: none;
-    }
-
-    .topScroll {
-        height: 200px; /* Adjust height as needed */
-    }
-
-    /* Add more styles for smaller screens as needed */
-}
