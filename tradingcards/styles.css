@@ -53,22 +53,22 @@ body {
 }
 
 .navbar a {
-  margin-top: 150px;
+  margin-top: 120px;
   font-size: 1.7rem;
   color: var(--text-color);
   font-weight: 500;
-  margin-left: 55rem;
+  margin-right: -600px;
   transition: .3s;
-  font-family: 'Poppins',sans-serif;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 }
 h6 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--main-color);
   padding-left: 1px;
-  font-size: 5rem;
+  font-size: 4rem;
   margin-top: 100px;
-  margin-left: 200px;
+  margin-left: 300px;
 
 }
 .btn-box {
@@ -96,19 +96,7 @@ h6 {
   overflow: hidden;
   transition: .5s;
 }
-.btn-box .btn:hover {
-  color: var(--main-color);
-}
-.btn-box .btn:nth-child(2) {
-  background: transparent;
-  color: var(--main-color);
-}
-.btn-box .btn:nth-child(2):hover {
-  color: var(--bg-color);
-}
-.btn-box .btn:nth-child(2)::before {
-  background: var(--main-color);
-}
+
 .btn-box .btn::before {
   content: '';
   position: absolute;
@@ -181,6 +169,21 @@ h6 {
   display: none;
 }
 
+/* sword line */
+.swordline {
+  height: 5px;
+  background-image: linear-gradient(
+      to right,
+      transparent 10%,
+      #00abf0 50%,
+      transparent 90%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100px;
+  background-position: 0 center;
+  z-index: 100;
+}
+
 /* start cards */
 
 
@@ -228,6 +231,7 @@ h6 {
   border-radius:1px;
   border-color:var(--second-bg-color);
   height:700px;
+  margin-top:172px;
 
 }
 
@@ -380,7 +384,7 @@ h1 {color:black;
     display: block;
     font-size: 20px;
     margin: 3px 0;
-    transform: translateX(-20rem);
+
     transition: .25s ease;
     transition-delay: 0s;
 }
@@ -454,56 +458,30 @@ h1 {color:black;
     padding-top: 80px; /* Adjust this value based on your header's height */
   }
 
-  .header {
-    padding: 25px;
-  }
 
-  .logo {
-    top:-500px;
-    font-size: 50px;
-    font-family: 'Poppins',sans-serif;
-  }
 
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    background-color: transparent;
-    left: 0%;
-    z-index: 99;
-  }
+ 
   .navbar a {
-    margin-top: 90px;
+    margin-top: 10px;
     font-size: 25px;
     color: var(--text-color);
     font-weight: 60;
-    margin-left: 3rem;
+    margin-left: 1rem;
     transition: .3s;
   
   }
-  .home-sci {
-    position:fixed;
-    bottom: 55rem;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-  }
+
 .home-sci a {
-    margin-left: 400px;
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
+    margin-left: -560px;
+    margin-top: 90px;
+    width: 99px;
     height: 50px;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 20%;
     font-size: 20px;
     color: var(--main-color);
-    z-index: 1;
-    overflow: hidden;
+    z-index: 66;
     transition: .5s;
   }
   .wrap {
@@ -513,9 +491,8 @@ h1 {color:black;
 
   h6 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    position: flex;
-    margin-left: 20px;
-    font-size: 30px;
+    margin-left: 36px;
+    font-size: 2rem;
   }
   .columns {
     width: auto;
@@ -530,6 +507,7 @@ h1 {color:black;
     width: 800px;
     margin: 10px;
     height: 1500px;
+    margin-top: 300px;
   }
 
   .Eagle {
