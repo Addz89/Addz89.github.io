@@ -551,10 +551,10 @@ h1 {color:black;
         to right,
         transparent 1%,
         #00abf0 60%,
-        transparent 200%
+        transparent 100%
     );
     background-repeat: no-repeat;
-    background-size: 100% 600rem;
+    background-size: 100% 900rem;
     background-position: 0 center;
     z-index: 100;
   }
