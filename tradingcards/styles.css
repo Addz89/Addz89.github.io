@@ -472,10 +472,10 @@ h1 {color:black;
   }
 
 .home-sci a {
-    margin-left: -560px;
+    margin-left: -360px;
     margin-top: 90px;
-    width: 99px;
-    height: 50px;
+    width: 220px;
+    height: 70px;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 20%;
@@ -492,7 +492,7 @@ h1 {color:black;
   h6 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-left: 36px;
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .columns {
     width: auto;
@@ -504,9 +504,9 @@ h1 {color:black;
   .wolf,
   .Eagle,
   .Tiger {
-    width: 800px;
+    width: 1160px;
     margin: 10px;
-    height: 1500px;
+    height: 1700px;
     margin-top: 300px;
   }
 
@@ -520,8 +520,8 @@ h1 {color:black;
 
   img {
     border: 6px solid var(--bg-color);
-    width:780px;
-    height:460px;
+    width:1140px;
+    height:660px;
     margin:-1px;
   } 
   
@@ -543,7 +543,23 @@ h1 {color:black;
   p {color:white;
     font-size: 35px;
   }
+
+  .swordline {
+    height: 10px;
+    margin-top: -20px;
+    background-image: linear-gradient(
+        to right,
+        transparent 1%,
+        #00abf0 60%,
+        transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 600rem;
+    background-position: 0 center;
+    z-index: 100;
+  }
 }
+
 
 /* home */
 
