@@ -474,9 +474,9 @@ h1 {color:black;
   }
   .home-sci {
     position: fixed;
-    margin-bottom: 1080px;
+    margin-bottom: 1150px;
     padding: 5px;
-    margin-left: -110px;
+    margin-left: -180px;
     display: flex;
     justify-content: space-between;
     
