@@ -234,6 +234,9 @@ h6 {
   margin-top:172px;
 
 }
+.icon-with-space i {
+  margin-right: 12px; /* Adjust the value as needed */
+}
 
 .Eagle {
   padding:30px;
@@ -463,7 +466,7 @@ h1 {color:black;
  
   .navbar a {
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 35px;
     color: var(--text-color);
     font-weight: 60;
     margin-left: 1rem;
@@ -479,7 +482,8 @@ h1 {color:black;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 20%;
-    font-size: 20px;
+    font-size: 30px solid;
+    font-weight: 750;
     color: var(--main-color);
     z-index: 66;
     transition: .5s;
@@ -551,10 +555,10 @@ h1 {color:black;
         to right,
         transparent 1%,
         #00abf0 60%,
-        transparent 100%
+        transparent 500%
     );
     background-repeat: no-repeat;
-    background-size: 100% 600rem;
+    background-size: 250% 1900rem;
     background-position: 0 center;
     z-index: 100;
   }
