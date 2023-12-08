@@ -893,3 +893,40 @@ label {
         margin-right: 850px;
       }
 }
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        width: 100%;
+        padding: 9px 4%;
+    }
+
+    .navbar {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+    }
+
+    .container {
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
+    .quicklogBottom {
+        display: contents;
+    }
+
+    .quicklog {
+        display: none;
+    }
+
+    .topScroll {
+        height: 200px; /* Adjust height as needed */
+    }
+
+    /* Add more styles for smaller screens as needed */
+}
