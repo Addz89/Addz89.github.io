@@ -482,8 +482,7 @@ h1 {color:black;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 20%;
-    font-size: 30px solid;
-    font-weight: 750;
+    font-size: 20px;
     color: var(--main-color);
     z-index: 66;
     transition: .5s;
@@ -558,7 +557,7 @@ h1 {color:black;
         transparent 500%
     );
     background-repeat: no-repeat;
-    background-size: 250% 1900rem;
+    background-size: 100% 600rem;
     background-position: 0 center;
     z-index: 100;
   }
