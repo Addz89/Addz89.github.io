@@ -463,7 +463,7 @@ h1 {color:black;
  
   .navbar a {
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 35px;
     color: var(--text-color);
     font-weight: 60;
     margin-left: 1rem;
@@ -479,7 +479,7 @@ h1 {color:black;
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 20%;
-    font-size: 30px;
+    font-size: 60px;
     color: var(--main-color);
     z-index: 66;
     transition: .5s;
@@ -554,7 +554,7 @@ h1 {color:black;
         transparent 100%
     );
     background-repeat: no-repeat;
-    background-size: 100% 900rem;
+    background-size: 150% 1900rem;
     background-position: 0 center;
     z-index: 100;
   }
