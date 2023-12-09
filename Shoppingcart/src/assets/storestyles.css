@@ -1030,6 +1030,15 @@ label {
 
     .container{
         padding-top: 50px;
+        width: 100px;
+    }
+    .parts .h2{
+        font-size: 1px;
+
+    }
+
+    .Pc {
+        width: 150px;
     }
 
     .container > h5 {
@@ -1042,26 +1051,30 @@ label {
         font-size: 22px;
     }
     
+    .parts > p {
+        font-size: 5px;
+    }
     .products-container{
         max-width: 500px;
-        height: 8390px;
+        height: 4590px;
+        font-size: 2px;
     }
 
-    .products {
+    .products > div {
          /* or a specific value */
-        width: auto;
+        width: 70px;
         margin: 10%;
-        height: 500px;
+        height: 400px;
         column-width: 20px;
         column-count: 23px;
         margin-right: 20px;
-        size: 50px;
+        font-size: 2px;
 
     }
 
     .PartsImg {
         width: 80px;
-        height: 80px;
+        height: 90px;
         margin-inline: auto;
     }
 
@@ -1073,7 +1086,7 @@ label {
         height: auto;
         z-index: 10;
         background-image: URL("..\\images\\pc1.png");
-        background-size: 105px;
+        background-size: 109px;
         background-position-x: left;
         background-repeat: no-repeat;
         background-position: 50%;
@@ -1085,6 +1098,21 @@ label {
         font-size: 20px;
         margin-top: 15px;
     }
+    /* for the gaming pc's */
+    .Container > div {
+        height: 250px;
+        width: 180px;
+        padding-left: 55px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:column;
+        margin: 10px;
+        justify-content: flex-end;
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255);
+        border: 3px solid #000000;
+        box-shadow: #4416f8 2px 2px 2px 0px inset, #1e13fa 0px 0px 6px 6px inset;
+    }
 
     .checkout-container {
         width: 100%;
@@ -1092,8 +1120,8 @@ label {
         text-align: center;
         background-image: URL("..\\images\\pc.png");
         background-repeat: no-repeat;
-        background-position: center 210px;
-        background-size: 400px;
+        background-position: 121px 210px;
+        background-size: 255px;
         height: auto;
         bottom: 20%;
         font-size: 20px;
@@ -1103,5 +1131,9 @@ label {
 
     .checkouttitle{
         font-size: 10px;
+    }
+    
+    h3{
+        font-size: 25px;
     }
 }
