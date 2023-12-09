@@ -854,43 +854,20 @@ label {
     }
 
 
-@media (max-width: 768px) {
-    .header {
-        background: var(--bg-color);
-    }
-
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: -100%;
-        width: 100%;
-        padding: 1rem 4%;
-        background: var(--main-color);
-        box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
-        z-index: 1;
-        transition: .25s ease;
-        transition-delay: .25s;
-    }
-    
-}
-}
-
-    @media (max-width: 1298px) {
+    @media (max-width: 768px) {
         body {
-            font-size: 16px;
+            font-size: 14px;
         }
     
         .header {
-            width: 97%;
-            padding: 1px 1%;
+            width: 100%;
+            padding: 9px 4%;
+            background: #112e42; /* Adjust background color if needed */
         }
     
         .navbar {
-            /* Adjust styles for the navigation bar if needed */
+            justify-content: center;
+            text-align: center;
         }
     
         .container {
@@ -898,170 +875,130 @@ label {
             margin-left: 10px;
         }
     
-        .quicklogBottom {
-            display: contents;
-            position: relative;
-            display: flex;
-            width: fit-content;
-            flex-wrap: wrap;
-            flex-direction: column;
-            margin: auto;
-            height: auto;
-        }
-    
-        .prompt {
-            font-size: 30px;
-        }
-    
-        .quickButton {
-            font-size: 20px;
-        }
-    
-        .container > h1 {
-            font-size: 1.2em;
-        }
-    
-        .container > p {
-            font-size: 16px;
-        }
-    
         .container > input {
-            width: 80%;
-        }
-    
-        .container, b {
-            font-size: 16px;
-        }
-    
-        .container > button {
-            font-size: 20px;
-        }
-    
-        .container > h5 {
-            font-size: 14px;
-        }
-    
-        a {
-            font-size: 16px;
+            width: 80%; /* Adjust input width */
         }
     
         .headerBG {
-            height: 500px;
+            height: 700px;
+            display: flex;
+            flex-wrap: wrap;
         }
     
         .topScroll {
-            margin-left: -900px;
-            background-size: 50%;
-        }
-    
-        .cart-total {
-            width: 150px;
-            height: 120px;
-            background-size: 120px;
-        }
-    
-        h2, h3 {
-            font-size: 16px;
-        }
-    
-        h5 {
-            font-size: 30px;
-        }
-    
-        h4 {
-            font-size: 40px;
-        }
-    
-        h6 {
-            font-size: 20px;
-        }
-    
-        p {
-            font-size: 14px;
-        }
-    
-        .Parts > p {
-            font-size: 30px;
-        }
-    
-        h2 {
-            font-size: 1em;
-        }
-    
-        h1 {
-            font-size: 40px;
-        }
-    
-        h3 {
-            font-size: 20px;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-    
-        .cart-total > div > p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-    
-        .currency-selector > select {
-            width: 80px;
-            margin-top: 15px;
-        }
-    
-        #checkouttitle {
-            font-size: 50px;
+            position: relative;
+            background-image: none;
+            background-color: #00000095;
+            z-index: 1;
+            height: 200px;
         }
     
         #PcTitle {
-            margin: 15px;
-            font-size: 30px;
-        }
-    
-        .products {
-            size: 5px;
-            font-size: 10px;
-        }
-    
-        .cart-container,
-        .checkout-container {
-            width: 100%;
-        }
-    
-        .Pc {
-            width: 200px;
-            height: 400px;
-            padding: 20px;
-        }
-
-        .pcshop {
-            margin-right: -930px;
-        }
-    
-        .snaps-inline {
-            scroll-snap-type: block;
+            margin-top: 10%;
+            max-width: 90%;
+            font-size: 35px;
         }
     
         .Container {
-            grid-auto-columns: 250px;
+            grid-auto-columns: 300px; /* Adjust grid columns */
             gap: var(--size-5);
         }
     
         .Container > div {
-            height: 250px;
-            width: 300px;
+            height: 250px; /* Adjust height */
+            width: 300px; /* Adjust width */
+        }
+    
+        .PcImg {
+            max-width: auto;
+            height: 65%; /* Adjust height */
+            margin: 10px; /* Adjust margin */
         }
     
         .Container > div > h3 {
-            font-size: 20px;
+            width: 120px;
+            font-size: 18px; /* Adjust font size */
+            margin-left: 0px;
         }
     
         .Container > div > p {
-            font-size: 20px;
+            margin-left: 0px;
+            font-size: 20px; /* Adjust font size */
+            width: 120px;
         }
     
         .Container > div > button {
             margin-left: 0%;
             margin-bottom: 10%;
+            font-size: 16px; /* Adjust font size */
+        }
+    
+        .Container > div > button:hover {
+            background-color: #000000;
+        }
+    
+        .Container > div {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+    
+        #PartsTitle {
+            margin-top: 10%;
+            margin-bottom: 10%;
+            max-width: 90%;
+            font-size: 30px; /* Adjust font size */
+        }
+    
+        .Parts {
+            width: 120px;
+            background-repeat: no-repeat;
+            z-index: 1;
+            background-size: contain;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background-position: center;
+            justify-content: space-evenly;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 250px; /* Adjust height */
+            padding: 10px;
+            order: 2;
+        }
+    
+        .PartsImg {
+            height: 10px;
+            margin-inline: auto;
+        }
+    
+        .Parts > h3 {
+            font-size: 16px; /* Adjust font size */
+            margin: 0px;
+            width: 90%;
+            align-self: center;
+        }
+    
+        .Parts > p {
+            margin: 0px;
+            margin-bottom: 10px;
+            font-size: 24px; /* Adjust font size */
+        }
+    
+        .Parts > button {
+            margin: 0px;
+            height: fit-content;
+            width: fit-content;
+            font-size: 16px; /* Adjust font size */
+            margin-bottom: 20px;
+        }
+    
+        .Parts > img {
+            width: auto;
+            height: 40px; /* Adjust height */
+            margin: 0px;
+            align-self: center;
+            margin-bottom: 15px;
+            margin-top: 20%;
         }
     
         .cart {
@@ -1072,13 +1009,192 @@ label {
             display: grid;
             grid-auto-flow: column;
             overscroll-behavior-inline: contain;
-            grid-auto-columns: 200px;
             overflow-x: auto;
-            gap: var(--size-2);
         }
     
-        .cart > div {
-            height: fit-content;
-            width: 150px;
+        .cart > button {
+            font-size: 16px; /* Adjust font size */
+            margin-bottom: 15px;
+            margin-right: 10px;
+        }
+    
+        .cart > button:hover {
+            background-color: #000000;
+        }
+    
+        .cartImg {
+            height: 50px; /* Adjust height */
         }
     }
+}
+@media (max-width: 1298px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        width: 100%;
+        padding: 9px 4%;
+        background: #112e42; /* Adjust background color if needed */
+    }
+
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    .container > input {
+        width: 80%; /* Adjust input width */
+    }
+
+    .headerBG {
+        height: 700px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .topScroll {
+        position: relative;
+        background-image: none;
+        background-color: #00000095;
+        z-index: 1;
+        height: 200px;
+    }
+
+    #PcTitle {
+        margin-top: 10%;
+        max-width: 90%;
+        font-size: 35px;
+    }
+
+    .Container {
+        grid-auto-columns: 400px;
+        gap: var(--size-5);
+    }
+
+    .Container > div {
+        height: 350px;
+        width: 400px;
+    }
+
+    .PcImg {
+        max-width: auto;
+        height: 85%;
+        margin: 20px;
+    }
+
+    .Container > div > h3 {
+        width: 150px;
+        font-size: 25px;
+        margin-left: 0px;
+    }
+
+    .Container > div > p {
+        margin-left: 0px;
+        font-size: 28px;
+        width: 150px;
+    }
+
+    .Container > div > button {
+        margin-left: 0%;
+        margin-bottom: 10%;
+    }
+
+    .Container > div > button:hover {
+        background-color: #000000;
+    }
+
+    .Container > div {
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+
+    #PartsTitle {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        max-width: 90%;
+        font-size: 35px;
+    }
+
+    .Parts {
+        width: 150px;
+        background-repeat: no-repeat;
+        z-index: 1;
+        background-size: contain;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        background-position: center;
+        justify-content: space-evenly;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        padding: 10px;
+        order: 2;
+    }
+
+    .PartsImg {
+        height: 10px;
+        margin-inline: auto;
+    }
+
+    .Parts > h3 {
+        font-size: 20px;
+        margin: 0px;
+        width: 90%;
+        align-self: center;
+    }
+
+    .Parts > p {
+        margin: 0px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    .Parts > button {
+        margin: 0px;
+        height: fit-content;
+        width: fit-content;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .Parts > img {
+        width: auto;
+        height: 50px;
+        margin: 0px;
+        align-self: center;
+        margin-bottom: 15px;
+        margin-top: 20%;
+    }
+
+    .cart {
+        justify-content: flex-start;
+        width: auto;
+        height: fit-content;
+        order: 1;
+        display: grid;
+        grid-auto-flow: column;
+        overscroll-behavior-inline: contain;
+        overflow-x: auto;
+    }
+
+    .cart > button {
+        font-size: 20px;
+        margin-bottom: 15px;
+        margin-right: 10px;
+    }
+
+    .cart > button:hover {
+        background-color: #000000;
+    }
+
+    .cartImg {
+        height: 60px;
+    }
+}
