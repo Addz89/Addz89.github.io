@@ -625,6 +625,7 @@ label {
     box-shadow: rgb(17, 87, 251) 2px 2px 2px 0px inset, #143af7 0px 0px 6px 6px inset;
     border: 1px solid #DCC099;
 }
+
 /* On screens that are 500px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
 
@@ -944,97 +945,71 @@ label {
     }
 }
 
-/* Updated media query for iPhone 14 Pro Max */
-@media screen and (max-width: 1284px) {
-    .quicklog {
-        display: none;
-    }
-
-    .quicklogBottom {
-        display: contents;
-        position: relative;
-        display: flex;
-        width: fit-content;
-        flex-wrap: wrap;
-        flex-direction: column;
-        margin: auto;
-        height: auto;
-    }
-
-    .container > h5 {
-        font-family: 'Amatic SC';
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        height: fit-content;
-        font-size: 30px;
-        border-radius: 25px;
-        text-align: center;
-        color: white;
-        text-shadow: none;
-        font-weight: 700;
-        line-height: auto;
-    }
-
-    .container > h5 > a {
-        font-family: 'Amatic SC';
-        height: fit-content;
-        font-size: 30px;
-        border-radius: 25px;
-        text-align: center;
-        font-weight: 700;
-    }
-
-    .prompt {
-        padding-top: 0px;
-        font-size: 30px;
-    }
-
-    .quicklogBottom > a {
-        text-align: center;
-    }
-
-    .prompt > b {
-        font-size: 40px;
-    }
-
-    .container > input {
-        height: fit-content;
-        width: fit-content;
-        font-size: 30px;
-    }
-
-    .container > button {
-        height: fit-content;
-        width: fit-content;
-        padding: 15px;
-        font-size: 30px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
+/* Responsive styles for screens up to 1298px */
+@media screen and (max-width: 1298px) {
     .header {
-        padding: 9px 4%;
+        width: 405px;
+        padding: .05px 1%;
     }
+
+    .pcshop {
+        width: 300px;
+
+    }
+    
 
     .navbar a {
-        font-size: 12px;
-        margin-left: 1.5rem;
+        width: 200px;
+        font-size: 14px;
+        margin-left: 1px;
     }
 
-    .headerBG {
-        height: 400px;
+    .topScroll {
+        background-image: URL("..\\images\\cover.jpg");
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 910px;
+        background-size: contain;
+    }
+
+    .gaming {
+        width: 410px;
     }
 
     .container > h1 {
-        font-size: 1.2em;
+        font-size: 2em;
         width: 100%;
         text-align: center;
     }
 
     .container > p {
-        font-size: 16px;
+        font-size: 18px;
         width: 100%;
         text-align: center;
+    }
+
+    .headerBG {
+        height: 300px;
+    }
+
+    .container > button {
+        font-size: 36px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .container > input {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .container > h5 {
+        font-size: 22px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .quicklogBottom > a {
+        font-size: 22px;
     }
 }
