@@ -1114,26 +1114,43 @@ label {
         box-shadow: #4416f8 2px 2px 2px 0px inset, #1e13fa 0px 0px 6px 6px inset;
     }
 
-    .checkout-container {
-        width: 100%;
-        padding-top: 60px;
-        text-align: center;
+    .receipt {
         background-image: URL("..\\images\\pc.png");
         background-repeat: no-repeat;
-        background-position: 121px 210px;
-        background-size: 255px;
-        height: auto;
-        bottom: 20%;
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
+        background-position: 50%;
+        font-size: 35px;
+        background-size: 9.7em;
+    }
+    .receipt >div {
+        width: 10px;
+        height: 150px;
+
     }
 
-    .checkouttitle{
-        font-size: 10px;
+    .checkout p {
+        font-size: 5px;
     }
+    .checkout-container {
+        width: 100%;
+        text-align: center;
+        padding-top: 12px;
+        background-image: URL("..\\images\\pc.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 300px;
+        height: auto;
+        font-size: 50px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+
     
     h3{
         font-size: 25px;
+    }
+    button{
+        font-size: 15px;
     }
 }
