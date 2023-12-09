@@ -625,11 +625,231 @@ label {
     box-shadow: rgb(17, 87, 251) 2px 2px 2px 0px inset, #143af7 0px 0px 6px 6px inset;
     border: 1px solid #DCC099;
 }
-.welcome > p {
-    display: none;
-}
 /* On screens that are 500px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
 
+    
+    .quicklog {
+        display: none;
+    }
+    .quicklogBottom {
+        display:contents;
+        position: relative;
+        display: flex;
+        width: fit-content;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: auto;
+        height: auto;
+    }
+    .container > h5 {
+        font-family: 'Amatic SC';
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: fit-content;
+        font-size: 30px;
+        border-radius: 25px;
+        text-align: center;
+        color: white;
+        text-shadow: none;
+        font-weight: 700;
+        line-height: auto;
+    }
+    .container > h5 > a {
+        font-family: 'Amatic SC';
+        height: fit-content;
+        font-size: 30px;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .prompt {
+        padding-top: 0px;
+        font-size: 30px;
+    }
+    .quicklogBottom > a {
+        text-align: center;
+    }
+    .prompt > b {
+        font-size: 40px;
+    }
+    .container > input {
+        width: 80%;
+    }
+    .headerBG {
+        height: 700px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .topScroll {
+        position: relative;
+        background-image: none;
+        background-color: #00000095;
+        z-index: 1;
+      }
+    .h1 {
+        padding: 15px;
+        color: #1524f7;
+        text-shadow: 0 0 3px #DCC099, 0 0 5px #DCC099;
+        font-size: 60px;
+        font-family: 'Uncial Antiqua';
+        margin-top: 5%;
+        animation: fadeIn 9s;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        33% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      
+    @-moz-keyframes fadeIn {
+        0% { opacity: 0; }
+        33% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    
+    @-webkit-keyframes fadeIn {
+        0% { opacity: 0; }
+        33% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    
+    @-o-keyframes fadeIn {
+        0% { opacity: 0; }
+        33% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    
+    @-ms-keyframes fadeIn {
+        0% { opacity: 0; }
+        33% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    #PcTitle {
+        margin-top: 10%;
+        max-width: 90%;
+        font-size: 35px;
+    }
+    .Container {
+        grid-auto-columns: 400px;
+        gap: var(--size-5);
+    }
+    .Container > div {
+        height: 350px;
+        width: 400px;
+    }
+    .PcImg {
+        max-width: auto;
+        height: 85%;
+        margin: 20px;
+    }
+    .Container > div > h3 {
+        width: 150px;
+        font-size: 25px;
+        margin-left: 0px;
+    }
+    .Container > div > p{
+        margin-left: 0px;
+        font-size: 28px;
+        width: 150px;
+    }
+    .Container > div > button {
+        margin-left: 0%;
+        margin-bottom: 10%;
+    }
+    .Container > div > button:hover {
+        background-color: #000000;
+    }
+    .Container > div {
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    #PartsTitle {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        max-width: 90%;
+        font-size: 35px;
+    }
+    .Parts {
+        width: 150px;
+        background-repeat: no-repeat;
+        z-index: 1;
+        background-size: contain;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        background-position: left;
+        justify-content:space-evenly;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        padding: 10px;
+        order: 2;
+    }
+    .PartsImg {
+        height: 10px;
+        margin-inline: auto;
+    }
+    .Parts > h3 {
+        font-size: 20px;
+        margin: 0px;
+        width: 90%;
+        align-self: center;
+    }
+    .Parts > p{
+        margin: 0px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    .Parts > button {
+        margin: 0px;
+        height: fit-content;
+        width: fit-content;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .Parts > img {
+        width: auto;
+        height: 50px;
+        margin: 0px;
+        align-self: center;
+        margin-bottom: 15px;
+        margin-top: 20%;
+    }
+    .cart {
+        justify-content: flex-start;
+        width: auto;
+        height: fit-content;
+        order: 1;
+        display:grid;
+        grid-auto-flow: column;
+        overscroll-behavior-inline: contain;
+        grid-auto-columns: 300px;
+        overflow-x: auto;
+        gap: var(--size-2);
+        background-image: ('src/');
+    }
+    .cart > div {
+        height: fit-content;
+        width: 250px;
+    }
+    .cart > div > h5 {
+        font-size: 25px;
+    }
+    .cart > div > h6 {
+        font-size: 25px;
+    }
+    .cart-total {
+        margin: auto;
+        right: 0px;
+        left: 15px;
+        height: auto;
+    }
+    .cart-total > div > p {
+        margin: auto;
+    }
+}
 @media screen and (max-width: 768px) {
     .quicklog {
         display: none;
@@ -724,55 +944,97 @@ label {
     }
 }
 
-/* Responsive styles for screens up to 1298px */
-@media screen and (max-width: 1298px) {
+/* Updated media query for iPhone 14 Pro Max */
+@media screen and (max-width: 1284px) {
+    .quicklog {
+        display: none;
+    }
+
+    .quicklogBottom {
+        display: contents;
+        position: relative;
+        display: flex;
+        width: fit-content;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: auto;
+        height: auto;
+    }
+
+    .container > h5 {
+        font-family: 'Amatic SC';
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: fit-content;
+        font-size: 30px;
+        border-radius: 25px;
+        text-align: center;
+        color: white;
+        text-shadow: none;
+        font-weight: 700;
+        line-height: auto;
+    }
+
+    .container > h5 > a {
+        font-family: 'Amatic SC';
+        height: fit-content;
+        font-size: 30px;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .prompt {
+        padding-top: 0px;
+        font-size: 30px;
+    }
+
+    .quicklogBottom > a {
+        text-align: center;
+    }
+
+    .prompt > b {
+        font-size: 40px;
+    }
+
+    .container > input {
+        height: fit-content;
+        width: fit-content;
+        font-size: 30px;
+    }
+
+    .container > button {
+        height: fit-content;
+        width: fit-content;
+        padding: 15px;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
     .header {
-        padding: 9px 2%;
+        padding: 9px 4%;
     }
 
-    .pcshop {
-
-
-    }
     .navbar a {
-        font-size: 14px;
-        margin-left: 1rem;
+        font-size: 12px;
+        margin-left: 1.5rem;
+    }
+
+    .headerBG {
+        height: 400px;
     }
 
     .container > h1 {
-        font-size: 2em;
+        font-size: 1.2em;
         width: 100%;
         text-align: center;
     }
 
     .container > p {
-        font-size: 18px;
+        font-size: 16px;
         width: 100%;
         text-align: center;
-    }
-
-    .headerBG {
-        height: 500px;
-    }
-
-    .container > button {
-        font-size: 36px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .container > input {
-        width: 90%;
-        font-size: 20px;
-    }
-
-    .container > h5 {
-        font-size: 22px;
-        width: 90%;
-        text-align: center;
-    }
-
-    .quicklogBottom > a {
-        font-size: 22px;
     }
 }
