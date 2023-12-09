@@ -38,9 +38,9 @@
 }
 .navbar a {
     font-size: 20px;
-    color: whitesmoke;
+    color: #00abf0;
     font-weight: 500;
-    margin-left: 3.5rem;
+    margin-left: -3.5rem;
     transition: .3s;
 }
 .logo {
@@ -123,7 +123,7 @@
 }
 .container > input {
     font-family: 'Amatic SC';
-    width: 40%;
+    width: 460%;
     background-color: transparent;
     background-color: rgb(232, 240, 254);
     margin-bottom: 20px;
@@ -175,7 +175,7 @@ input:-webkit-autofill {
     background-image: URL("..\\images\\cover.jpg");
     background-repeat: no-repeat;
     background-position: right center;
-    width: 1900px;
+    width: 1507px;
     height: 300px;
     text-align: center;
     background-size: 2200px;
@@ -282,7 +282,6 @@ h3 {
 }
 .products-container{
     max-width: 100%;
-    
 }
 .cart-container {
     height: fit-content;
@@ -950,6 +949,7 @@ label {
     .header {
         width: 405px;
         padding: .05px 1%;
+        color: #00abf0;
     }
 
     .pcshop {
@@ -962,14 +962,16 @@ label {
         width: 200px;
         font-size: 14px;
         margin-left: 1px;
+        color: #00abf0;
     }
 
     .topScroll {
         background-image: URL("..\\images\\cover.jpg");
         background-repeat: no-repeat;
         background-position: right;
-        width: 910px;
-        background-size: contain;
+        width: 920px;
+        height: 150px;
+        background-size:cover;
     }
 
     .gaming {
@@ -987,6 +989,28 @@ label {
         width: 100%;
         text-align: center;
     }
+    .container > h5 {
+        font-family: 'Amatic SC';
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: fit-content;
+        font-size: 30px;
+        border-radius: 25px;
+        text-align: center;
+        color: white;
+        text-shadow: none;
+        font-weight: 700;
+        line-height: auto;
+    }
+    .container > h5 > a {
+        font-family: 'Amatic SC';
+        height: fit-content;
+        font-size: 30px;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: 700;
+    }
 
     .headerBG {
         height: 300px;
@@ -996,6 +1020,7 @@ label {
         font-size: auto;
         margin-top: auto;
         margin-bottom: auto;
+        margin-left: 20px;
     }
 
     .container > input {
@@ -1003,9 +1028,13 @@ label {
         font-size: 20px;
     }
 
+    .container{
+        padding-top: 50px;
+    }
+
     .container > h5 {
         font-size: 22px;
-        width: 90%;
+        width: 20%;
         text-align: center;
     }
 
@@ -1013,43 +1042,66 @@ label {
         font-size: 22px;
     }
     
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-}
-
-    .container > * {
-        flex: 1;
-        margin: 10px;
-}
-
     .products-container{
-        max-width: 60%;
-        
+        max-width: 500px;
+        height: 8390px;
     }
+
     .products {
-        height:max-content;
+         /* or a specific value */
+        width: auto;
+        margin: 10%;
+        height: 500px;
+        column-width: 20px;
+        column-count: 23px;
+        margin-right: 20px;
+        size: 50px;
+
     }
 
     .PartsImg {
-        max-width: auto;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         margin-inline: auto;
     }
 
     .cart-total {
         position: fixed;
-        bottom: 10%;
+        bottom: 5%;
         right: -45%;
         width: auto;
         height: auto;
         z-index: 10;
         background-image: URL("..\\images\\pc1.png");
-        background-size: 10px;
+        background-size: 105px;
         background-position-x: left;
         background-repeat: no-repeat;
         background-position: 50%;
         line-height: 4;
         transform: scale(2);
+    }
+
+    .cart-total > div > p {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .checkout-container {
+        width: 100%;
+        padding-top: 60px;
+        text-align: center;
+        background-image: URL("..\\images\\pc.png");
+        background-repeat: no-repeat;
+        background-position: center 210px;
+        background-size: 400px;
+        height: auto;
+        bottom: 20%;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkouttitle{
+        font-size: 10px;
     }
 }
