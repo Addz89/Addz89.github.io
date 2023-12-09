@@ -977,7 +977,7 @@ label {
     }
 
     .container > h1 {
-        font-size: 2em;
+        font-size: auto;
         width: 100%;
         text-align: center;
     }
@@ -993,9 +993,9 @@ label {
     }
 
     .container > button {
-        font-size: 36px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        font-size: auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .container > input {
@@ -1011,5 +1011,35 @@ label {
 
     .quicklogBottom > a {
         font-size: 22px;
+    }
+
+    .products-container{
+        max-width: 60%;
+        
+    }
+    .products {
+        height:max-content;
+    }
+
+    .PartsImg {
+        max-width: auto;
+        height: 50px;
+        margin-inline: auto;
+    }
+
+    .cart-total {
+        position: fixed;
+        bottom: 10%;
+        right: -45%;
+        width: auto;
+        height: auto;
+        z-index: 10;
+        background-image: URL("..\\images\\pc1.png");
+        background-size: 10px;
+        background-position-x: left;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        line-height: 4;
+        transform: scale(2);
     }
 }
