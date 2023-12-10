@@ -439,7 +439,7 @@ h3 {
 .Container > div > p{
     text-align: center;
     color:#000000;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Uncial Antiqua';
     width: fit-content;
     max-width: 150px;
@@ -1014,6 +1014,7 @@ label {
 
     .headerBG {
         height: 300px;
+        margin-top: -610px;
     }
 
     .container > button {
@@ -1042,7 +1043,7 @@ label {
     }
 
     .container > h5 {
-        font-size: 22px;
+        font-size: 20px;
         width: 20%;
         text-align: center;
     }
@@ -1073,9 +1074,9 @@ label {
     }
 
     .PartsImg {
-        width: 80px;
-        height: 90px;
-        margin-inline: auto;
+        width: 90px;
+        height: 110px;
+        margin: auto;
     }
 
     .cart-total {
@@ -1086,7 +1087,7 @@ label {
         height: auto;
         z-index: 10;
         background-image: URL("..\\images\\pc1.png");
-        background-size: 109px;
+        background-size: 129px;
         background-position-x: left;
         background-repeat: no-repeat;
         background-position: 50%;
@@ -1100,7 +1101,7 @@ label {
     }
     /* for the gaming pc's */
     .Container > div {
-        height: 250px;
+        height: 230px;
         width: 180px;
         padding-left: 55px;
         display: flex;
@@ -1115,11 +1116,11 @@ label {
     }
 
     .receipt {
-        background-image: URL("..\\images\\pc.png");
+        background-image: URL("../images/Pc.png");
         background-repeat: no-repeat;
         background-position: 50%;
         font-size: 35px;
-        background-size: 9.7em;
+        background-size: 9em;
     }
     .receipt >div {
         width: 10px;
@@ -1133,18 +1134,27 @@ label {
     .checkout-container {
         width: 100%;
         text-align: center;
-        padding-top: 12px;
-        background-image: URL("..\\images\\pc.png");
+        margin-top: 52px;
+        background-image: URL("../images/Pc.png");
         background-repeat: no-repeat;
-        background-position: center top;
-        background-size: 300px;
-        height: auto;
+        background-position: center 135px;
+        background-size: 380px;
+        height: 550px;
         font-size: 50px;
         display: flex;
         flex-direction: column;
     
     }
 
+    .currency-selector{
+        margin-top: 605px;
+    }
+    .products > div h3 {
+        font-weight: 800;
+        font-size: 15px;
+        color: #000000;
+        position: relative;
+    }
 
     
     h3{
