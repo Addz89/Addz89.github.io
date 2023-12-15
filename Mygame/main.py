@@ -338,6 +338,9 @@ while True:
                     back_button_rect = back_button_text.get_rect(center=(60, 30))
                     screen.blit(back_button_text, back_button_rect)
                     option = 'back'
+                    text_rect = menu_font.render(option, True, (0, 0, 0)).get_rect(center=(400, 135 + i * 65))
+                    if text_rect.collidepoint(mouse_pos):
+                        menu_index = i
                     game_state = GameState.MENU
                     # high scores screen
             elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -346,7 +349,9 @@ while True:
                 back_button_text = menu_font.render('Back', True, (2, 20, 3))
                 back_button_rect = back_button_text.get_rect(center=(60, 30))
                 screen.blit(back_button_text, back_button_rect)
+                text_rect = menu_font.render(option, True, (0, 0, 0)).get_rect(center=(400, 135 + i * 65))
                 if back_button_rect.collidepoint(mouse_pos):
+                    menu_index = i
                     game_state = GameState.MENU
 
 
@@ -358,7 +363,7 @@ while True:
 
         if score == 0 or game_restart:
             screen.blit(game_message, game_message_rect)
-            
+
         for i, option in enumerate(menu_options):
             color = (194, 178, 128) if i == menu_index else (0, 0, 0)
             text = menu_font.render(option, True, color)
@@ -390,6 +395,6 @@ while True:
     elif game_state == GameState.HIGH_SCORE_INPUT:
         game_state = handle_high_score_input(screen, score)
         option = 'back'
-        
+
     pygame.display.update()
     clock.tick(60)      
