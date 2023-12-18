@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=MedievalSharp&display=swap');
+/* font i like */
+@import url('https://fonts.cdnfonts.com/css/western');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Forum&family=MedievalSharp&display=swap');
+@import url('https://fonts.cdnfonts.com/css/supernatural-knight');
+@import url('https://fonts.cdnfonts.com/css/rock-paper-scissors');
 * {
     margin: 0;
     padding: 0;
@@ -205,11 +211,16 @@ p{
 /* barrel jump page */
 
 .barrel{
-    font-family: 'Open Sans';
-    font-size: 80px;
-    color: #00abf0;
+    font-family: 'Western', sans-serif;
+    font-weight:800;
+    -webkit-text-stroke-width: 0.01px;
+    -webkit-text-stroke-color:black;
+    text-shadow: 5px 5px gray;
+
+    font-size: 100px;
+    color:sandybrown;
     margin-top: 290px;
-    margin-left: 750px;
+    margin-left: 550px;
 }
 .game{
     margin-top: 50px;
@@ -221,25 +232,25 @@ iframe{
     height: 700px;
     margin-left: 200px;
     margin-top: -150px;
-    color: #050505;
 }
 .adventure_title{
-    font-family: 'Open Sans';
-    font-size: 80px;
-    color: #00abf0;
+    font-family: 'Supernatural Knight', sans-serif;
+    font-size: 100px;
+    color: whitesmoke;
     margin-top: 160px;
-    margin-left: 650px;
+    margin-left: 500px;
 }
 .adventure{
     margin-top: -150px;
 
 }
 .RPS{
-    font-family: 'Open Sans';
-    font-size: 80px;
-    color: #00abf0;
+    font-family: 'Rock Paper Scissors', sans-serif;
+    font-size: 170px;
+    font-weight: 50;
+    color: whitesmoke;
     margin-top: 160px;
-    margin-left: 640px;
+    margin-left: 500px;
 }
 .RPS_screen{
     margin-top: -150px;

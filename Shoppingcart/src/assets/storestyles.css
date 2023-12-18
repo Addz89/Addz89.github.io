@@ -14,15 +14,16 @@
 /* navbar */
 .header {
     position: top;
-    top: 0;
     left: 0;
-    width: 84%;
-    padding: 9px 8%;
+    width: 85.4%;
+    margin-left: -20px;
+    padding: 19px 8%;
+    margin-top: -20px;
     background: #112e42;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 90;
     transition: .3s;
 }
 
@@ -37,15 +38,16 @@
     display: flex;
 }
 .navbar a {
-    font-size: 20px;
+    font-size: 30px;
     color: #00abf0;
     font-weight: 500;
     margin-left: -3.5rem;
     transition: .3s;
 }
-.logo {
-    color: whitesmoke;
-}
+.logos img{
+    height: 2rem;
+    margin-bottom: 5px;
+  }
 .quicklog {
     width: 100%;
     display: flex;
@@ -175,7 +177,7 @@ input:-webkit-autofill {
     background-image: URL("..\\images\\cover.jpg");
     background-repeat: no-repeat;
     background-position: right center;
-    width: 1507px;
+    width: 100.3%;
     height: 300px;
     text-align: center;
     background-size: 2200px;
