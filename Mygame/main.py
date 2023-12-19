@@ -115,33 +115,37 @@ def collisions(player, obstacles):
     return not any(player.colliderect(obstacle.rect) for obstacle in obstacles)
 
 def display_high_scores_screen(screen):
-    screen.fill((194, 178, 128))# Set the background color
-
+    # Set the background color
+    ground = load_image('Mygame/background/ground.png')
+    background = load_image('Mygame/background/Sky.jpg')
     high_scores_list = load_high_scores()
     high_scores_list.sort(reverse=True, key=lambda x: x['score'])
-    high_score_font = pygame.font.Font('Mygame/font/Pixeltype.ttf', 55)
-
-    title_text = high_score_font.render('Top 10 High Scores:', True, (0, 0, 0))
-    screen.blit(title_text, (500 - title_text.get_width() // 1, 35))
+    high_score_font = pygame.font.Font('Mygame/font/west.ttf', 40)
+    title_text = pygame.font.Font('Mygame/font/west.ttf', 55)
+    screen.blit(ground,(0, 300))
+    screen.blit(background, (0, 0))
+    
+    title_text = title_text.render('Top 10 High Scores:', True, (0, 0, 0))
+    screen.blit(title_text, (410 - title_text.get_width() // 1, 5))
     
     # image backgrounds
     player_stand = load_image('Mygame/Player/player_stand.png')
-    player_stand = pygame.transform.scale(player_stand, (player_stand.get_width() * 1.5, player_stand.get_height() * 1.5))
+    player_stand = pygame.transform.scale(player_stand, (player_stand.get_width() * 2, player_stand.get_height() * 2))
     hay = load_image('Mygame/Fly/Fly2.png')
     hay = pygame.transform.scale(hay, (hay.get_width() * 1, hay.get_height() * 1))
     barrel = load_image('Mygame/snail/snail1.png')
     barrel = pygame.transform.scale(barrel, (barrel.get_width() * 1.2, barrel.get_height() * 1.2))
     # print on screen
-    screen.blit(player_stand, (85, 190))
+    screen.blit(player_stand, (255, 190))
     
-    back_button_text = menu_font.render('Back', True, (2, 20, 3))
-    back_button_rect = back_button_text.get_rect(center=(60, 30))
+    back_button_text = menu_font.render('Back', True, (0, 0, 0))
+    back_button_rect = back_button_text.get_rect(center=(60, 375))
     screen.blit(back_button_text, back_button_rect)
 
     for i, hs in enumerate(high_scores_list[:10]):
         hs_text = high_score_font.render(f"{i + 1}. {hs['name']}: {hs['score']}", True, (0, 0, 0))
-        screen.blit(hs_text, (550 - hs_text.get_width() // 93, 40 + i * 35))
-
+        screen.blit(hs_text, (550 - hs_text.get_width() // 33, 10 + i * 39))
+    
     pygame.display.update()
     
 def handle_high_score_input(screen, final_score):
@@ -173,24 +177,24 @@ def handle_high_score_input(screen, final_score):
                     save_high_score(player_name, final_score)
                     return GameState.MENU  # Restart the game
 
-            elif exit_rect.collidepoint(mouse_pos):
-                pygame.quit()
-                sys.exit()
+                elif exit_rect.collidepoint(mouse_pos):
+                    pygame.quit()
+                    sys.exit()
 
         screen.blit(sky_surface, (0, 0))  # Set the background color
-        high_score_font = pygame.font.Font(None, 36)
+        high_score_fonts = pygame.font.Font('Mygame/font/west.ttf', 47)
 
         # Display the final score
-        score_message = high_score_font.render(f'Your Final Score: {score}', True, (0, 0, 0))
+        score_message = high_score_fonts.render(f'Your Final Score: {score}', True, (0, 0, 0))
         score_rect = score_message.get_rect(center=(400, 150))
         screen.blit(score_message, score_rect)
 
         # Display "Play Again" and "Exit" buttons
-        play_again_text = high_score_font.render('Menu', True, (194, 178, 128))
+        play_again_text = high_score_fonts.render('Menu', True, (194, 178, 128))
         play_again_rect = play_again_text.get_rect(center=(100, 275))
         screen.blit(play_again_text, play_again_rect)
 
-        exit_text = high_score_font.render('Exit', True, (194, 178, 128))
+        exit_text = high_score_fonts.render('Exit', True, (194, 178, 128))
         exit_rect = exit_text.get_rect(center=(600, 275))
         screen.blit(exit_text, exit_rect)
 
@@ -198,7 +202,7 @@ def handle_high_score_input(screen, final_score):
         input_rect = pygame.Rect(300, 200, 200, 40)
         pygame.draw.rect(screen, (255, 255, 255), input_rect)
         pygame.draw.rect(screen, (0, 0, 0), input_rect, 2)
-        input_text = high_score_font.render(player_name, True, (0, 0, 0))
+        input_text = high_score_fonts.render(player_name, True, (0, 0, 0))
         screen.blit(input_text, input_rect.move(10, 5))  # Adjust the x-coordinate from 1 to 10
 
         pygame.display.update()
@@ -231,7 +235,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Barrel Jump')
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('Mygame/font/Pixeltype.ttf', 50)
+test_font = pygame.font.Font('Mygame/font/west.ttf', 60)
 
 bg_music = pygame.mixer.Sound('Mygame/Sounds/background.mp3')
 bg_music.set_volume(0.5)
@@ -257,7 +261,7 @@ game_message_rect = game_message.get_rect(center=(400, 340))
 
 menu_options = ['Play', 'Sound', 'High Scores', 'Exit']
 menu_index = 0
-menu_font = pygame.font.Font('Mygame/font/Pixeltype.ttf', 47)
+menu_font = pygame.font.Font('Mygame/font/west.ttf', 47)
 small_font = pygame.font.Font(None, 24)
 sound_status = "On"
 sound_text = small_font.render(f"Sound: {sound_status}", True, (255, 255, 255))
@@ -296,7 +300,8 @@ while True:
                         sound_status = "On" if bg_music.get_volume() > 0 else "Off"
                         sound_text = small_font.render(f"Sound: {sound_status}", True, (255, 255, 255))
                     elif menu_options[menu_index] == 'High Scores':
-                        game_state = GameState.DISPLAY_HIGH_SCORES_SCREEN  # Fixed this line
+                        game_state = GameState.HIGH_SCORES
+                        display_high_scores_screen(screen)# Fixed this line
                     elif menu_options[menu_index] == 'Exit':
                         pygame.quit()
                         sys.exit()
@@ -309,9 +314,14 @@ while True:
                             game_state = GameState.PLAYING
                             start_time = int(pygame.time.get_ticks() / 1000)
                         elif option == 'Sound':
-                            bg_music.set_volume(1.0 - bg_music.get_volume())
-                            sound_status = "On" if bg_music.get_volume() > 0 else "Off"
-                            sound_text = small_font.render(f"Sound: {sound_status}", True, (255, 255, 255))
+                            for event in pygame.event.get():
+                                if event.type == pygame.MOUSEBUTTONDOWN:
+                                    x, y = pygame.mouse.get_pos()
+                                    if sound_rect.collidepoint(x, y):
+                                        # Toggle sound logic here
+                                        bg_music.set_volume(1.0 - bg_music.get_volume())
+                                        sound_status = "On" if bg_music.get_volume() > 0 else "Off"
+                                        sound_text = small_font.render(f"Sound: {sound_status}", True, (255, 255, 255))
                         elif option == 'High Scores':
                             game_state = GameState.HIGH_SCORES
                             display_high_scores_screen(screen)  # Fixed this line
@@ -334,24 +344,21 @@ while True:
                 if event.key == pygame.K_RETURN:
                     screen.blit(sky_surface, (0, 0))
                     display_high_scores_screen(screen)
-                    back_button_text = menu_font.render('Back', True, (2, 20, 3))
-                    back_button_rect = back_button_text.get_rect(center=(60, 30))
                     screen.blit(back_button_text, back_button_rect)
                     option = 'back'
                     text_rect = menu_font.render(option, True, (0, 0, 0)).get_rect(center=(400, 135 + i * 65))
-                    if text_rect.collidepoint(mouse_pos):
-                        menu_index = i
+                if text_rect.collidepoint(mouse_pos):
+                    menu_index = i
                     game_state = GameState.MENU
                     # high scores screen
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 display_high_scores_screen(screen)
-                back_button_text = menu_font.render('Back', True, (2, 20, 3))
-                back_button_rect = back_button_text.get_rect(center=(60, 30))
+                back_button_text = menu_font.render('Back', True, (0, 0, 0))
+                back_button_rect = back_button_text.get_rect(center=(60, 375))
                 screen.blit(back_button_text, back_button_rect)
-                text_rect = menu_font.render(option, True, (0, 0, 0)).get_rect(center=(400, 135 + i * 65))
+
                 if back_button_rect.collidepoint(mouse_pos):
-                    menu_index = i
                     game_state = GameState.MENU
 
 
@@ -394,7 +401,8 @@ while True:
 
     elif game_state == GameState.HIGH_SCORE_INPUT:
         game_state = handle_high_score_input(screen, score)
-        option = 'back'
 
+    screen.blit(sound_text, (10, 0))
+    pygame.display.flip()
     pygame.display.update()
     clock.tick(60)      
