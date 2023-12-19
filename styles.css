@@ -47,7 +47,7 @@ body {
     transition: .3s;
 }
 
-.logo {
+.logos {
     font-size: 2.5rem;
     color: var(--main-color);
     font-weight: 600;
@@ -55,7 +55,8 @@ body {
 }
 
 .navbar a {
-    font-size: 3rem;
+    font-size: 2rem;
+    font-family:'Cinzel', serif;
     color: var(--text-color);
     font-weight: 500;
     margin-left: 3.5rem;
@@ -76,12 +77,15 @@ body {
     display: none;
 }
 
+h2{
+    font-size: 10px;
+}
 p{
     display: inline-block;
     position: relative;
     padding-top: 10px;
-    padding-left: 300px;
-    margin: 186px;
+    width: 1200px;
+    margin-left: 206px;
     color: var(--main-color);
     font-size: 3rem;
 }
@@ -149,6 +153,10 @@ p{
         font-size: 10px;
     
         }
+        .iframe{
+            height: 1px;
+            margin-left: 220px ;
+        }
     
         .footer {
             margin-top: 30px;
@@ -158,6 +166,9 @@ p{
             position: flex;
             font-size: 9px;
             margin-left: 5px;
+        }
+        h1 > barrel{
+            font-size: 5%;
         }
     
     
@@ -176,84 +187,179 @@ p{
         position: flex;
         font-size: 10px;
     }
+    .iframe{
+        height: 1px;
+        margin-left: 220px ;
+    }
 
     .footer p {
         padding-left: 1px;
+    }
+    h1{
+        font-size: 5%;
+    }
+    .game{
+        margin-top: 50px;
+        margin-left: 75px;
+        font-size: 2px;
+        color:var(--text-color);
     }
 
 }
 
 @media (max-width: 1200px) {
-    p {
-    position:flex;
-    width: 400px;
-    margin-left: 75px;
-    margin-top: 270px;
-    padding-top: 1px;
-    color: var(--main-color);
-    font-size: 10px;
-
+    .html{
+        size: 1%;
+        font-size: 5%;
     }
 
+    .logos img{
+        height:70px;
+
+    }
+  
+
+    .barrel{
+        font-size: 310%;
+        width: 600px;
+        margin-left: 70px;
+        margin-top: 180px;
+    }
     .footer {
         margin-top: 30px;
         position: static;
     }
     .footer-text p {
         position: flex;
-        font-size: 9px;
-        margin-left: 5px;
+        font-size: 8px;
+        margin-left: -5px;
+    }
+    .jump{
+        height: 300px;
+        width: 80%;
+        margin-left: 30px ;
+        margin-top: 10px;
+    }
+    .bx{
+        font-size: 85%;
+        position: space-between;
+        margin-left: 1%;
+    }
+    p {
+        width: 200px;
+        margin-top: 50px;
+        margin-left: 95px;
+        font-size:10px;
+        color:var(--text-color);
+    }
+    .h2{
+        font-size: 130%;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    h1{
+        font-size: 1px;
+    }
+    .adventure_title i {
+
+        font-size: 20px;
+        margin-left: -120px;
+    }
+    .adventure{
+        height: 300px;
+        width: 80%;
+        margin-left: 30px ;
+        margin-top: 10px;
+    }
+    .h3{
+        font-size:25px;
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+    .h4{
+        font-size: 35px;
+        font-weight: 50;
+        color: whitesmoke;
+        margin-top: 10px;
+        margin-left: 80px;
+    }
+    .RPS_screen{
+        margin-left: 20px;
+        height: 500px;
     }
 
+}
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+    section {
+        padding: 10rem 4% 2rem;
+    }
+    .home {
+        padding: 0 4%;
+    }
+    .footer {
+        padding: 2rem 4%;
+    }
+    h1{
+        font-size: 10%;
+    }
 
+    .game{
+        margin-top: 50px;
+        margin-left: 75px;
+        font-size: 2px;
+        color:var(--text-color);
+    }
 }
 
 /* barrel jump page */
 
-.barrel{
+h1{
     font-family: 'Western', sans-serif;
     font-weight:800;
     -webkit-text-stroke-width: 0.01px;
     -webkit-text-stroke-color:black;
     text-shadow: 5px 5px gray;
-
     font-size: 100px;
     color:sandybrown;
     margin-top: 290px;
-    margin-left: 550px;
+    margin-left: 350px;
 }
-.game{
-    margin-top: 50px;
-    margin-left: -175px;
+h2{
+
+    margin-top: 150px;
+    margin-left:125px;
     font-size: 25px;
-    color:var(--text-color);
+    color:var(--main-color);
 }
 iframe{
     height: 700px;
     margin-left: 200px;
-    margin-top: -150px;
+    margin-top: 50px;
 }
-.adventure_title{
+h3{
     font-family: 'Supernatural Knight', sans-serif;
-    font-size: 100px;
+    font-size: 90px;
     color: whitesmoke;
     margin-top: 160px;
-    margin-left: 500px;
+    margin-left: 240px;
 }
 .adventure{
-    margin-top: -150px;
+    margin-top: 110px;
 
 }
-.RPS{
+h4{
     font-family: 'Rock Paper Scissors', sans-serif;
-    font-size: 170px;
+    font-size: 160px;
     font-weight: 50;
     color: whitesmoke;
     margin-top: 160px;
-    margin-left: 500px;
+    margin-left: 200px;
 }
 .RPS_screen{
-    margin-top: -150px;
+    margin-top: 80px;
 
 }
 .swordline {
@@ -270,3 +376,4 @@ iframe{
     background-position: 0 center;
     z-index: 100;
 }
+
