@@ -44,9 +44,9 @@ body {
 
 .logo {
     position: relative;
-    font-size: 2.5rem;
+    font-size: 0rem;
     color: var(--text-color);
-    font-weight: 600;
+    font-weight: 60;
 
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .navbar a {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     color: var(--text-color);
     font-weight: 500;
     margin-left: 3.5rem;
@@ -550,7 +550,7 @@ span {
 }
 .contact form .textarea-field {
     position: relative;
-    margin: .8rem 0 2.7rem;
+    margin: .3rem 0 2.7rem;
     display: flex;
 }
 .contact form .textarea-field textarea {
@@ -564,7 +564,7 @@ span {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem 9%;
+    padding: .5rem 2%;
     background: var(--second-bg-color);
 }
 
@@ -574,7 +574,7 @@ span {
 }
 
 .footer-text p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 .footer-iconTop a {
     position: relative;
@@ -603,7 +603,7 @@ span {
     width: 100%;
 }
 .footer-iconTop a i {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: var(--bg-color);
     transition: .5s;
 }
