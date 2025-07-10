@@ -30,37 +30,44 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
+    padding: -10px 9%;
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: .3s;
+    transition: .1s;
 }
 .header.sticky {
     background: var(--bg-color);
 }
 
-.logo {
-    position: relative;
-    font-size: 0rem;
-    color: var(--text-color);
-    font-weight: 60;
+.logo img {
+width: 350px;
 
 }
+
+
 
 .navbar {
     position: relative;
 }
 
 .navbar a {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: var(--text-color);
     font-weight: 500;
-    margin-left: 3.5rem;
     transition: .3s;
+  padding: 0 9px;
+  text-decoration: none;
+  color: #fff; /* or your text color */
+  border-right: 1px solid rgba(255, 255, 255, 0.2); /* subtle vertical line */
 }
+
+.navbar a:last-child {
+  border-right: none;
+}
+
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
@@ -81,10 +88,10 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url('images/home.JPEG') no-repeat;
+    background: url('images/code_pic.png') no-repeat;
     background-size: contain;
-    background-position: right;
-    background: url('images/home.png') no-repeat;
+    /* background-position: right; */
+    background: url('images/code_pic.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -236,7 +243,7 @@ section {
 .home-sci a:hover::before {
     width: 100%;
 }
-.home-imgHover {
+/* .home-imgHover {
     position: absolute;
     top: 0;
     right: 0;
@@ -244,7 +251,7 @@ section {
     height: 100%;
     background: transparent;
     transition: 3s;
-}
+} */
 .home-imgHover:hover {
     background: var(--bg-color);
     opacity: .8;
@@ -622,16 +629,16 @@ span {
     z-index: 98;
 }
 
-.animate.home-img {
+/* .animate.home-img {
     width: 50%;
-}
+} */
 
 .logo .animate,
 .navbar .animate,
 #menu-icon .animate,
 .home.show-animate .animate {
     animation: showRight 1s ease forwards;
-    animation-delay: calc(.3s * var(--i) );
+    animation-delay: calc(.1s * var(--i) );
 }
 
 .animate.scroll {
