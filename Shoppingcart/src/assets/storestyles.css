@@ -217,8 +217,20 @@ button.empty {
     .Container > div, .products > div {
         width: 100%;
     }
+    .gaming{
+        width: 400px;
+    }
+    .Top{
+        width: 450px;
+        height: 300px;
+        margin-bottom: -300px;
+    }
+    
     .cart-total {
         position: static;
         margin-top: 2em;
+    }
+    .parts{
+        margin-left: 60px;
     }
 }
