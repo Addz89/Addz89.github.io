@@ -1,90 +1,79 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- header design -->
+  <meta charset="UTF-8" />
+  <title>Retro Hero Trading Cards</title>
 
-  <a href="#" class="logos"><img src="../images/logo.png" alt=""><span class="animate" style="--i:1;"></span></a>
-    <div class="navbar">
-                <div class="home-sci">
-                  
-                  <h6>Animal Trading Cards</h6>
-          <a href="../index.html"class="icon-with-space"><i class='bx bxs-home-alt-2'></i>Home</a>
-          <span class="animate" style="--i:6;"></span>
+  <!-- Google Font for that pulp‑comic vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- simple nav -->
+  <nav>
+    <a href="../index.html" class="home-btn">🏠 Home</a>
+  </nav>
+
+  <h1 class="page-title">Retro Hero Trading Cards</h1>
+
+  <section class="card-grid">
+    <!-- PUNISHER -->
+    <article class="card">
+      <header class="card__header">THE PUNISHER</header>
+
+      <figure class="card__art">
+        <!-- 340 × 450 works well; replace with your own image -->
+        <img src="punisher2.png" alt="The Punisher">
+      </figure>
+
+      <div class="card__stats">
+        <h3>POWER&nbsp;<span class="stat">+30</span></h3>
+        <p class="stat-desc"><strong>Tactical Mastermind</strong><br>+30 ATK when attacking lawbreakers</p>
       </div>
 
-        <span class="animate" style="--i:2;"></span>
-    </div>
+      <div class="card__ability">
+        <h3>ABILITY</h3>
+        <p class="ability-desc"><strong>Relentless Vengeance</strong><br>Can strike twice when wounded</p>
+      </div>
+    </article>
 
-  <meta charset="UTF-8">
-  <title>Animal Trading Cards</title>
-  <link rel="stylesheet" href="styles.css">
-  <div class="swordline"></div>
-  </head>
-  <body>
-  <div class="wrap">
-    <div class="wolf">
-      <h1>Gray Wolf</h1>
-      <br>
-      <br>
-      <img src="Eurasian_wolf_2.jpg" class="wolf1" alt="photo of wolf">
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="columns">
-        <p class="intro"> The wolf has very dense and fluffy winter fur, with a short undercoat and long, coarse guard hairs.Most of the undercoat and some guard hairs are shed in spring and grow back in autumn.<br></p>
-        <p><span><br>Scientific Name:</span> Canis lupus<br></p>
-        <p><span><br>Habitat:</span> Forests and Grasslands</p>
-        <p><span><br>Diet:</span> Large Hoofed Mammals</p>
-        <p><span><br>Average Length:</span> 105–160 cm</p>
-        <p class="about"><br>The wolf has upright ears and it also resembles a dog with perky ears in other respects. Habitat use by wolves depends on the abundance of prey, snow conditions.</p>
-    </div>
-    </div>
-  </div>
-      <div class="Eagle">
-        <h2>American Bald Eagle</h2>
-        <br>
-      <img src="bald_eagle.jpg" alt="photo of American Bald Eagle">
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="columns">
-    <p class="intro">The bald eagle has been the national symbol of the United States since June 20, 1782. Their feet, which are also yellow, are equipped with sharp black talons. Eagles can fly up to 30 m.p.h.</p>
-    <p><span><br><br>Scientific Name:</span> <br>Haliaeetus leucocephalus</p>
-    <p><span><br>Habitat:</span> Lakes and reservoirs</p>
-    <p><span><br>Diet:</span> Fish</p>
-    <p><span><br>Average Length:</span> 28 to 40 inches</p>
-    <p class="about"><br>Bald eagles are large, predatory raptors that are recognizable for their brown body and wings, white head and tail, and hooked yellow beak.</p>
-  </div>
-</div>
-<div class="Tiger">
-  <h3>Tiger</h3>
-  <br>
-  <img src="tiger.jpg" alt="photo of tiger">
-    <br>
-    <br>
-    <div class="container">
-      <br>
-      <br>
-    <div class="columns">
-      <p class="intro">Tigers are powerful hunters with sharp teeth, strong jaws and agile bodies. They are the largest terrestrial mammal whose diet consists entirely of meat. Tigers can jump up to 32 feet</p>
-      <p><span><br>Scientific Name:</span> <br>Panthera tigris</p>
-      <p><span><br>Habitat:</span> Forests and Grasslands </p>
-      <p><span><br>Diet:</span> Moose, Horses, Buffalos and Goats.</p>
-      <p><span><br>Average Length:</span> 189-300 cm </p>
-      <p class="about"><br>The tiger was first scientifically described in 1758. It once ranged widely from the Eastern Anatolia Region in the west to the Amur River basin in the east.</p>
-    </div>
-  </div>
-  </div> 
-  </body>
+    <!-- SUPERMAN -->
+    <article class="card">
+      <header class="card__header">SUPERMAN</header>
 
-  <footer class="footer">
-    <div class="footer-text">
-        <p>Copyright &copy; 2023 by Adam Naumovski | All Rights Reserved.</p>
+      <figure class="card__art">
+        <img src="superman.png" alt="Superman">
+      </figure>
 
-        <span class="animate scroll" style="--i:1;"></span>
-    </div>
-  </html>
+      <div class="card__stats">
+        <h3>POWER&nbsp;<span class="stat">+50</span></h3>
+        <p class="stat-desc"><strong>Solar‑Charged Might</strong><br>+50 ATK in sunlight</p>
+      </div>
+
+      <div class="card__ability">
+        <h3>ABILITY</h3>
+        <p class="ability-desc"><strong>Man of Steel</strong><br>Ignores first damage received each turn</p>
+      </div>
+    </article>
+
+    <!-- HULK -->
+    <article class="card">
+      <header class="card__header">HULK</header>
+
+      <figure class="card__art">
+        <img src="hulk.png" alt="Hulk">
+      </figure>
+
+      <div class="card__stats">
+        <h3>POWER&nbsp;<span class="stat">+45</span></h3>
+        <p class="stat-desc"><strong>Rage Surge</strong><br>+5 ATK for every hit taken</p>
+      </div>
+
+      <div class="card__ability">
+        <h3>ABILITY</h3>
+        <p class="ability-desc"><strong>Unstoppable</strong><br>Cannot be stunned or slowed</p>
+      </div>
+    </article>
+  </section>
+</body>
+</html>

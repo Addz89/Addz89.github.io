@@ -216,9 +216,11 @@ function currencyBuilder(){
      let currencyPicker = document.querySelector('.currency-selector');
      let select = document.createElement("select");
      select.classList.add("currency-select");
-     select.innerHTML = `<option value="USD">USD</option>
-                         <option value="EUR">EUR</option>
-                         <option value="YEN">YEN</option>`;
+     select.innerHTML = `<option value="AUD">AUD</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="YEN">YEN</option>
+                    `;
      currencyPicker.append(select);
  }
  currencyBuilder();

@@ -1,625 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=MedievalSharp&display=swap');
+/* Global reset & fonts */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{background-image: url("https://wallpaper.dog/large/20493136.jpg");}
-
-/* header styles */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing:content-box;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  scroll-behavior: smooth;
-  font-family: 'Poppins',sans-serif;
-}
-
-html {
-  overflow-x: hidden;
-}
 body {
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: #d0b07c;                /* black backdrop */
+  color: #000;
+  font-family: 'Roboto Serif', serif;
+  line-height: 1.4;
+  min-height: 100vh;
 }
 
-:root {
-  --bg-color: #081b29;
-  --second-bg-color: #112e42;
-  --text-color: #ededed;
-  --main-color: #00abf0;
+/* Home button */
+nav {
+  padding: 1rem;
+}
+.home-btn {
+  background: #080808;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+.home-btn:hover { background: #0080bf; }
+
+.page-title {
+  text-align: center;
+  color: #111010;
+  font-family: 'Cinzel', serif;
+  margin: 1rem 0 2rem;
 }
 
-.header {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 2rem 9%;
-  background: transparent;
+/* Card grid */
+.card-grid {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  transition: .3s;
-}
-
-.logos img{
-  height: 7rem;
-  margin-bottom: -159px;
-}
-
-.navbar a {
-  margin-top: 100px;
-  font-size: 1.7rem;
-  color: var(--text-color);
-  font-weight: 500;
-  margin-right: -600px;
-  transition: .3s;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-
-}
-h6 {
-  font-family: 'MedievalSharp', cursive;
-  color: var(--main-color);
-  padding-left: 1px;
-  font-size: 4rem;
-  margin-top: 100px;
-  margin-left: 500px;
-
-}
-.btn-box {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 3.5rem;
-  height: 5rem;
-
-}
-.btn-box .btn {
-  position: relative;
-  display: inline-flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  width: 15rem;
-  height: 100%;
-  background: var(--main-color);
-  border: .2rem solid var(--main-color);
-  border-radius: .8rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: .1rem;
-  color: var(--bg-color);
-  z-index: 1;
+  gap: 2rem;
+  padding: 0 1rem 3rem;
+}
+
+/* Core card style */
+.card {
+  width: 300px;
+  background: #d0b07c;                 /* old parchment */
+  border: 10px solid #141313;             /* thick black frame */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
   overflow: hidden;
-  transition: .5s;
-}
-
-.btn-box .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background:var(--bg-color);
-  z-index: -1;
-  transition: .5s;
-}
-.btn-box .btn:hover::before {
-  width: 100%;
-}
-.home-sci {
   position: relative;
-  bottom: 2rem;
-  width: 1270px;
-  
-  display: flex;
-  justify-content: space-between;
 }
-.home-sci a {
-  margin-left: 50px;
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 50px;
+
+/* Title bar */
+.card__header {
   background: transparent;
-  border: .2rem solid var(--main-color);
-  border-radius: 20%;
-  font-size: 20px;
-  color: var(--main-color);
-  z-index: 1;
-  overflow: hidden;
-  transition: .5s;
-}
-.home-sci a:hover {
-  color: var(--text-color);
-}
-.home-sci a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-
-  background: var(--main-color);
-  z-index: -1;
-  transition: .5s;
-}
-.home-sci a:hover::before {
-  width: 100%;
-  background: var(--second-bg-color);
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.9rem;
+  padding: 0.6rem 0;
+  border-bottom: 3px solid #000;
 }
 
-
-
-.navbar a:hover,
-.navbar a.active {
-    color: var(--main-color);
-
-}
-
-#menu-icon {
-
-  font-size: 3.6rem;
-  color: var(--text-color);
-  cursor: pointer;
-  display: none;
-}
-
-/* sword line */
-.swordline {
-  height: 5px;
-  background-image: linear-gradient(
-      to right,
-      transparent -3%,
-      #00abf0 50%,
-      transparent 90%
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 100px;
-  background-position: 0 center;
-  z-index: 100;
-}
-
-/* start cards */
-
-
-.wrap {
-  width:500px;
-  margin:300px;
-  margin-top:130px;
-
-}
-
-.columns {
-  border:7px groove;
-  border-width:3px;
-  padding:10px;
-  border-color:var(--second-bg-color);
-  color:var(--bg-color);
-  width:280px;
-  height:368px;
-  background: linear-gradient(to bottom, #ffffff 0%, #081b29 85%);
-}
-
-.wolf:hover {
-  box-shadow:10px 16px 16px 0 rgba(0,0,0,2);
-}
-
-.Eagle:hover {
-  box-shadow:10px 16px 16px 0 rgba(0,0,0,2);
-}
-  
-.Tiger:hover {
-  box-shadow:10px 16px 16px 0 rgba(0,0,0,2);
-}
-
-.wolf {
-  padding:30px;
-  transition:0.4s;
-  width:300px;
-  text-align:left;
-  float:left;
-  margin:20px;
-  margin-top:1px;
-  background: linear-gradient(to bottom, #ffffff 0%, #cc0000 85%);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-  border:2px groove;
-  border-width:3px;
-  border-padding:1px;
-  border-color:var(--second-bg-color);
-  box-height:300px;
-  margin-top:-29px;
-  height:700px;
-}
-.icon-with-space i {
-  margin-right: 12px; /* Adjust the value as needed */
-}
-
-.Eagle {
-  padding:30px;
-  transition:0.4s;
-  width:300px;
-  text-align:left;
-  float:left;
-  margin:20px;
-  margin-top:1px;
-  background: linear-gradient(to bottom, #ffffff 0%, #0099ff 85%);
-  float:left;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-  border:2px groove;
-  border-width:3px;
-  border-padding:1px;
-  border-color:var(--second-bg-color);
-  box-height:300px;
-  margin-top:-200px;
-  height:700px;
-}
-
-.Tiger {
-  padding:30px;
-  transition:0.4s;
-  width:300px;
-  text-align:left;
-  float:left;
-  margin:20px;
-  margin-top:1px;
-  background: linear-gradient(to bottom, #ffffff 0%, #006600 85%);
-  float:left;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-  border:2px groove;
-  border-width:3px;
-  border-padding:1px;
-  border-color:var(--second-bg-color);
-  box-hight:300px;
-  margin-top:-200px;
-  height:700px;
-}
-
-p.intro {
-  margin-top:1px;
-  font-style: italic;
-  color: black;
-}
-
-span { 
-  font-weight:bold;
-  color:var(--second-bg-color);
-}
-
-img {
-  border: 6px solid var(--bg-color);
-  width:294px;
-  height:190px;
-  margin:-1px;
-  margin-top: 1px;
-} 
-
-h2 {color:rgb(0, 0, 0);
-  font-size:30px;
-}
-
-h3 {color:black;
-  font-size:27px;
-}
-
-.about {color:white;
-}
-
-p {color:white;
-}
-
-h1 {color:black;
-  size:10px;
-  height:20px;
-}
-
-.footer {
-  margin: 6px;
-  margin-bottom: 1150px;
-  padding-top: 1px;
-  background: var(--second-bg-color);
-}
-
-.footer-text p {
-  margin-right: 50px;
-  margin: 13px;
-  font-size: 20px;
-
-}
-
-/* Scrollbar styles */
-
-/* width */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 30px;
-  background-color:rgb(255, 255, 255);
-  box-shadow: black 2px 4px 6px;
-  box-shadow: #112e42 2px 5px 5px 2px inset, #00abf0 0px 0px 6px 6px inset;
-  border: 1px solid #00abf0;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
-}
-/* Buttons */
-::-webkit-scrollbar-button:single-button {
+/* Artwork */
+.card__art img {
   display: block;
-  border-style: dotted;
-  height: 13px;
-  width: 20px;
-  background-color: #050505;
-  border: 1px dotted #00abf0;
-  border-radius: 1em;
-  box-shadow: #112e42 2px 2px 1px 0px inset, #00abf0 0px 0px 6px 6px inset;
+  width: 100%;
+  height: auto;
 }
 
-/* styles for card on screen */
-
-/* Add this media query at the bottom of your existing CSS code */
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 80px; /* Adjust this value based on your header's height */
-  }
-
-  .header {
-    padding: 10px;
-  }
-
-  .logo {
-    font-size: 15px;
-  }
-  #menu-icon {
-    display: block;
+/* Stat + ability boxes */
+.card__stats,
+.card__ability {
+  border-top: 3px solid #000;
+  padding: 1rem;
+  background: #d0b07c;
 }
 
-  .navbar {
-    display: flex; /* Hide the navbar on small screens */
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    background-color: transparent;
-    top: 3px; /* Adjust this value based on your header's height */
-    left: 159%;
-    z-index: 99;
-  }
-
-  .navbar a {
-    display: block;
-    font-size: 20px;
-    margin: 3px 0;
-
-    transition: .25s ease;
-    transition-delay: 0s;
+.card__stats {
+  border-bottom: 3px solid #000;
 }
 
-  #menu-icon {
-    display: block;
-  }
-
-  .wrap {
-    flex-direction: column;
-    width: auto;
-    margin: 10px;
-  }
-
-  .columns {
-    width: auto;
-    margin: 8px;
-    height: 430px;
-    color: var(--bg-color);
-  }
-
-
-
-  .wolf,
-  .Eagle,
-  .Tiger {
-    width: auto;
-    margin: 10px;
-    height: 750px;
-  }
-
-  .Eagle {
-    margin-left: 20px;
-  }
-
-  .Tiger {
-    margin-left: 20px;
-  }
-
-  img {
-    border: 6px solid var(--bg-color);
-    width:275px;
-    height:190px;
-    margin:-1px;
-  } 
-  
-  h1 {color:black;
-    font-size:25px;
-  }
-
-  h2 {color:black;
-    font-size:25px;
-  }
-  
-  h3 {color:black;
-    font-size:25px;
-  }
-  
-  .about {color:white;
-  }
-  
-  p {color:white;
-  }
-  
-  
+.card__stats h3,
+.card__ability h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
 }
 
-@media (max-width: 1298px) {
-
-  body {
-    padding-top: 80px; /* Adjust this value based on your header's height */
-  }
-
-
-  
- 
-  .navbar a {
-    margin-top: 10px;
-    font-size: 35px;
-    color: var(--text-color);
-    font-weight: 60;
-    margin-left: 1rem;
-    transition: .3s;
-  
-  }
-
-.home-sci a {
-    margin-left: -360px;
-    margin-top: 99px;
-    width: 220px;
-    height: 70px;
-    background: transparent;
-    border: .2rem solid var(--main-color);
-    border-radius: 20%;
-    font-size: 40px ;
-    font-weight: 750;
-    color: var(--main-color);
-    z-index: 66;
-    transition: .5s;
-  }
-  .wrap {
-    width: 20px;
-    margin: 10px;
-  }
-
-  h6 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 36px;
-    font-size: 4rem;
-  }
-  .columns {
-    width: auto;
-    margin: 8px;
-    height: 1100px;
-    color: var(--bg-color);
-  }
-
-  .wolf,
-  .Eagle,
-  .Tiger {
-    width: 1160px;
-    margin: 10px;
-    height: 2000px;
-    margin-top: 300px;
-  }
-
-  .Eagle {
-    margin-left: 20px;
-  }
-
-  .Tiger {
-    margin-left: 20px;
-  }
-
-  img {
-    border: 6px solid var(--bg-color);
-    width:1140px;
-    height:660px;
-    margin:-1px;
-  } 
-  
-  h1 {color:black;
-    font-family: 'Roboto', sans-serif;
-    font-size:65px;
- 
-  }
-  .wolf1{
-    margin-top: 50px;
-  }
-
-  h2 {color:black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:65px;
-  }
-  
-  h3 {color:black;
-
-    font-size:65px;
-  }
-  
-  .about {color:white;
-  }
-  
-  p {color:white;
-    font-size: 45px;
-  }
-
-  .swordline {
-    width: 1350px;
-    margin-left: 30px;
-    height: 5px;
-    background-image: linear-gradient(
-        to right,
-        transparent -1%,
-        #00abf0 50%,
-        transparent 90%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 100px;
-    background-position: 0 center;
-    z-index: 100;
-  }
-
-  .footer {
-    height: 55px;
-    width: 1000px;
-    margin: 0px;
-    margin-top: 10px;
-    padding-top: 35px;
-    padding-bottom: 100px;
-    background: var(--second-bg-color);
-  }
-  
-  .footer-text p {
-    margin-left: 100px;
-    font-size: 20px;
-  
-  }
+.stat {
+  font-size: 2rem;
 }
 
-.footer {
-  margin: 0px;
-  margin-top: 900px;
-  padding-top: 35px;
-  padding-bottom: 20px;
-  background: var(--second-bg-color);
+.stat-desc,
+.ability-desc {
+  font-size: 0.95rem;
+  line-height: 1.35;
 }
 
-.footer-text p {
-  margin-left: 100px;
-  font-size: 20px;
-
+/* Responsive tweak */
+@media (max-width: 380px) {
+  .card { width: 100%; }
 }
-
-/* home */
-
-

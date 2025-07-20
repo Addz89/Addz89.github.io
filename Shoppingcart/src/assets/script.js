@@ -6,7 +6,7 @@ const products = [
     quantity: 0,
     productId: 101,
     basePrice: 100,
-    image: "src/images/500gbharddrive.jpg"
+    image: "src/images/500gbharddrive.png"
   },
   {
     name: "1 Tb Hard Drive",
@@ -14,7 +14,7 @@ const products = [
     quantity: 0,
     productId: 102,
     basePrice: 120,
-    image: "src/images/1tbharddrive.jpg"
+    image: "src/images/1tbharddrive.png"
   },
   {
     name: "4 Tb Hard Drive",
@@ -22,7 +22,7 @@ const products = [
     quantity: 0,
     productId: 103,
     basePrice: 175,
-    image: "src/images/4tbharddrive.jpg"
+    image: "src/images/4tbharddrive.png"
   },
   {
     name: "6 Tb Hard Drive",
@@ -30,7 +30,7 @@ const products = [
     quantity: 0,
     productId: 104,
     basePrice: 200,
-    image: "src/images/6tbharddrive.jpg"
+    image: "src/images/6tbharddrive.png"
   },
   {
     name: "Razer Mouse",
@@ -38,7 +38,7 @@ const products = [
     quantity: 0,
     productId: 105,
     basePrice: 80,
-    image: "src/images/Razermouse.jpg"
+    image: "src/images/Razermouse.png"
   },
   { 
     name: "Dragon Gaming Mouse",
@@ -70,7 +70,7 @@ const products = [
     quantity: 0,
     productId: 109,
     basePrice: 540,
-    image: "src/images/graphicscard1.jpg"
+    image: "src/images/graphicscard1.png"
   },
   {
     name: "ASUS NVIDIA GeForce RTX 4070 Ti",
@@ -78,7 +78,7 @@ const products = [
     quantity: 0,
     productId: 110,
     basePrice: 700,
-    image: "src/images/graphicscard2.jpg"
+    image: "src/images/graphicscard2.png"
   },
   {
     name: "MSI NVIDIA GeForce RTX 4070 Ti",
@@ -86,7 +86,7 @@ const products = [
     quantity: 0,
     productId: 111,
     basePrice: 800,
-    image: "src/images/graphicscard3.jpg"
+    image: "src/images/graphicscard3.png"
   },
   {
     name: "MSI LGA1700 ATX Motherboard",
@@ -110,7 +110,7 @@ const products = [
     quantity: 0,
     productId: 96,
     basePrice: 1500,
-    image: "src/images/pccase1.jpg"
+    image: "src/images/pccase1.png"
   },
   {
     name: "AMANSON ATX Gaming Case",
@@ -118,7 +118,7 @@ const products = [
     quantity: 0,
     productId: 95,
     basePrice: 2500,
-    image: "src/images/pccase2.jpg"
+    image: "src/images/pccase2.png"
   },
   {
     name: "KEDIERS PC ATX Tower",
@@ -126,7 +126,7 @@ const products = [
     quantity: 0,
     productId: 94,
     basePrice: 3000,
-    image: "src/images/pccase3.jpg"
+    image: "src/images/pccase3.png"
   },
   {
     name: "DistroCase Water Cooled",
@@ -134,7 +134,7 @@ const products = [
     quantity: 0,
     productId: 93,
     basePrice: 3150,
-    image: "src/images/pccase4.jpg"
+    image: "src/images/pccase4.png"
   }
 ]
 // Function to get product by productId
@@ -225,6 +225,8 @@ function currency() {
   let USD = 1.000;
   let EUR = 0.9965;
   let YEN = 143.1875;
+  let AUD = 1.46; // example rate, update as needed
+
   for (let index = 0; index < products.length; ++index) {
     if (currencySymbol === '$') {
       products[index].price = (USD * products[index].basePrice).toFixed(2);
@@ -232,7 +234,9 @@ function currency() {
       products[index].price = (EUR * products[index].basePrice).toFixed(2);
     } else if (currencySymbol === '¥') {
       products[index].price = (YEN * products[index].basePrice).toFixed(2);
-    };
+    } else if (currencySymbol === 'A$') {
+      products[index].price = (AUD * products[index].basePrice).toFixed(2);
+    }
   }
 }
 /* The following is for running unit tests. 

@@ -1,379 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=MedievalSharp&display=swap');
-/* font i like */
-@import url('https://fonts.cdnfonts.com/css/western');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Forum&family=MedievalSharp&display=swap');
-@import url('https://fonts.cdnfonts.com/css/supernatural-knight');
-@import url('https://fonts.cdnfonts.com/css/rock-paper-scissors');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: 'Poppins',sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
 :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
+  --bg-color: #0b0c10;
+  --primary-color: #00f7ff;
+  --accent-color: #1f2833;
+  --text-color: #ffffff;
+  --font-main: 'Orbitron', sans-serif;
 }
-html {
-    font-size: 62.5%;
-    overflow-x: hidden;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
 }
 
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  padding-bottom: 100px;
 }
 
+/* Header */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
-    background: var(--bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    transition: .3s;
+  background:var(--bg-color);
+  padding: 1.2rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 20px #00f7ff;
 }
 
-.logos {
-    font-size: 2.5rem;
-    color: var(--main-color);
-    font-weight: 600;
-    
+.header .logos img {
+  height: 40px;
 }
 
 .navbar a {
-    font-size: 2rem;
-    font-family:'Cinzel', serif;
-    color: var(--text-color);
-    font-weight: 500;
-    margin-left: 3.5rem;
-    transition: .3s;
-
+  font-size: 1.6rem;
+  color: #ededed;
+  margin-left: 3rem;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00f7ff44;
 }
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--main-color);
-
+  color: #00f7ff;
+  text-shadow: 0 0 8px #00f7ff;
 }
 
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--text-color);
-    cursor: pointer;
-    display: none;
+
+/* Game Headers */
+h1.barrel,
+h3.h3,
+h4.h4 {
+  text-align: center;
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 15px var(--primary-color);
+  margin: 150px auto 20px;
 }
 
-h2{
-    font-size: 10px;
-}
-p{
-    display: inline-block;
-    position: relative;
-    padding-top: 10px;
-    width: 1200px;
-    margin-left: 206px;
-    color: var(--main-color);
-    font-size: 3rem;
+h2.h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  margin: 10px auto 20px;
 }
 
-.footer {
-    margin: 6px;
-    margin-top: 150px;
-    padding-top: 1px;
-    background: var(--second-bg-color);
+iframe {
+  display: block;
+  margin: 0 auto 40px;
+  width: 90%;
+  max-width: 1000px;
+  height: 360px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--primary-color);
 }
 
-.footer-text p {
-    margin: 13px;
-    font-size: 20px;
-
-}
-
-/* Scrollbar styles */
-
-/* width */
-::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    border-radius: 30px;
-    background-color:rgb(255, 255, 255);
-    box-shadow: black 2px 4px 6px;
-    box-shadow: #112e42 2px 5px 5px 2px inset, #00abf0 0px 0px 6px 6px inset;
-    border: 1px solid #00abf0;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-  }
-  /* Buttons */
-::-webkit-scrollbar-button:single-button {
-    display: block;
-    border-style: dotted;
-    height: 13px;
-    width: 20px;
-    background-color: #050505;
-    border: 1px dotted #00abf0;
-    border-radius: 1em;
-    box-shadow: #112e42 2px 2px 1px 0px inset, #00abf0 0px 0px 6px 6px inset;
-  }
-
-
-/* screen sizes */
-@media (max-width: 768px) {
-    p {
-        position:flex;
-        width: 400px;
-        margin-left: 75px;
-        margin-top: 270px;
-        padding-top: 1px;
-        color: var(--main-color);
-        font-size: 10px;
-    
-        }
-        .iframe{
-            height: 1px;
-            margin-left: 220px ;
-        }
-    
-        .footer {
-            margin-top: 30px;
-            position: static;
-        }
-        .footer-text p {
-            position: flex;
-            font-size: 9px;
-            margin-left: 5px;
-        }
-        h1 > barrel{
-            font-size: 5%;
-        }
-    
-    
-    }
-
-@media (max-width: 520px) {
-    p {
-    position: flex;
-    padding-top: 10px;
-    padding-left: 1px;
-    color: var(--main-color);
-    font-size: 10px;
-    }
-
-    .footer-text p {
-        position: flex;
-        font-size: 10px;
-    }
-    .iframe{
-        height: 1px;
-        margin-left: 220px ;
-    }
-
-    .footer p {
-        padding-left: 1px;
-    }
-    h1{
-        font-size: 5%;
-    }
-    .game{
-        margin-top: 50px;
-        margin-left: 75px;
-        font-size: 2px;
-        color:var(--text-color);
-    }
-
-}
-
-@media (max-width: 1200px) {
-    .html{
-        size: 1%;
-        font-size: 5%;
-    }
-
-    .logos img{
-        height:70px;
-
-    }
-  
-
-    .barrel{
-        font-size: 310%;
-        width: 600px;
-        margin-left: 70px;
-        margin-top: 180px;
-    }
-    .footer {
-        margin-top: 30px;
-        position: static;
-    }
-    .footer-text p {
-        position: flex;
-        font-size: 8px;
-        margin-left: -5px;
-    }
-    .jump{
-        height: 300px;
-        width: 80%;
-        margin-left: 30px ;
-        margin-top: 10px;
-    }
-    .bx{
-        font-size: 85%;
-        position: space-between;
-        margin-left: 1%;
-    }
-    p {
-        width: 200px;
-        margin-top: 50px;
-        margin-left: 95px;
-        font-size:10px;
-        color:var(--text-color);
-    }
-    .h2{
-        font-size: 130%;
-        margin-left: 50px;
-        margin-top: 20px;
-    }
-    h1{
-        font-size: 1px;
-    }
-    .adventure_title i {
-
-        font-size: 20px;
-        margin-left: -120px;
-    }
-    .adventure{
-        height: 300px;
-        width: 80%;
-        margin-left: 30px ;
-        margin-top: 10px;
-    }
-    .h3{
-        font-size:25px;
-        margin-left: 50px;
-        margin-top: 10px;
-    }
-    .h4{
-        font-size: 35px;
-        font-weight: 50;
-        color: whitesmoke;
-        margin-top: 10px;
-        margin-left: 80px;
-    }
-    .RPS_screen{
-        margin-left: 20px;
-        height: 500px;
-    }
-
-}
-@media (max-width: 991px) {
-    .header {
-        padding: 2rem 4%;
-    }
-    section {
-        padding: 10rem 4% 2rem;
-    }
-    .home {
-        padding: 0 4%;
-    }
-    .footer {
-        padding: 2rem 4%;
-    }
-    h1{
-        font-size: 10%;
-    }
-
-    .game{
-        margin-top: 50px;
-        margin-left: 75px;
-        font-size: 2px;
-        color:var(--text-color);
-    }
-}
-
-/* barrel jump page */
-
-h1{
-    font-family: 'Western', sans-serif;
-    font-weight:800;
-    -webkit-text-stroke-width: 0.01px;
-    -webkit-text-stroke-color:black;
-    text-shadow: 5px 5px gray;
-    font-size: 100px;
-    color:sandybrown;
-    margin-top: 290px;
-    margin-left: 350px;
-}
-h2{
-
-    margin-top: 150px;
-    margin-left:125px;
-    font-size: 25px;
-    color:var(--main-color);
-}
-iframe{
-    height: 700px;
-    margin-left: 200px;
-    margin-top: 50px;
-}
-h3{
-    font-family: 'Supernatural Knight', sans-serif;
-    font-size: 90px;
-    color: whitesmoke;
-    margin-top: 160px;
-    margin-left: 240px;
-}
-.adventure{
-    margin-top: 110px;
-
-}
-h4{
-    font-family: 'Rock Paper Scissors', sans-serif;
-    font-size: 160px;
-    font-weight: 50;
-    color: whitesmoke;
-    margin-top: 160px;
-    margin-left: 200px;
-}
-.RPS_screen{
-    margin-top: 80px;
-
-}
+/* Swordline */
 .swordline {
-    margin-top: 25px;
-    height: 15px;
-    background-image: linear-gradient(
-        to right,
-        transparent 10%,
-        rgb(0,171,240) 50%,
-        transparent 90%
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 100px;
-    background-position: 0 center;
-    z-index: 100;
+  height: 5px;
+  background-image: linear-gradient(
+    to right,
+    transparent 10%,
+    var(--primary-color) 50%,
+    transparent 90%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100px;
+  background-position: 0 center;
+  margin: 40px auto;
 }
 
+/* About Paragraph */
+.about {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  max-width: 900px;
+  margin: 30px auto 50px;
+  padding: 0 20px;
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  background: var(--accent-color);
+  margin-bottom: -180px;
+  padding: 30px 0;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  box-shadow: 0 -10px 20px var(--primary-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--accent-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #66fcf1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1.barrel,
+  h3.h3,
+  h4.h4 {
+    font-size: 2.2rem;
+  }
+
+  h2.h2 {
+    font-size: 1.3rem;
+  }
+
+  .about {
+    font-size: 1.2rem;
+  }
+
+  iframe {
+    height: 300px;
+  }
+
+  .navbar a {
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+  }
+}

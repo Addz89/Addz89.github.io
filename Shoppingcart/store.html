@@ -4,73 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic SC">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Uncial Antiqua">
+    <title>PUN1SH3R's Ultimate Gaming Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
-    <link href="src/assets/storestyles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/assets/storestyles.css">
     <script src="src/assets/script.js" defer></script>
     <script src="src/assets/front.js" defer></script>
-    <script src="../script.js"></script>
-    <header class="header">
-        <a href="#" class="logos"><img src="../images/logo.png" alt=""><span class="animate" style="--i:1;"></span></a>
-        <div class="bx bx-menu" id="menu-icon"> <span class="animate" style="--i:2;"></span></div>
-
-        <nav class="navbar">
-            <a href="../index.html" class="active">Home</a>
-            <a href="../index.html#about">About</a>
-            <a href="../index.html#education">Education</a>
-            <a href="../index.html#skills">Skills</a>
-            <a href="../index.html#contact">Contact</a>
-
-            <span class="active-nav"></span>
-            <span class="animate" style="--i:2;"></span>
-        </nav>
-    </header>
+    <style>
+        body {
+            /* background-image: url('../images/dark-gaming-bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center; */
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="cart-total"></div>
-    <div class="shopping-cart">
-        <div class="swordline"></div>
-        <div class="currency-selector"></div>
-        <div class="headerBG">
-            <div class="topScroll">
-                <img class="pcshop" src="src/images/pcshop.png" alt="pcshop">
-            </div>
-        </div>
-        <div class="swordline">   </div>
-        <div class="cart-container">
-            <div class="products-container">
-                <img class="gaming" src="src/images/gamingpcsale.png" alt="sale">
-                <h5>Swipe to see more</h5>
-                <div class="Container snaps-inline"></div>
-                <div class="swordline"></div>
-                <img src="src/images/parts.png" alt="parts">
-                <div class="products"></div>
-            </div>
-            <div class="swordline"></div>
-            <h2 class="cartBorder">Your Cart</h2>
-            <div class="cart"></div>
-            <div class="empty-btn"></div>
-            <div class="swordline"></div>
-            </div>
-        </div>
-            <div class="checkout-container">
-                <h1 id="checkouttitle">Checkout</h1>
+    <header class="header">
+        <a href="#" class="logos"><img src="../images/logo.png" alt="Logo"></a>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <!-- <a href="../index.html#about">About</a>
+            <a href="../index.html#education">Education</a> -->
+            <!-- <a href="../index.html#skills">Skills</a> -->
+            <!-- <a href="../index.html#contact">Contact</a> -->
+        </nav>
+    </header>
 
-                <div class="checkout">
-                    <div class="cart-total"></div>
-                    <form>
-                        <label>Pay Amount:</label>
-                        <input class="received" type="text">
-                        <button onclick=soundPay() class="pay">Sign</button> 
-                    </form>
-                    <h4>Receipt</h4>
-                    <div class="pay-summary"></div>
-                </div>
-            </div>
+    <div class="currency-selector"></div>
+    <div class="headerBG">
+        <img class="Top" src="/Shoppingcart/src/images/mkd_pun.png" width="1350">
+        <!-- <div class="topScroll">
+            <img class="pcshop" src="src/images/pcshop.png" alt="PC Shop">
+        </div> -->
+    </div>
+
+    <div class="swordline"></div>
+
+    <div class="cart-total"></div>
+
+    <div class="cart-container">
+        <div class="products-container">
+            <h2 id="PcTitle">🔥 Featured Gaming PCs 🔥</h2>
+            <img class="gaming" src="src/images/gamingpcsale.png" alt="Gaming PC Sale">
+            <h5>Swipe to see more</h5>
+            <div class="Container snaps-inline"></div>
+            <div class="swordline"></div>
+            <h2 id="PartsTitle">⚙️ Pro Gamer Parts ⚙️</h2>
+            <img src="src/images/parts.png" alt="Parts">
+            <div class="products"></div>
         </div>
+
+        <div class="swordline"></div>
+
+        <h2 class="cartBorder">Your Cart</h2>
+        <div class="cart"></div>
+        <div class="empty-btn"></div>
+        <div class="swordline"></div>
+    </div>
+
+    <div class="checkout-container">
+        <h1 id="checkouttitle">Checkout</h1>
+        <div class="checkout">
+            <div class="cart-total"></div>
+            <form>
+                <label>Pay Amount:</label>
+                <input class="received" type="text">
+                <button onclick="soundPay()" class="pay">Sign</button>
+            </form>
+            <h4>Receipt</h4>
+            <div class="pay-summary"></div>
+        </div>
+    </div>
 </body>
 </html>
