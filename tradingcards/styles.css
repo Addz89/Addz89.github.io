@@ -2,9 +2,14 @@
 *,
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@font-face {
+  font-family: 'Punisher';
+  src: url('/tradingcards/Punishment-DPwE.ttf') format('truetype');
+  /* You can also add woff or woff2 for better compatibility */
+}
 
 body {
-  background: #d0b07c;                /* black backdrop */
+  background-image: url('/tradingcards/super1.png');                /* black backdrop */
   color: #000;
   font-family: 'Roboto Serif', serif;
   line-height: 1.4;
@@ -12,9 +17,21 @@ body {
 }
 
 /* Home button */
+
 nav {
   padding: 1rem;
 }
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .home-btn {
   background: #080808;
   color: #fff;
@@ -22,15 +39,20 @@ nav {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 700;
+  font-size: 20px;
   transition: background 0.3s;
 }
+
 .home-btn:hover { background: #0080bf; }
 
 .page-title {
+  font-size: 50px;
   text-align: center;
-  color: #111010;
-  font-family: 'Cinzel', serif;
+  color: #f0ecec;
+  font-family: 'Punisher', serif;
   margin: 1rem 0 2rem;
+  font-weight: 200;
+  text-shadow: 3px 4px 0 #000;
 }
 
 /* Card grid */
@@ -44,6 +66,7 @@ nav {
 
 /* Core card style */
 .card {
+  padding-top: -100px;
   width: 300px;
   background: #d0b07c;                 /* old parchment */
   border: 10px solid #141313;             /* thick black frame */
