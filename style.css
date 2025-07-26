@@ -44,11 +44,13 @@ body {
 }
 
 .logo img {
-width: 350px;
-
+    width: 350px;
 }
 
-
+.social-pic{
+    padding: 20px;
+    letter-spacing: 90px;
+}
 
 .navbar {
     position: relative;
@@ -59,14 +61,14 @@ width: 350px;
     color: var(--text-color);
     font-weight: 500;
     transition: .3s;
-  padding: 0 9px;
-  text-decoration: none;
-  color: #fff; /* or your text color */
-  border-right: 1px solid rgba(255, 255, 255, 0.2); /* subtle vertical line */
+    padding: 0 9px;
+    text-decoration: none;
+    color: #fff; /* or your text color */
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* subtle vertical line */
 }
 
 .navbar a:last-child {
-  border-right: none;
+    border-right: none;
 }
 
 .navbar a:hover,
