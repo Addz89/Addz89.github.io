@@ -25,7 +25,7 @@ body {
 /* Header */
 .header {
   background:var(--bg-color);
-  padding: 1.2rem 5%;
+  padding: 1px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +37,7 @@ body {
 }
 
 .header .logos img {
-  height: 40px;
+  height: 140px;
 }
 
 .navbar a {
