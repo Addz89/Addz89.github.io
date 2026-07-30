@@ -1,61 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MKD_PUN1SH3R Merch Store</title>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="shopstyle.css" />
-
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Official MKD Punisher creator merch including a hoodie, mug and sports bottle.">
+  <meta name="theme-color" content="#070707">
+  <title>MKD Punisher Merch</title>
+  <link rel="icon" type="image/png" href="images/logo_lo.png">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="shopstyle.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">MKD_PUN1SH3R Merch</div>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Shop</a>
-      <!-- <a href="#contact">Contact</a> -->
-    </nav>
+  <a class="skip-link" href="#products">Skip to products</a>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand merch-brand" href="index.html"><span class="brand-mark">MKD</span><span class="brand-copy"><strong>MKD Punisher</strong><span>Official creator merch</span></span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="merch-navigation" aria-expanded="false" data-nav-toggle><span></span></button>
+      <nav class="site-nav" id="merch-navigation" aria-label="Page navigation" data-nav>
+        <a href="index.html">Portfolio</a>
+        <a class="active" href="#merch">Merch</a>
+        <a href="#products">Products</a>
+        <a href="Barreljump.html">Barrel Jump</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Official MKD_PUN1SH3R Merch</h1>
-    <p>Support the stream and rep the brand with exclusive merch drops.</p>
-  </section>
+  <main>
+    <section class="merch-hero" id="merch">
+      <div class="container merch-hero__grid">
+        <div class="merch-copy reveal">
+          <p class="eyebrow">Official creator gear</p>
+          <h1>Rep the stream.<br><span>Wear the mark.</span></h1>
+          <p>Support the channel with a focused collection of MKD Punisher merch, built around a bold black-and-red creator identity.</p>
+          <div class="button-row"><a class="btn" href="#products">Shop the drop <i class="bx bx-down-arrow-alt"></i></a><a class="btn btn--secondary" href="index.html">View portfolio</a></div>
+        </div>
+        <div class="merch-hero__visual reveal">
+          <div class="merch-orbit" aria-hidden="true"></div>
+          <img src="Shop/hoodie.png" alt="Black MKD Punisher hoodie" width="703" height="699">
+          <span class="drop-tag">DROP 01</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- Shop Section -->
-  <section class="shop">
-    <div class="product-card">
-      <img src="Shop/hoodie.png" alt="MKD Hoodie" />
-      <h3>MKD_PUN1SH3R Hoodie</h3>
-      <p>$84.00</p>
-      <a href="https://4ntysg-yd.myshopify.com/products/under-armour%C2%AE-hoodie?variant=51523311927599" button class="buy-btn">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="Shop/mug.png" alt="MKD Mug" />
-      <h3>MKD Mug</h3>
-      <p>$26.50</p>
-      <a href="https://4ntysg-yd.myshopify.com/products/black-glossy-mug?variant=51376925147439" button class="buy-btn">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="Shop/sport bottle.png" alt="MKD Sport Bottle" />
-      <h3>Sports Water Bottle</h3>
-      <p>$26.50</p>
-      <a href="https://4ntysg-yd.myshopify.com/products/pun1sh3r-sports-water-bottle?variant=51375438528815" button class="buy-btn">Buy Now</a>
-    </div>
-    <!-- Add more items here -->
-  </section>
+    <section class="section product-section" id="products">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">The collection</p><h2 class="section-title">Three essentials. <span class="accent">No filler.</span></h2><p class="section-copy">Choose a product below. Checkout and fulfilment are handled securely through Shopify.</p></div>
+        <div class="merch-grid">
+          <article class="merch-card reveal">
+            <div class="merch-card__image"><span>01</span><img src="Shop/hoodie.png" alt="MKD Punisher black hoodie" width="703" height="699"></div>
+            <div class="merch-card__body"><div><small>Apparel</small><h3>MKD Punisher Hoodie</h3></div><strong>$84.00</strong><p>A heavyweight black hoodie with the MKD Punisher identity front and centre.</p><a class="btn" href="https://4ntysg-yd.myshopify.com/products/under-armour%C2%AE-hoodie?variant=51523311927599" target="_blank" rel="noreferrer">Buy on Shopify <i class="bx bx-link-external"></i></a></div>
+          </article>
+          <article class="merch-card reveal">
+            <div class="merch-card__image"><span>02</span><img src="Shop/mug.png" alt="Black MKD mug" width="696" height="698"></div>
+            <div class="merch-card__body"><div><small>Drinkware</small><h3>MKD Black Mug</h3></div><strong>$26.50</strong><p>A glossy black mug carrying the sharp MKD mark for the desk or gaming setup.</p><a class="btn" href="https://4ntysg-yd.myshopify.com/products/black-glossy-mug?variant=51376925147439" target="_blank" rel="noreferrer">Buy on Shopify <i class="bx bx-link-external"></i></a></div>
+          </article>
+          <article class="merch-card reveal">
+            <div class="merch-card__image"><span>03</span><img src="Shop/sport bottle.png" alt="MKD sports water bottle" width="438" height="692"></div>
+            <div class="merch-card__body"><div><small>Drinkware</small><h3>Sports Water Bottle</h3></div><strong>$26.50</strong><p>A practical sports bottle with the creator branding wrapped around the body.</p><a class="btn" href="https://4ntysg-yd.myshopify.com/products/pun1sh3r-sports-water-bottle?variant=51375438528815" target="_blank" rel="noreferrer">Buy on Shopify <i class="bx bx-link-external"></i></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer" id="contact">
-    <p>&copy; 2025 Adam Naumovski (MKD_PUN1SH3R). All rights reserved.</p>
-    <!-- <p>For custom orders or support: <a href="mailto:your@email.com">your@email.com</a></p> -->
-  </footer>
+    <section class="section merch-note"><div class="container merch-note__card reveal"><i class="bx bx-shield-quarter"></i><div><h2>External checkout, clear expectations.</h2><p>Product availability, shipping, taxes and returns are shown on the Shopify product page before purchase.</p></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-shell"><p>© <span data-year>2026</span> Adam Naumovski · MKD Punisher.</p><div class="footer-links"><a href="index.html">Portfolio</a><a href="#merch">Back to top</a></div></div></footer>
 </body>
 </html>

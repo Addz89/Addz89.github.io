@@ -1,247 +1,216 @@
-let currencySymbol = '$';
+"use strict";
 
-// Adds sounds to buttons
-function soundAdd() {
-    const audio = new Audio("src/images/ES_Duffle Bag Drop 1 - SFX Producer.mp3");
-    audio.play()
-}
-function soundRemove() {
-    const audio = new Audio("src/images/ES_Jar Remove Lid 2 - SFX Producer.mp3");
-    audio.play()
-}
-function soundUp() {
-    const audio = new Audio("src/images/ES_Gun Holster Remove 3 - SFX Producer.mp3");
-    audio.play()
-}
-function soundDown() {
-    const audio = new Audio("src/images/ES_Cigarette Remove - SFX Producer.mp3");
-    audio.play()
-}
-function soundPay() {
-    const audio = new Audio("src/images/ES_Coins Drop 1 - SFX Producer.mp3");
-    audio.play()
-}
+const store = window.StoreModel;
 
-// Draws product list
-function drawProducts() {
-    let productList = document.querySelector('.products');
-    let productItems = '';
-    products.forEach((element) => {
-        if (element.productId > 100) {
-        productItems += `
-            <div class='Pc' data-productId='${element.productId}'>
-                <img src='${element.image}' class='PartsImg'>
-                <h3>${element.name}</h3>
-                <p>price: ${currencySymbol}${element.price}</p>
-                <button class='button'>Add to Cart</button>
-            </div>
-        `}})
-    // use innerHTML so that products only drawn once
-    productList.innerHTML = productItems;
+const ui = {
+  featured: document.querySelector("[data-featured-products]"),
+  parts: document.querySelector("[data-parts-products]"),
+  cartItems: document.querySelector("[data-cart-items]"),
+  cartCount: document.querySelector("[data-cart-count]"),
+  summaryCount: document.querySelector("[data-summary-count]"),
+  total: document.querySelector("[data-cart-total]"),
+  productTotal: document.querySelector("[data-product-total]"),
+  currency: document.querySelector("[data-currency]"),
+  currencySymbol: document.querySelector("[data-currency-symbol]"),
+  emptyButton: document.querySelector("[data-empty-cart]"),
+  cartJump: document.querySelector("[data-cart-jump]"),
+  checkoutForm: document.querySelector("[data-checkout-form]"),
+  cashReceived: document.querySelector("[data-cash-received]"),
+  receipt: document.querySelector("[data-receipt]"),
+  toast: document.querySelector("[data-toast]"),
+  year: document.querySelector("[data-store-year]"),
+  header: document.querySelector("[data-store-header]")
+};
+
+let toastTimer;
+
+function safeSound(filename) {
+  try {
+    const audio = new Audio(`src/images/${filename}`);
+    audio.volume = 0.28;
+    audio.play().catch(() => {});
+  } catch {
+    // Sound is an optional enhancement.
+  }
 }
 
-function drawCards() {
-    let productList = document.querySelector('.Container');
-    let productItems = '';
-    products.forEach((element) => {
-        if (element.productId < 100) {
-        productItems += `
-            <div class='container' data-productId='${element.productId}'>
-                <img src='${element.image}' class='PartsImg'>
-                <h3>${element.name}</h3>
-                <p>price: ${currencySymbol}${element.price}</p>
-                <button class='button'>Add to Cart</button>
-            </div>
-        `}})
-    // use innerHTML so that products only drawn once
-    productList.innerHTML = productItems;
+function showToast(message) {
+  if (!ui.toast) return;
+  ui.toast.textContent = message;
+  ui.toast.classList.add("is-visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => ui.toast.classList.remove("is-visible"), 1800);
 }
 
-// Draws cart
-function drawCart() {
-    let cartList = document.querySelector('.cart');
-    // clear cart before drawing
-    let cartItems = '';
-    cart.forEach((element) => {
-        let itemTotal = element.price * element.quantity;
-
-        cartItems += `
-            <div data-productId='${element.productId}'>
-                <h5>${element.name}</h5>
-                <h6>price: ${currencySymbol}${element.price}</h6>
-                <h6>quantity: ${element.quantity}</h6>
-                <h6>total: ${currencySymbol}${itemTotal}</h6>
-                <button onclick=soundUp() class="qup">+</button>
-                <button onclick=soundDown() class="qdown">-</button>
-                <button onclick=soundRemove() class="remove">remove</button>
-            </div>
-        `;
-    });
-    // use innerHTML so that cart products only drawn once
-    cart.length
-        ? (cartList.innerHTML = cartItems)
-        : (cartList.innerHTML = 'No Items');
+function productCard(product) {
+  return `
+    <article class="product-card">
+      <div class="product-card__image">
+        <span>${product.category}</span>
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3>${product.name}</h3>
+        <div class="product-card__price">${store.formatMoney(product.basePrice)}</div>
+        <button class="add-button" type="button" data-add-product="${product.id}">
+          <i class="bx bx-cart-add" aria-hidden="true"></i> Add to cart
+        </button>
+      </div>
+    </article>`;
 }
 
-// Draws checkout
-function drawCheckout() {
-    let checkout = document.querySelector('.cart-total');
-    checkout.innerHTML = '';
-
-    // run cartTotal() from script.js
-    let cartSum = cartTotal();
-    let div = document.createElement('div');
-    div.innerHTML = `<p>Cart Total: ${currencySymbol}${cartSum}`;
-    checkout.append(div);
+function renderProducts() {
+  const featured = store.PRODUCTS.filter((product) => product.featured);
+  const parts = store.PRODUCTS.filter((product) => !product.featured);
+  ui.featured.innerHTML = featured.map(productCard).join("");
+  ui.parts.innerHTML = parts.map(productCard).join("");
+  ui.productTotal.textContent = `${store.PRODUCTS.length} products`;
 }
 
-// Initialize store with products, cart, and checkout
-drawCards();
-drawProducts();
-drawCart();
-drawCheckout();
+function cartItemMarkup({ product, quantity }) {
+  return `
+    <article class="cart-item" data-cart-item="${product.id}">
+      <img src="${product.image}" alt="" loading="lazy">
+      <div class="cart-item__copy">
+        <h3 title="${product.name}">${product.name}</h3>
+        <span>${store.formatMoney(product.basePrice * quantity)}</span>
+        <div class="quantity-control" aria-label="Quantity controls for ${product.name}">
+          <button type="button" data-quantity-change="-1" aria-label="Decrease quantity"><i class="bx bx-minus"></i></button>
+          <span>${quantity}</span>
+          <button type="button" data-quantity-change="1" aria-label="Increase quantity"><i class="bx bx-plus"></i></button>
+        </div>
+      </div>
+      <button class="remove-item" type="button" data-remove-product aria-label="Remove ${product.name}"><i class="bx bx-x"></i></button>
+    </article>`;
+}
 
-document.querySelector('.products').addEventListener('click', (e) => {
-    let productId = e.target.parentNode.getAttribute('data-productId');
-    productId *= 1;
-    addProductToCart(productId);
-    drawCart();
-    drawCheckout();
+function clearReceipt() {
+  if (!ui.receipt) return;
+  ui.receipt.hidden = true;
+  ui.receipt.classList.remove("is-error");
+  ui.receipt.textContent = "";
+}
+
+function renderCart() {
+  const items = store.cartItems();
+  const count = store.itemCount();
+  const total = store.formatMoney(store.totalAUD());
+
+  ui.cartCount.textContent = count;
+  ui.summaryCount.textContent = count;
+  ui.total.textContent = total;
+  ui.emptyButton.disabled = count === 0;
+  ui.checkoutForm.querySelector("button").disabled = count === 0;
+
+  ui.cartItems.innerHTML = items.length
+    ? items.map(cartItemMarkup).join("")
+    : `<div class="empty-cart"><i class="bx bx-cart"></i><strong>Your cart is empty</strong><span>Add a product to start the demo.</span></div>`;
+}
+
+function renderAll() {
+  renderProducts();
+  renderCart();
+  const config = store.CURRENCIES[store.state.currency];
+  ui.currencySymbol.textContent = config.symbol;
+  clearReceipt();
+}
+
+function handleProductClick(event) {
+  const button = event.target.closest("[data-add-product]");
+  if (!button) return;
+  const product = store.getProduct(button.dataset.addProduct);
+  if (!product) return;
+  store.add(product.id);
+  safeSound("ES_Duffle Bag Drop 1 - SFX Producer.mp3");
+  renderCart();
+  clearReceipt();
+  showToast(`${product.name} added to cart`);
+}
+
+ui.featured.addEventListener("click", handleProductClick);
+ui.parts.addEventListener("click", handleProductClick);
+
+ui.cartItems.addEventListener("click", (event) => {
+  const item = event.target.closest("[data-cart-item]");
+  if (!item) return;
+  const id = Number(item.dataset.cartItem);
+
+  const quantityButton = event.target.closest("[data-quantity-change]");
+  if (quantityButton) {
+    const change = Number(quantityButton.dataset.quantityChange);
+    store.changeQuantity(id, change);
+    safeSound(change > 0 ? "ES_Gun Holster Remove 3 - SFX Producer.mp3" : "ES_Cigarette Remove - SFX Producer.mp3");
+    renderCart();
+    clearReceipt();
+    return;
+  }
+
+  if (event.target.closest("[data-remove-product]")) {
+    const product = store.getProduct(id);
+    store.remove(id);
+    safeSound("ES_Jar Remove Lid 2 - SFX Producer.mp3");
+    renderCart();
+    clearReceipt();
+    showToast(`${product?.name || "Item"} removed`);
+  }
 });
 
-document.querySelector('.Container').addEventListener('click', (e) => {
-    let productId = e.target.parentNode.getAttribute('data-productId');
-    productId *= 1;
-    addProductToCart(productId);
-    drawCart();
-    drawCheckout();
+ui.emptyButton.addEventListener("click", () => {
+  if (!store.itemCount()) return;
+  store.empty();
+  safeSound("ES_Jar Remove Lid 2 - SFX Producer.mp3");
+  renderCart();
+  clearReceipt();
+  showToast("Cart emptied");
 });
 
-// Event delegation used to support dynamically added cart items
-document.querySelector('.cart').addEventListener('click', (e) => {
-    // Helper nested higher order function to use below
-    // Must be nested to have access to the event target
-    // Takes in a cart function as an agrument
-    function runCartFunction(fn) {
-        let productId = e.target.parentNode.getAttribute('data-productId');
-        productId *= 1;
-        for (let i = cart.length - 1; i > -1; i--) {
-            if (cart[i].productId === productId) {
-                let productId = cart[i].productId;
-                fn(productId);
-            }
-        }
-        // force cart and checkout redraw after cart function completes
-        drawCart();
-        drawCheckout();
-    }
-
-    // check the target's class and run function based on class
-    if (e.target.classList.contains('remove')) {
-        // run removeProductFromCart() from script.js
-        runCartFunction(removeProductFromCart);
-    } else if (e.target.classList.contains('qup')) {
-        // run increaseQuantity() from script.js
-        runCartFunction(increaseQuantity);
-    } else if (e.target.classList.contains('qdown')) {
-        // run decreaseQuantity() from script.js
-        runCartFunction(decreaseQuantity);
-    }
+ui.currency.addEventListener("change", (event) => {
+  store.state.currency = event.target.value;
+  renderAll();
+  showToast(`Display changed to ${event.target.value}`);
 });
 
-document.querySelector('.pay').addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Get input cash received field value, set to number
-    let amount = document.querySelector('.received').value;
-    amount *= 1;
-
-    // Set cashReturn to return value of pay()
-    let cashReturn = pay(amount);
-
-    let paymentSummary = document.querySelector('.pay-summary');
-    let div = document.createElement('div');
-
-    // If total cash received is greater than cart total thank customer
-    // Else request additional funds
-    if (cashReturn >= 0) {
-        div.innerHTML = `
-            <div class = 'receipt'>
-            Cash Received: ${currencySymbol}${amount}<br>
-            Cash Returned: ${currencySymbol}${cashReturn}<br>
-            Thank you!<br>
-            </div>
-        `;
-        emptyCart();
-        drawCart();
-        drawCheckout();
-        total = 0;
-    } else {
-        // reset cash field for next entry
-        document.querySelector('.received').value = '';
-        div.innerHTML = `
-            <div class = 'receipt'>
-            <br>
-            Cash Received: ${currencySymbol}${amount}<br>
-            Remaining Balance: ${cashReturn}$<br>
-            Please pay additional amount.<br>
-            </div>
-        `;
-    }
-
-    paymentSummary.append(div);
+ui.cartJump.addEventListener("click", () => {
+  document.querySelector("#cart")?.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-/* Removes all items from cart */
- function dropCart(){
-     let shoppingCart = document.querySelector('.empty-btn');
-     let div = document.createElement("button");
-     div.classList.add("empty");
-     div.innerHTML =`Empty Your Cart`;
-     shoppingCart.append(div);
- }
- dropCart();
+ui.checkoutForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  clearReceipt();
 
- document.querySelector('.empty-btn').addEventListener('click', (e) => {
-     soundRemove();
-     if (e.target.classList.contains('empty')){
-         emptyCart();
-         drawCart();
-         drawCheckout();
-     }
- })
+  const total = store.convertedValue(store.totalAUD());
+  const received = Number(ui.cashReceived.value);
+  const formatter = new Intl.NumberFormat(store.CURRENCIES[store.state.currency].locale, {
+    style: "currency",
+    currency: store.CURRENCIES[store.state.currency].currency,
+    maximumFractionDigits: store.state.currency === "JPY" ? 0 : 2
+  });
 
-/*Initializes currencies for currency converter */
-function currencyBuilder(){
-     let currencyPicker = document.querySelector('.currency-selector');
-     let select = document.createElement("select");
-     select.classList.add("currency-select");
-     select.innerHTML = `<option value="AUD">AUD</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="YEN">YEN</option>
-                    `;
-     currencyPicker.append(select);
- }
- currencyBuilder();
+  ui.receipt.hidden = false;
 
- document.querySelector('.currency-select').addEventListener('change', function handleChange(event) {
-     switch(event.target.value){
-         case 'EUR':
-             currencySymbol = '€';
-             break;
-         case 'YEN':
-             currencySymbol = '¥';
-             break;
-         default:
-             currencySymbol = '$';
-             break;
-      }
+  if (!Number.isFinite(received) || received <= 0) {
+    ui.receipt.classList.add("is-error");
+    ui.receipt.textContent = "Enter a valid cash amount to continue.";
+    return;
+  }
 
-     currency(event.target.value);
-     drawProducts();
-     drawCards()
-     drawCart();
-     drawCheckout();
- });
+  if (received < total) {
+    ui.receipt.classList.add("is-error");
+    ui.receipt.innerHTML = `<strong>More payment needed.</strong><br>Remaining balance: ${formatter.format(total - received)}`;
+    return;
+  }
 
+  ui.receipt.innerHTML = `<strong>Demo sale complete.</strong><br>Received: ${formatter.format(received)}<br>Change: ${formatter.format(received - total)}`;
+  safeSound("ES_Coins Drop 1 - SFX Producer.mp3");
+  store.empty();
+  ui.cashReceived.value = "";
+  renderCart();
+  showToast("Demo checkout completed");
+});
+
+window.addEventListener("scroll", () => {
+  ui.header?.classList.toggle("is-scrolled", window.scrollY > 12);
+}, { passive: true });
+
+ui.year.textContent = new Date().getFullYear();
+renderAll();

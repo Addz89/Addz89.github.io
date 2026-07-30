@@ -1,56 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Adam's Portfilio</title>
-
-    <!---custom css link-->
-    <link rel="stylesheet" href="styles.css">
-
-    <!---boxiocons link--->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logos"><img src="/images/logo_1.png" alt="logo_1"><span class="animate" style="--i:1;"></span></a>
-
-        <!-- <div class="bx bx-menu" id="menu-icon"> <span class="animate" style="--i:2;"></span></div> -->
-
-        <nav class="navbar">
-            <a href="index.html" class="active">Home</a>
-
-            <span class="active-nav"></span>
-            <span class="animate" style="--i:2;"></span>
-        </nav>
-    </header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play three Python projects by Adam Naumovski: Barrel Jump, an adventure game and rock paper scissors.">
+  <meta name="theme-color" content="#050b12">
+  <title>Python Games | Adam Naumovski</title>
+  <link rel="icon" type="image/png" href="images/logo_lo.png">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1 class = "barrel"><i class='bx bx-bullseye bx-tada' style='color:#e04036'></i>  BARREL JUMP  <i class='bx bx-bullseye bx-tada' style='color:#e04036'  ></i></h1>
-    <h2 class="h2">Please Press Run <i class='bx bxs-chevron-down'></i></h2>
-    <iframe class="jump" src="https://trinket.io/embed/pygame/3d6a713280?outputOnly=true" width="80%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-    <div class="swordline"></div>
-    <h3 class="h3"><i class='bx bx-tv bx-tada' style='color:white' ></i>Adventure Game<i class='bx bx-tv bx-tada' style='color:white' ></i></h3>
-    <h2 class="h2">Please Press Run <i class='bx bxs-chevron-down'></i></h2>
-    <iframe class="adventure" src="https://trinket.io/embed/python3/02068ab4d9?outputOnly=true&runOption=run" width="80%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-    <div class="swordline"></div>
-    <h4 class="h4">Rock, Paper, Scissors</h4>
-    <h2 class="h2">Please Press Run <i class='bx bxs-chevron-down'></i></h2>
-    <iframe class="RPS_screen" src="https://trinket.io/embed/python3/94cb7de4fc?outputOnly=true&runOption=run" width="80%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-    <!-- footer design -->
-    <div class="swordline"></div>
-    <p class="about">These games have been made with Python, i have had alot of fun creating. There is alot more to come...
-        Thanks for playing..
-    </p>
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2025 by Adam Naumovski | All Rights Reserved.</p>
+  <a class="skip-link" href="#main">Skip to games</a>
 
-            <span class="animate scroll" style="--i:1;"></span>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Back to Adam Naumovski portfolio">
+        <img src="images/logo_223.png" alt="Adam Naumovski programmer logo" width="295" height="104">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="game-navigation" aria-expanded="false" data-nav-toggle><span></span></button>
+      <nav class="site-nav" id="game-navigation" aria-label="Page navigation" data-nav>
+        <a href="index.html">Portfolio</a>
+        <a class="active" href="#games">Games</a>
+        <a href="#about-games">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="games-hero" id="games">
+      <div class="container games-hero__grid">
+        <div class="reveal">
+          <p class="eyebrow">Playable projects</p>
+          <h1 class="display-title">Python games, built to <span class="accent">learn by doing.</span></h1>
+          <p class="lead">These projects explore game loops, player input, scoring, object-oriented programming and interactive storytelling. Press Run inside each game to start.</p>
+          <div class="button-row">
+            <a class="btn" href="#barrel-game">Start playing <i class="bx bx-down-arrow-alt" aria-hidden="true"></i></a>
+            <a class="btn btn--secondary" href="index.html#work">Back to portfolio</a>
+          </div>
         </div>
+        <div class="terminal-card card reveal" aria-hidden="true">
+          <div class="terminal-card__bar"><i></i><i></i><i></i><span>python_games.py</span></div>
+          <pre><code><b>class</b> GameCollection:
+    def __init__(self):
+        self.games = [
+            "Barrel Jump",
+            "Adventure Game",
+            "Rock Paper Scissors"
+        ]
+
+    def play(self):
+        return "Press Run to begin"</code></pre>
         </div>
-    </footer>
-    <!---custom js link-->
-    <script src="script.js"></script>
+      </div>
+    </section>
+
+    <section class="section game-list">
+      <div class="container">
+        <article class="game-card reveal" id="barrel-game">
+          <div class="game-card__intro">
+            <span class="game-number">Game 01</span>
+            <i class="bx bx-target-lock" aria-hidden="true"></i>
+            <h2>Barrel Jump</h2>
+            <p>An arcade-style Pygame project focused on timing, obstacles, scoring and replayability.</p>
+            <span class="run-note"><i class="bx bx-play"></i> Press Run in the player</span>
+          </div>
+          <div class="game-embed"><iframe title="Play Barrel Jump" src="https://trinket.io/embed/pygame/3d6a713280?outputOnly=true" loading="lazy" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="game-card reveal">
+          <div class="game-card__intro">
+            <span class="game-number">Game 02</span>
+            <i class="bx bx-map-alt" aria-hidden="true"></i>
+            <h2>Adventure Game</h2>
+            <p>A text-driven Python experience using decisions, branching logic and player interaction.</p>
+            <span class="run-note"><i class="bx bx-play"></i> Press Run in the player</span>
+          </div>
+          <div class="game-embed"><iframe title="Play the Python Adventure Game" src="https://trinket.io/embed/python3/02068ab4d9?outputOnly=true&runOption=run" loading="lazy" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="game-card reveal">
+          <div class="game-card__intro">
+            <span class="game-number">Game 03</span>
+            <i class="bx bx-shape-circle" aria-hidden="true"></i>
+            <h2>Rock, Paper, Scissors</h2>
+            <p>A clean object-oriented take on the classic game, with computer choices and round results.</p>
+            <span class="run-note"><i class="bx bx-play"></i> Press Run in the player</span>
+          </div>
+          <div class="game-embed"><iframe title="Play Rock Paper Scissors" src="https://trinket.io/embed/python3/94cb7de4fc?outputOnly=true&runOption=run" loading="lazy" allowfullscreen></iframe></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-games" id="about-games">
+      <div class="container about-games__card card reveal">
+        <div><p class="eyebrow">Why these matter</p><h2 class="section-title">Small games. Big lessons.</h2></div>
+        <p>These were some of the projects that helped turn programming theory into practical skills. Every broken loop, unexpected input and scoring bug forced better problem-solving—and that process still shapes how I build websites and software today.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-shell"><p>© <span data-year>2026</span> Adam Naumovski.</p><div class="footer-links"><a href="index.html">Portfolio</a><a href="#games">Back to top</a></div></div></footer>
 </body>
 </html>

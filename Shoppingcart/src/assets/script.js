@@ -1,259 +1,121 @@
-/* An array that assigns values and creates products on site */
-const products = [
-  {
-    name: '500gb HDD',
-    price: 100,
-    quantity: 0,
-    productId: 101,
-    basePrice: 100,
-    image: "src/images/500gbharddrive.png"
-  },
-  {
-    name: "1 Tb Hard Drive",
-    price: 120,
-    quantity: 0,
-    productId: 102,
-    basePrice: 120,
-    image: "src/images/1tbharddrive.png"
-  },
-  {
-    name: "4 Tb Hard Drive",
-    price: 175,
-    quantity: 0,
-    productId: 103,
-    basePrice: 175,
-    image: "src/images/4tbharddrive.png"
-  },
-  {
-    name: "6 Tb Hard Drive",
-    price: 200,
-    quantity: 0,
-    productId: 104,
-    basePrice: 200,
-    image: "src/images/6tbharddrive.png"
-  },
-  {
-    name: "Razer Mouse",
-    price: 80,
-    quantity: 0,
-    productId: 105,
-    basePrice: 80,
-    image: "src/images/Razermouse.png"
-  },
-  { 
-    name: "Dragon Gaming Mouse",
-    price: 150,
-    quantity: 0,
-    productId: 106,
-    basePrice: 150,
-    image: "src/images/reddragonmouse.jpg"
-  },
-  { 
-    name: "Bengoo Mouse",
-    price: 180,
-    quantity: 0,
-    productId: 107,
-    basePrice: 180,
-    image: "src/images/bengoomouse.jpg"
-  },
-  {
-    name: "Logitech Mouse",
-    price: 200,
-    quantity: 0,
-    productId: 108,
-    basePrice: 200,
-    image: "src/images/gamingmouse.jpg"
-  },
-  {
-    name: "GIGABYTE GeForce RTX 4060",
-    price: 540,
-    quantity: 0,
-    productId: 109,
-    basePrice: 540,
-    image: "src/images/graphicscard1.png"
-  },
-  {
-    name: "ASUS NVIDIA GeForce RTX 4070 Ti",
-    price: 700,
-    quantity: 0,
-    productId: 110,
-    basePrice: 700,
-    image: "src/images/graphicscard2.png"
-  },
-  {
-    name: "MSI NVIDIA GeForce RTX 4070 Ti",
-    price: 800,
-    quantity: 0,
-    productId: 111,
-    basePrice: 800,
-    image: "src/images/graphicscard3.png"
-  },
-  {
-    name: "MSI LGA1700 ATX Motherboard",
-    price: 300,
-    quantity: 0,
-    productId: 112,
-    basePrice: 300,
-    image: "src/images/motherboard1.jpg"
-  },
-  {
-    name: "Gigabyte B760 1700 ATX Motherboard",
-    price: 500,
-    quantity: 0,
-    productId: 113,
-    basePrice: 500,
-    image: "src/images/motherboard2.jpg"
-  },
-  {   
-    name: "Segotep T1 Gaming PC Case",
-    price: 1500,
-    quantity: 0,
-    productId: 96,
-    basePrice: 1500,
-    image: "src/images/pccase1.png"
-  },
-  {
-    name: "AMANSON ATX Gaming Case",
-    price: 2500,
-    quantity: 0,
-    productId: 95,
-    basePrice: 2500,
-    image: "src/images/pccase2.png"
-  },
-  {
-    name: "KEDIERS PC ATX Tower",
-    price: 3000,
-    quantity: 0,
-    productId: 94,
-    basePrice: 3000,
-    image: "src/images/pccase3.png"
-  },
-  {
-    name: "DistroCase Water Cooled",
-    price: 3150,
-    quantity: 0,
-    productId: 93,
-    basePrice: 3150,
-    image: "src/images/pccase4.png"
-  }
-]
-// Function to get product by productId
-function productById(productId) {
-  for (let index = 0; index < products.length; ++index) {
-    if (productId === products[index].productId) {
-      return products[index]
-    }
-  }
-}
-/* Declares an empty array named cart to hold the items in the cart */
-let cart = [];
-/* Creates a function named addProductToCart that takes in the product productId as an argument
-  - addProductToCart should get the correct product based on the productId
-  - addProductToCart should then increase the product's quantity
-  - if the product is not already in the cart, add it to the cart
-*/
-function addProductToCart(productId) {
-  for (let index = 0; index < products.length; ++index) {
-    if (productId === products[index].productId) {
-      if (cart.includes(products[index]) === false) {
-        cart.push(products[index]);
-        ++productById(productId).quantity;
-        soundAdd();
-    } else if (cart.includes(products[index]) === true) {
-      ++productById(productId).quantity;
-      soundAdd();
-    }
-  }
-}
-}
-/* Creates a function named increaseQuantity that takes in the productId as an argument
-  - increaseQuantity should get the correct product based on the productId
-  - increaseQuantity should then increase the product's quantity
-*/
-function increaseQuantity(productId) {
-  ++productById(productId).quantity;
-}
-/* Creates a function named decreaseQuantity that takes in the productId as an argument
-  - decreaseQuantity should get the correct product based on the productId
-  - decreaseQuantity should decrease the quantity of the product
-  - if the function decreases the quantity to 0, the product is removed from the cart
-*/
-function decreaseQuantity(productId) {
-  if (productById(productId).quantity > 1) {
-    --productById(productId).quantity;
-  } else if (productById(productId).quantity === 1) {
-    removeProductFromCart(productId);
-  }
-}
-/* Creates a function named removeProductFromCart that takes in the productId as an argument
-  - removeProductFromCart should get the correct product based on the productId
-  - removeProductFromCart should update the product quantity to 0
-  - removeProductFromCart should remove the product from the cart
-*/
-function removeProductFromCart(productId) {
-  productById(productId).quantity = 0;
-  (productById(productId).quantity < 1 ? cart.splice(cart.indexOf(productById(productId)), 1) : null);
-}
-/* Creates a function named cartTotal that has no parameters
-  - cartTotal should iterate through the cart to get the total of all products
-  - cartTotal should return the sum of the products in the cart
-*/
-function cartTotal() {
-  let total = 0;
-  cart.forEach((item) => {
-    total += (item.price * item.quantity);
-  }); return total;
-}
-/* Creates a function called emptyCart that empties the products from the cart */
-function emptyCart() {
-  for (let index = 0; index < cart.length; ++index) {
-    cart[index].quantity = 0;
-  }
-  cart.splice(0, cart.length - 1);
-  cart = [];
-}
-/* Creates a function named pay that takes in an amount as an argument*/
-let total = 0
+"use strict";
 
-let pay = function pay(amount) {
-  total += amount;
-  let newTotal = (total - cartTotal());
-  return newTotal;
-}
-/* Currency converter*/
-function currency() {
-  let USD = 1.000;
-  let EUR = 0.9965;
-  let YEN = 143.1875;
-  let AUD = 1.46; // example rate, update as needed
+const PRODUCTS = [
+  { id: 96, name: "Segotep T1 Gaming PC Case", category: "Gaming case", basePrice: 1500, image: "src/images/pccase1.png", featured: true },
+  { id: 95, name: "AMANSON ATX Gaming Case", category: "Gaming case", basePrice: 2500, image: "src/images/pccase2.png", featured: true },
+  { id: 94, name: "KEDIERS PC ATX Tower", category: "Gaming case", basePrice: 3000, image: "src/images/pccase3.png", featured: true },
+  { id: 93, name: "DistroCase Water Cooled", category: "Gaming build", basePrice: 3150, image: "src/images/pccase4.png", featured: true },
+  { id: 101, name: "500GB Hard Drive", category: "Storage", basePrice: 100, image: "src/images/500gbharddrive.png" },
+  { id: 102, name: "1TB Hard Drive", category: "Storage", basePrice: 120, image: "src/images/1tbharddrive.png" },
+  { id: 103, name: "4TB Hard Drive", category: "Storage", basePrice: 175, image: "src/images/4tbharddrive.png" },
+  { id: 104, name: "6TB Hard Drive", category: "Storage", basePrice: 200, image: "src/images/6tbharddrive.png" },
+  { id: 105, name: "Razer Gaming Mouse", category: "Mouse", basePrice: 80, image: "src/images/Razermouse.png" },
+  { id: 106, name: "Redragon Gaming Mouse", category: "Mouse", basePrice: 150, image: "src/images/reddragonmouse.jpg" },
+  { id: 107, name: "Bengoo Gaming Mouse", category: "Mouse", basePrice: 180, image: "src/images/bengoomouse.jpg" },
+  { id: 108, name: "Logitech Gaming Mouse", category: "Mouse", basePrice: 200, image: "src/images/gamingmouse.jpg" },
+  { id: 109, name: "Gigabyte GeForce RTX 4060", category: "Graphics card", basePrice: 540, image: "src/images/graphicscard1.png" },
+  { id: 110, name: "ASUS GeForce RTX 4070 Ti", category: "Graphics card", basePrice: 700, image: "src/images/graphicscard2.png" },
+  { id: 111, name: "MSI GeForce RTX 4070 Ti", category: "Graphics card", basePrice: 800, image: "src/images/graphicscard3.png" },
+  { id: 112, name: "MSI LGA1700 ATX Motherboard", category: "Motherboard", basePrice: 300, image: "src/images/motherboard1.jpg" },
+  { id: 113, name: "Gigabyte B760 ATX Motherboard", category: "Motherboard", basePrice: 500, image: "src/images/motherboard2.jpg" }
+];
 
-  for (let index = 0; index < products.length; ++index) {
-    if (currencySymbol === '$') {
-      products[index].price = (USD * products[index].basePrice).toFixed(2);
-    } else if (currencySymbol === '€') {
-      products[index].price = (EUR * products[index].basePrice).toFixed(2);
-    } else if (currencySymbol === '¥') {
-      products[index].price = (YEN * products[index].basePrice).toFixed(2);
-    } else if (currencySymbol === 'A$') {
-      products[index].price = (AUD * products[index].basePrice).toFixed(2);
-    }
+const CURRENCIES = {
+  AUD: { locale: "en-AU", currency: "AUD", symbol: "A$", rate: 1 },
+  USD: { locale: "en-US", currency: "USD", symbol: "US$", rate: 0.66 },
+  EUR: { locale: "en-IE", currency: "EUR", symbol: "€", rate: 0.61 },
+  JPY: { locale: "ja-JP", currency: "JPY", symbol: "¥", rate: 101 }
+};
+
+function loadCart() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("gaming-store-cart") || "{}");
+    return saved && typeof saved === "object" ? saved : {};
+  } catch {
+    return {};
   }
 }
-/* The following is for running unit tests. 
-   To fully complete this project, it is expected that all tests pass.
-   Run the following command in terminal to run tests
-   npm run test
-*/
-module.exports = {
-  products,
-  cart,
-  addProductToCart,
-  increaseQuantity,
-  decreaseQuantity,
-  removeProductFromCart,
-  cartTotal,
-  pay, 
-  emptyCart,
-  total,
-  currency
+
+const state = {
+  currency: "AUD",
+  cart: loadCart()
+};
+
+function saveCart() {
+  try {
+    localStorage.setItem("gaming-store-cart", JSON.stringify(state.cart));
+  } catch {
+    // The demo still works when storage is blocked.
+  }
 }
+
+function getProduct(id) {
+  return PRODUCTS.find((product) => product.id === Number(id));
+}
+
+function add(id) {
+  if (!getProduct(id)) return;
+  state.cart[id] = (Number(state.cart[id]) || 0) + 1;
+  saveCart();
+}
+
+function changeQuantity(id, change) {
+  if (!getProduct(id)) return;
+  const next = (Number(state.cart[id]) || 0) + change;
+  if (next <= 0) delete state.cart[id];
+  else state.cart[id] = next;
+  saveCart();
+}
+
+function remove(id) {
+  delete state.cart[id];
+  saveCart();
+}
+
+function empty() {
+  state.cart = {};
+  saveCart();
+}
+
+function cartItems() {
+  return Object.entries(state.cart)
+    .map(([id, quantity]) => ({ product: getProduct(id), quantity: Number(quantity) }))
+    .filter((item) => item.product && item.quantity > 0);
+}
+
+function itemCount() {
+  return cartItems().reduce((sum, item) => sum + item.quantity, 0);
+}
+
+function totalAUD() {
+  return cartItems().reduce((sum, item) => sum + item.product.basePrice * item.quantity, 0);
+}
+
+function convertedValue(audValue) {
+  return audValue * CURRENCIES[state.currency].rate;
+}
+
+function formatMoney(audValue) {
+  const config = CURRENCIES[state.currency];
+  return new Intl.NumberFormat(config.locale, {
+    style: "currency",
+    currency: config.currency,
+    maximumFractionDigits: state.currency === "JPY" ? 0 : 2
+  }).format(convertedValue(audValue));
+}
+
+window.StoreModel = {
+  PRODUCTS,
+  CURRENCIES,
+  state,
+  getProduct,
+  add,
+  changeQuantity,
+  remove,
+  empty,
+  cartItems,
+  itemCount,
+  totalAUD,
+  convertedValue,
+  formatMoney
+};

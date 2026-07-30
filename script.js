@@ -1,48 +1,76 @@
-// toggle icon navbar
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+"use strict";
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+const header = document.querySelector("[data-header]");
+const nav = document.querySelector("[data-nav]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const navLinks = [...document.querySelectorAll("[data-nav] a[href^='#']")];
+const sections = [...document.querySelectorAll("main section[id]")];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function setMenu(open) {
+  if (!nav || !navToggle) return;
+  nav.classList.toggle("is-open", open);
+  navToggle.setAttribute("aria-expanded", String(open));
+  navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
 }
 
-// scroll sections
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+navToggle?.addEventListener("click", () => setMenu(!nav?.classList.contains("is-open")));
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 600;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+navLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
 
-        if(top >= offset && top < offset + height) {
-            // active navbar links
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-            // active sections for animation on scroll
-            sec.classList.add('show-animate');
-        }
-        // if want to use animation the repeats on scroll use this
-            else {
-                sec.classList.remove('show-animate');
-        }
-    })
-    // sticky header
-    let header = document.querySelector('header');
+document.addEventListener("click", (event) => {
+  if (!nav?.classList.contains("is-open")) return;
+  if (!nav.contains(event.target) && !navToggle?.contains(event.target)) setMenu(false);
+});
 
-    header.classList.toggle('sticky', window.scrollY > 100);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setMenu(false);
+});
 
-    // remove toggle icon and navbar when click navbar links(scroll)
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-
-    // animation footer on scroll
-    let footer = document.querySelector('footer');
-
-    footer.classList.toggle('show-animate', window.innerHeight + window.scrollY >= document.body.scrollHeight);
+function updateHeader() {
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
 }
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.13, rootMargin: "0px 0px -40px" });
+
+  document.querySelectorAll(".reveal").forEach((element, index) => {
+    element.style.transitionDelay = reduceMotion.matches ? "0ms" : `${Math.min(index % 4, 3) * 70}ms`;
+    revealObserver.observe(element);
+  });
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+
+    navLinks.forEach((link) => {
+      const active = link.getAttribute("href") === `#${visible.target.id}`;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  }, { threshold: [0.2, 0.45, 0.7], rootMargin: "-20% 0px -58%" });
+
+  sections.forEach((section) => sectionObserver.observe(section));
+} else {
+  document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+}
+
+document.querySelectorAll("[data-year]").forEach((node) => {
+  node.textContent = new Date().getFullYear();
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 880) setMenu(false);
+});

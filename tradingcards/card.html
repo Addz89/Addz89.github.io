@@ -1,84 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Retro Hero Trading Cards</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A retro comic-inspired collection of hero trading cards.">
+  <meta name="theme-color" content="#0a0907">
+  <title>Retro Hero Trading Cards | Adam Naumovski</title>
+  <link rel="icon" type="image/png" href="../images/logo_lo.png">
 
-  <!-- Google Font for that pulp‑comic vibe -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto+Serif:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  
+  <a class="skip-link" href="#collection">Skip to the cards</a>
 
-  <!-- simple nav -->
-  <nav>
-    <a href="../index.html" class="home-btn"> Home</a>
+  <header class="site-header">
+    <a class="back-link" href="../index.html" aria-label="Back to Adam's portfolio">
+      <span aria-hidden="true">←</span>
+      <span>Back to portfolio</span>
+    </a>
+    <p class="edition">Collector Series · 2026</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__stars" aria-hidden="true">
+        <span></span><b>★</b><span></span>
+      </div>
+      <h1 id="page-title"><span>Retro Hero</span> Trading Cards</h1>
+      <p>A collection of legends</p>
+    </section>
+
+    <section class="collection" id="collection" aria-label="Hero card collection">
+      <article class="hero-card hero-card--punisher" tabindex="0" aria-label="The Punisher trading card. Press Enter for a closer view.">
+        <div class="hero-card__inner">
+          <header class="hero-card__header">
+            <span class="card-number">No. 001</span>
+            <h2>The Punisher</h2>
+            <span class="card-class">Vigilante</span>
+          </header>
+
+          <figure class="hero-card__art">
+            <img src="punisher2.png" alt="The Punisher in tactical gear" width="680" height="900">
+            <figcaption>Tactical specialist</figcaption>
+          </figure>
+
+          <div class="hero-card__details">
+            <section class="power-block">
+              <div class="score">
+                <span>Power</span>
+                <strong>100</strong>
+              </div>
+              <div>
+                <h3>Tactical Mastermind</h3>
+                <p><b>+30 ATK</b> when attacking lawbreakers.</p>
+              </div>
+            </section>
+
+            <section class="ability-block">
+              <span>Ability</span>
+              <div>
+                <h3>Relentless Vengeance</h3>
+                <p>Can strike twice when wounded.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-card hero-card--superman" tabindex="0" aria-label="Superman trading card. Press Enter for a closer view.">
+        <div class="hero-card__inner">
+          <header class="hero-card__header">
+            <span class="card-number">No. 002</span>
+            <h2>Superman</h2>
+            <span class="card-class">Guardian</span>
+          </header>
+
+          <figure class="hero-card__art">
+            <img src="superman.png" alt="Superman standing heroically" width="680" height="900">
+            <figcaption>Last son of Krypton</figcaption>
+          </figure>
+
+          <div class="hero-card__details">
+            <section class="power-block">
+              <div class="score">
+                <span>Power</span>
+                <strong>50</strong>
+              </div>
+              <div>
+                <h3>Solar-Charged Might</h3>
+                <p><b>+50 ATK</b> while fighting in sunlight.</p>
+              </div>
+            </section>
+
+            <section class="ability-block">
+              <span>Ability</span>
+              <div>
+                <h3>Man of Steel</h3>
+                <p>Ignores the first damage received each turn.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-card hero-card--hulk" tabindex="0" aria-label="Hulk trading card. Press Enter for a closer view.">
+        <div class="hero-card__inner">
+          <header class="hero-card__header">
+            <span class="card-number">No. 003</span>
+            <h2>Hulk</h2>
+            <span class="card-class">Powerhouse</span>
+          </header>
+
+          <figure class="hero-card__art">
+            <img src="hulk.png" alt="Hulk ready for battle" width="680" height="900">
+            <figcaption>Strength without limit</figcaption>
+          </figure>
+
+          <div class="hero-card__details">
+            <section class="power-block">
+              <div class="score">
+                <span>Power</span>
+                <strong>75</strong>
+              </div>
+              <div>
+                <h3>Rage Surge</h3>
+                <p><b>+5 ATK</b> for every hit taken.</p>
+              </div>
+            </section>
+
+            <section class="ability-block">
+              <span>Ability</span>
+              <div>
+                <h3>Unstoppable</h3>
+                <p>Cannot be stunned or slowed.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <p class="interaction-hint">
+      <span aria-hidden="true">✦</span>
+      Select a card for a closer look
+      <span aria-hidden="true">✦</span>
+    </p>
+  </main>
+
+  <dialog class="card-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close card view">×</button>
+    <div class="dialog-card" id="dialog-card"></div>
+    <p id="dialog-title" class="sr-only">Expanded trading card</p>
+  </dialog>
+
+  <nav class="project-nav" aria-label="Explore more portfolio projects">
+    <span>More projects</span>
+    <a href="../Python_games.html">Python Games <b aria-hidden="true">→</b></a>
+    <a href="../Shoppingcart/store.html">Gaming Store <b aria-hidden="true">→</b></a>
+    <a href="../Barreljump.html">Barrel Jump <b aria-hidden="true">→</b></a>
   </nav>
-  <br><br>
 
-  <h1 class="page-title">Retro Hero Trading Cards</h1>
-  <br><br>
-
-
-  <section class="card-grid">
-    <!-- PUNISHER -->
-    <article class="card">
-      <header class="card__header">THE PUNISHER</header>
-
-      <figure class="card__art">
-        <!-- 340 × 450 works well; replace with your own image -->
-        <img src="punisher2.png" alt="The Punisher">
-      </figure>
-
-      <div class="card__stats">
-        <h3>POWER&nbsp;<span class="stat">+100</span></h3>
-        <p class="stat-desc"><strong>Tactical Mastermind</strong><br>+30 ATK when attacking lawbreakers</p>
-      </div>
-
-      <div class="card__ability">
-        <h3>ABILITY</h3>
-        <p class="ability-desc"><strong>Relentless Vengeance</strong><br>Can strike twice when wounded</p>
-      </div>
-    </article>
-
-    <!-- SUPERMAN -->
-    <article class="card">
-      <header class="card__header">SUPERMAN</header>
-
-      <figure class="card__art">
-        <img src="superman.png" alt="Superman">
-      </figure>
-
-      <div class="card__stats">
-        <h3>POWER&nbsp;<span class="stat">+50</span></h3>
-        <p class="stat-desc"><strong>Solar‑Charged Might</strong><br>+50 ATK in sunlight</p>
-      </div>
-
-      <div class="card__ability">
-        <h3>ABILITY</h3>
-        <p class="ability-desc"><strong>Man of Steel</strong><br>Ignores first damage received each turn</p>
-      </div>
-    </article>
-
-    <!-- HULK -->
-    <article class="card">
-      <header class="card__header">HULK</header>
-
-      <figure class="card__art">
-        <img src="hulk.png" alt="Hulk">
-      </figure>
-
-      <div class="card__stats">
-        <h3>POWER&nbsp;<span class="stat">+75</span></h3>
-        <p class="stat-desc"><strong>Rage Surge</strong><br>+5 ATK for every hit taken</p>
-      </div>
-
-      <div class="card__ability">
-        <h3>ABILITY</h3>
-        <p class="ability-desc"><strong>Unstoppable</strong><br>Cannot be stunned or slowed</p>
-      </div>
-    </article>
-  </section>
+  <footer>
+    <p>Designed &amp; built by Adam Naumovski · 2026</p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,17 @@
+ADAM NAUMOVSKI PORTFOLIO — IMPROVED BUILD
+
+What changed
+- Rebuilt the portfolio homepage with a modern responsive layout.
+- Added current Moxi Corp and Ashar Music work.
+- Reorganised projects into a clearer portfolio flow.
+- Rewrote navigation, mobile menus, reveal animations and active-section behaviour.
+- Rebuilt the Python Games, Barrel Jump, merch and thank-you pages.
+- Redesigned the JavaScript gaming store and fixed its cart, currency and checkout logic.
+- Connected project pages with consistent routes back to the portfolio.
+- Improved semantic HTML, form fields, keyboard support, labels and image alt text.
+- Added a shared design system, favicon links, sitemap, robots file and GitHub Pages .nojekyll file.
+- Updated all public pages for mobile, tablet and desktop layouts.
+
+Deployment cleanup
+The package excludes Git history, VS Code settings, generated PyInstaller build folders,
+duplicate executable files and the unused Poppins.zip. The Python game source and assets remain included.

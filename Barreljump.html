@@ -1,43 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>App Store</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5977/5977575.png" type="image/png">
-
-    <!---custom css link-->
-    <link rel="stylesheet" href="appstyle.css">
-
-    <!---boxiocons link--->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!-- header design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Barrel Jump is Adam Naumovski's retro arcade game for iPhone and iPad.">
+  <meta name="theme-color" content="#140b05">
+  <title>Barrel Jump | iOS Arcade Game</title>
+  <link rel="icon" type="image/png" href="images/logo_lo.png">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="appstyle.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
 <body>
-  <header class="header">
-    <div class="logo">
-  <a href="https://apps.apple.com/" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/5977/5977575.png" alt="Download on the App Store" width="30">
-  </a>
-</div>
-    <nav class="navbar">
-      <a href="index.html" class="active">Home</a>
-      <a href="shop.html">Shop</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to app details</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark">BJ</span><span class="brand-copy"><strong>Barrel Jump</strong><span>iOS arcade game</span></span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="app-navigation" aria-expanded="false" data-nav-toggle><span></span></button>
+      <nav class="site-nav" id="app-navigation" aria-label="Page navigation" data-nav>
+        <a href="index.html">Portfolio</a>
+        <a class="active" href="#app">The game</a>
+        <a href="#features">Features</a>
+        <a href="shop.html">Merch</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>READY TO JUMP?</h1>
-    <p>Master the barrel jump! Experience the thrill of retro gameplay reimagined.<br><br>  <img src="https://em-content.zobj.net/source/apple/419/mobile-phone-with-arrow_1f4f2.png" alt="Download on the App Store" class="phone"> Download it now on IOS<img src="https://em-content.zobj.net/source/apple/419/mobile-phone-with-arrow_1f4f2.png" alt="Download on the App Store" class="phone"><br>Iphone and Ipad
-    </p>
-    <a href="https://apps.apple.com/us/app/barrel-jump/id6602894022?platform=iphone" target="_blank" class="download-btn">Download Now</a>
-    <img src="images/barrel.png" alt="Barrel Jump image" class="barrel-image" />
-  </section>
+  <main id="main">
+    <section class="app-hero" id="app">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="mountains" aria-hidden="true"></div>
+      <div class="container app-hero__grid">
+        <div class="app-copy reveal">
+          <p class="eyebrow">Available on iPhone and iPad</p>
+          <h1>Ready to <span>jump?</span></h1>
+          <p>Time every leap, clear the barrels and chase a higher score in a fast retro arcade game built for quick, addictive runs.</p>
+          <div class="button-row">
+            <a class="app-store-button" href="https://apps.apple.com/us/app/barrel-jump/id6602894022?platform=iphone" target="_blank" rel="noreferrer" aria-label="Download Barrel Jump on the App Store"><i class="bx bxl-apple" aria-hidden="true"></i><span><small>Download on the</small>App Store</span></a>
+            <a class="btn btn--secondary" href="#features">See how it plays</a>
+          </div>
+          <div class="app-meta"><span><i class="bx bx-mobile-alt"></i> iPhone</span><span><i class="bx bx-tab"></i> iPad</span><span><i class="bx bx-joystick"></i> Arcade</span></div>
+        </div>
 
-  <footer class="footer">
-    <p>&copy; 2025 Adam Naumovski. All rights reserved.</p>
-  </footer>
+        <div class="phone-showcase reveal">
+          <div class="phone phone--back"><img src="images/barrel.png" alt="Barrel Jump game screens" width="1920" height="1080"></div>
+          <div class="phone phone--front"><img src="images/barrel.png" alt="Barrel Jump start, gameplay and scores screens" width="1920" height="1080"></div>
+          <div class="score-chip"><small>CHASE THE</small><strong>HIGH SCORE</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section app-features" id="features">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Simple to start. Hard to master.</p>
+          <h2 class="section-title">One jump can change the <span class="accent">whole run.</span></h2>
+          <p class="section-copy">Barrel Jump strips the experience down to timing, focus and another attempt at beating your best.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="reveal"><i class="bx bx-timer"></i><h3>Fast rounds</h3><p>Jump straight into short runs that are easy to replay.</p></article>
+          <article class="reveal"><i class="bx bx-trending-up"></i><h3>Score chasing</h3><p>Every clean jump pushes you closer to a new personal best.</p></article>
+          <article class="reveal"><i class="bx bx-palette"></i><h3>Retro style</h3><p>Bright desert visuals and arcade-inspired presentation.</p></article>
+          <article class="reveal"><i class="bx bx-mobile"></i><h3>Built for mobile</h3><p>Designed for iPhone and iPad with quick touch gameplay.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section app-cta">
+      <div class="container app-cta__card reveal">
+        <div><p class="eyebrow">Your next run starts now</p><h2>Think you can beat your score?</h2></div>
+        <a class="app-store-button" href="https://apps.apple.com/us/app/barrel-jump/id6602894022?platform=iphone" target="_blank" rel="noreferrer"><i class="bx bxl-apple"></i><span><small>Download on the</small>App Store</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-shell"><p>© <span data-year>2026</span> Adam Naumovski. Barrel Jump.</p><div class="footer-links"><a href="index.html">Portfolio</a><a href="#app">Back to top</a></div></div></footer>
 </body>
-
-
 </html>

@@ -1,165 +1,201 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
-
-:root {
-  --bg-color: #0b0c10;
-  --primary-color: #00f7ff;
-  --accent-color: #1f2833;
-  --text-color: #ffffff;
-  --font-main: 'Orbitron', sans-serif;
+.games-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(76px, 10vw, 132px) 0;
+  border-bottom: 1px solid var(--line);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-main);
+.games-hero::after {
+  content: '';
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  right: -240px;
+  top: -320px;
+  border-radius: 50%;
+  background: rgba(40,196,255,.09);
+  filter: blur(20px);
+  pointer-events: none;
 }
 
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  overflow-x: hidden;
-  padding-bottom: 100px;
+.games-hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: clamp(50px, 8vw, 100px);
 }
 
-/* Header */
-.header {
-  background:var(--bg-color);
-  padding: 1px 5%;
+.games-hero .lead {
+  max-width: 700px;
+  margin: 26px 0 32px;
+}
+
+.terminal-card {
+  overflow: hidden;
+  transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+}
+
+.terminal-card__bar {
+  min-height: 44px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 0 20px #00f7ff;
+  gap: 7px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
 }
 
-.header .logos img {
-  height: 140px;
+.terminal-card__bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.22);
 }
 
-.navbar a {
-  font-size: 1.6rem;
-  color: #ededed;
-  margin-left: 3rem;
+.terminal-card__bar span {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: .72rem;
+}
+
+.terminal-card pre {
+  min-height: 310px;
+  margin: 0;
+  padding: clamp(22px, 4vw, 40px);
+  overflow: auto;
+  color: #dce9f2;
+  background: linear-gradient(145deg, rgba(40,196,255,.05), transparent 50%), #07111a;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: clamp(.76rem, 1.4vw, .95rem);
+  line-height: 1.85;
+}
+
+.terminal-card code b {
+  color: var(--accent);
+}
+
+.game-list .container {
+  display: grid;
+  gap: 24px;
+}
+
+.game-card {
+  display: grid;
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.game-card__intro {
+  padding: clamp(28px, 5vw, 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(40,196,255,.09), transparent 48%);
+}
+
+.game-number {
+  color: var(--accent);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  transition: 0.3s ease;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 5px #00f7ff44;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #00f7ff;
-  text-shadow: 0 0 8px #00f7ff;
+.game-card__intro > i {
+  margin: 34px 0 12px;
+  color: var(--accent);
+  font-size: 3rem;
+  filter: drop-shadow(0 0 20px rgba(40,196,255,.35));
 }
 
-
-/* Game Headers */
-h1.barrel,
-h3.h3,
-h4.h4 {
-  text-align: center;
-  font-size: 3.5rem;
-  color: var(--primary-color);
-  text-shadow: 0 0 15px var(--primary-color);
-  margin: 150px auto 20px;
+.game-card h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
 }
 
-h2.h2 {
-  text-align: center;
-  font-size: 1.6rem;
-  color: var(--text-color);
-  margin: 10px auto 20px;
+.game-card p {
+  margin: 14px 0 24px;
+  color: var(--muted);
 }
 
-iframe {
+.run-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #d9e8f1;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.game-embed {
+  min-height: 510px;
+  padding: 14px;
+  background: #05090d;
+}
+
+.game-embed iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 482px;
   display: block;
-  margin: 0 auto 40px;
-  width: 90%;
-  max-width: 1000px;
-  height: 360px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 20px var(--primary-color);
+  border: 0;
+  border-radius: 16px;
+  background: white;
 }
 
-/* Swordline */
-.swordline {
-  height: 5px;
-  background-image: linear-gradient(
-    to right,
-    transparent 10%,
-    var(--primary-color) 50%,
-    transparent 90%
-  );
-  background-repeat: no-repeat;
-  background-size: 100% 100px;
-  background-position: 0 center;
-  margin: 40px auto;
+.about-games {
+  padding-top: 0;
 }
 
-/* About Paragraph */
-.about {
-  text-align: center;
-  font-size: 1.4rem;
-  color: var(--primary-color);
-  max-width: 900px;
-  margin: 30px auto 50px;
-  padding: 0 20px;
-  line-height: 1.8;
+.about-games__card {
+  padding: clamp(28px, 5vw, 52px);
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  align-items: center;
+  gap: clamp(34px, 6vw, 80px);
 }
 
-/* Footer */
-.footer {
-  background: var(--accent-color);
-  margin-bottom: -180px;
-  padding: 30px 0;
-  text-align: center;
-  color: var(--primary-color);
-  font-size: 1.3rem;
-  box-shadow: 0 -10px 20px var(--primary-color);
+.about-games__card h2 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--accent-color);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #66fcf1;
+.about-games__card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.04rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  h1.barrel,
-  h3.h3,
-  h4.h4 {
-    font-size: 2.2rem;
+@media (max-width: 900px) {
+  .games-hero__grid,
+  .game-card,
+  .about-games__card {
+    grid-template-columns: 1fr;
   }
 
-  h2.h2 {
-    font-size: 1.3rem;
+  .terminal-card {
+    transform: none;
   }
 
-  .about {
-    font-size: 1.2rem;
+  .game-card__intro {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .game-embed {
+    min-height: 450px;
+    padding: 8px;
   }
 
-  iframe {
-    height: 300px;
-  }
-
-  .navbar a {
-    font-size: 1.3rem;
-    margin-left: 1.5rem;
+  .game-embed iframe {
+    min-height: 434px;
   }
 }

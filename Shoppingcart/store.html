@@ -1,84 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUN1SH3R's Ultimate Gaming Store</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/assets/storestyles.css">
-    <script src="src/assets/script.js" defer></script>
-    <script src="src/assets/front.js" defer></script>
-    <style>
-        body {
-            /* background-image: url('../images/dark-gaming-bg.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center; */
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive JavaScript gaming store demo by Adam Naumovski.">
+  <meta name="theme-color" content="#05070b">
+  <title>Gaming Store Cart Demo | Adam Naumovski</title>
+  <link rel="icon" type="image/png" href="../images/logo_lo.png">
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="src/assets/storestyles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="src/assets/script.js" defer></script>
+  <script src="src/assets/front.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logos"><img src="../images/logo.png" alt="Logo"></a>
-        <nav class="navbar">
-            <a href="../index.html">Home</a>
-            <!-- <a href="../index.html#about">About</a>
-            <a href="../index.html#education">Education</a> -->
-            <!-- <a href="../index.html#skills">Skills</a> -->
-            <!-- <a href="../index.html#contact">Contact</a> -->
-        </nav>
-    </header>
+  <a class="skip-link" href="#catalogue">Skip to products</a>
 
-    <div class="currency-selector"></div>
-    <div class="headerBG">
-        <img class="Top" src="/Shoppingcart/src/images/mkd_pun.png" width="1350">
-        <!-- <div class="topScroll">
-            <img class="pcshop" src="src/images/pcshop.png" alt="PC Shop">
-        </div> -->
+  <header class="site-header store-header" data-store-header>
+    <div class="nav-shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">GS</span>
+        <span class="brand-copy"><strong>Gaming Store</strong><span>JavaScript cart demo</span></span>
+      </a>
+      <nav class="store-nav" aria-label="Store navigation">
+        <a href="../index.html"><i class="bx bx-left-arrow-alt"></i> Portfolio</a>
+        <a href="#catalogue">Products</a>
+        <button class="cart-jump" type="button" data-cart-jump><i class="bx bx-cart-alt"></i><span>Cart</span><b data-cart-count>0</b></button>
+      </nav>
     </div>
+  </header>
 
-    <div class="swordline"></div>
+  <main>
+    <section class="store-hero">
+      <div class="container store-hero__grid">
+        <div class="store-hero__copy">
+          <p class="eyebrow">Interactive portfolio project</p>
+          <h1>Build the setup.<br><span>Control the cart.</span></h1>
+          <p>This working front-end demo lets you browse gaming gear, add products, update quantities, switch display currency and test a cash checkout flow.</p>
+          <div class="button-row"><a class="btn" href="#catalogue">Browse products <i class="bx bx-down-arrow-alt"></i></a><a class="btn btn--secondary" href="../index.html#work">Back to portfolio</a></div>
+          <div class="demo-note"><i class="bx bx-info-circle"></i><span>This is a portfolio demonstration. Products, conversion rates and checkout are not live.</span></div>
+        </div>
+        <div class="store-hero__visual" aria-hidden="true">
+          <div class="rig-card"><img src="src/images/Pc.png" alt="" width="1088" height="829"><span>BUILD / UPGRADE / PLAY</span></div>
+          <div class="hero-chip hero-chip--one"><i class="bx bx-chip"></i>GPU READY</div>
+          <div class="hero-chip hero-chip--two"><i class="bx bx-mouse"></i>GEAR SELECTED</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="cart-total"></div>
+    <section class="store-toolbar" aria-label="Store controls">
+      <div class="container store-toolbar__inner">
+        <div><strong>Gaming catalogue</strong><span data-product-total>0 products</span></div>
+        <label for="currency-select">Display currency
+          <select id="currency-select" data-currency>
+            <option value="AUD">AUD · Australian dollar</option>
+            <option value="USD">USD · US dollar</option>
+            <option value="EUR">EUR · Euro</option>
+            <option value="JPY">JPY · Japanese yen</option>
+          </select>
+        </label>
+      </div>
+    </section>
 
-    <div class="cart-container">
-        <div class="products-container">
-            <h2 id="PcTitle">🔥 Featured Gaming PCs 🔥</h2>
-            <img class="gaming" src="src/images/gamingpcsale.png" alt="Gaming PC Sale">
-            <h5>Swipe to see more</h5>
-            <div class="Container snaps-inline"></div>
-            <div class="swordline"></div>
-            <h2 id="PartsTitle">⚙️ Pro Gamer Parts ⚙️</h2>
-            <img class="parts" src="src/images/parts.png" alt="Parts">
-            <div class="products"></div>
+    <section class="section store-section" id="catalogue">
+      <div class="container store-layout">
+        <div class="catalogue">
+          <section class="product-group" aria-labelledby="featured-title">
+            <div class="group-heading"><div><p class="eyebrow">Cases and builds</p><h2 id="featured-title">Featured gaming PCs</h2></div><span>Swipe on mobile</span></div>
+            <div class="product-grid product-grid--featured" data-featured-products></div>
+          </section>
+
+          <section class="product-group" aria-labelledby="parts-title">
+            <div class="group-heading"><div><p class="eyebrow">Upgrade the rig</p><h2 id="parts-title">Parts and accessories</h2></div><span>Storage · mice · GPUs · boards</span></div>
+            <div class="product-grid" data-parts-products></div>
+          </section>
         </div>
 
-        <div class="swordline"></div>
+        <aside class="cart-panel" id="cart" aria-labelledby="cart-title">
+          <div class="cart-panel__head">
+            <div><p class="eyebrow">Your selection</p><h2 id="cart-title">Shopping cart</h2></div>
+            <button class="icon-button" type="button" data-empty-cart title="Empty cart" aria-label="Empty cart"><i class="bx bx-trash"></i></button>
+          </div>
+          <div class="cart-items" data-cart-items aria-live="polite"></div>
+          <div class="cart-summary">
+            <div><span>Items</span><strong data-summary-count>0</strong></div>
+            <div class="cart-total-row"><span>Total</span><strong data-cart-total>A$0.00</strong></div>
+          </div>
 
-        <h2 class="cartBorder">Your Cart</h2>
-        <div class="cart"></div>
-        <div class="empty-btn"></div>
-        <div class="swordline"></div>
-    </div>
-
-    <div class="checkout-container">
-        <h1 id="checkouttitle">Checkout</h1>
-        <div class="checkout">
-            <div class="cart-total"></div>
-            <form>
-                <label>Pay Amount:</label>
-                <input class="received" type="text">
-                <button onclick="soundPay()" class="pay">Sign</button>
+          <div class="checkout-box">
+            <div class="checkout-heading"><i class="bx bx-receipt"></i><span><strong>Demo checkout</strong><small>Enter a cash amount to calculate change</small></span></div>
+            <form data-checkout-form>
+              <label for="cash-received">Cash received</label>
+              <div class="cash-input"><span data-currency-symbol>A$</span><input id="cash-received" data-cash-received type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+              <button class="btn checkout-button" type="submit">Complete demo sale</button>
             </form>
-            <h4>Receipt</h4>
-            <div class="pay-summary"></div>
-        </div>
-    </div>
+            <div class="receipt" data-receipt hidden></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <footer class="site-footer"><div class="footer-shell"><p>© <span data-store-year>2026</span> Adam Naumovski. JavaScript shopping cart project.</p><div class="footer-links"><a href="../index.html">Portfolio</a><a href="#catalogue">Back to products</a></div></div></footer>
 </body>
 </html>
